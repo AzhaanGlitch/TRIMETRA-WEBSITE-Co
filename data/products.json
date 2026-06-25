@@ -98,5 +98,29 @@
       "assets/images/bridal_2.png"
     ],
     "featured": false
+  },
+  {
+    "id": "TRM-BR-001",
+    "name": "Golden Bloom Bracelet",
+    "collection": "bracelets",
+    "description": "A fluid 18k solid gold chain bracelet adorned with delicate, hand-sculpted golden flowers set with brilliant-cut diamonds.",
+    "materials": ["18k Yellow Gold", "0.6ct Round Brilliant Diamonds", "Adjustable 7-8 inch safety clasp"],
+    "price": "$3,400",
+    "images": [
+      "assets/images/bracelet_1.png"
+    ],
+    "featured": true
+  },
+  {
+    "id": "TRM-BR-002",
+    "name": "Starlight Diamond Cuff",
+    "collection": "bracelets",
+    "description": "An architectural open cuff in solid white gold, with micro-pavé diamonds arranged in geometric patterns resembling the night sky.",
+    "materials": ["18k White Gold", "2.4ct Pavé-set Diamonds (VS2, F-G)", "Flexible inner hinge"],
+    "price": "$9,200",
+    "images": [
+      "assets/images/bracelet_2.png"
+    ],
+    "featured": false
   }
 ]

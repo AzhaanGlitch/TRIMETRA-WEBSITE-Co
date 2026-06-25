@@ -11,22 +11,60 @@ const state = {
     currentFilter: 'all'
 };
 
-// DOM Elements
+// DOM Elements (initialized dynamically after header and footer are loaded)
 const appRoot = document.getElementById('app-root');
-const navMenu = document.getElementById('nav-menu');
-const navToggle = document.getElementById('nav-toggle');
-const navLinks = document.querySelectorAll('.nav-link');
-const globalWhatsAppCta = document.getElementById('global-whatsapp-cta');
-const footerInsta = document.getElementById('footer-insta');
-const footerWa = document.getElementById('footer-wa');
-const footerMail = document.getElementById('footer-mail');
+let navMenu = null;
+let navToggle = null;
+let navLinks = [];
+let globalWhatsAppCta = null;
+let footerInsta = null;
+let footerWa = null;
+let footerMail = null;
 
 /* ==========================================================================
    INITIALIZATION & DATA LOADING
    ========================================================================== */
 
+// Dynamically load external header and footer components
+async function loadHeaderAndFooter() {
+    try {
+        const [headerRes, footerRes] = await Promise.all([
+            fetch('header.html'),
+            fetch('footer.html')
+        ]);
+
+        if (!headerRes.ok || !footerRes.ok) {
+            throw new Error('Failed to load header or footer components.');
+        }
+
+        const headerHtml = await headerRes.text();
+        const footerHtml = await footerRes.text();
+
+        // Inject into placeholders
+        document.getElementById('header-placeholder').innerHTML = headerHtml;
+        document.getElementById('footer-placeholder').innerHTML = footerHtml;
+
+        // Query the DOM elements now that they are injected
+        navMenu = document.getElementById('nav-menu');
+        navToggle = document.getElementById('nav-toggle');
+        navLinks = document.querySelectorAll('.nav-link');
+        globalWhatsAppCta = document.getElementById('global-whatsapp-cta');
+        footerInsta = document.getElementById('footer-insta');
+        footerWa = document.getElementById('footer-wa');
+        footerMail = document.getElementById('footer-mail');
+
+        // Set up hamburger toggle and scroll styling
+        setupNavEvents();
+    } catch (error) {
+        console.error('Error loading header/footer components:', error);
+    }
+}
+
 async function initApp() {
     try {
+        // Load header/footer first so DOM elements exist
+        await loadHeaderAndFooter();
+
         // Fetch static JSON databases
         const [productsResponse, contentResponse] = await Promise.all([
             fetch('data/products.json'),
@@ -47,10 +85,10 @@ async function initApp() {
         // Initialize Router
         window.addEventListener('hashchange', router);
         window.addEventListener('load', router);
-        
+
         // Initial route handling
         router();
-        
+
     } catch (error) {
         console.error('Initialization Error:', error);
         renderErrorState(error.message);
@@ -62,12 +100,20 @@ function setupGlobalLinks() {
     const contact = state.content.contact;
     if (contact) {
         // Floating WhatsApp Widget
-        globalWhatsAppCta.href = `https://wa.me/${contact.whatsapp.number}?text=${encodeURIComponent(contact.whatsapp.message)}`;
-        
+        if (globalWhatsAppCta) {
+            globalWhatsAppCta.href = `https://wa.me/${contact.whatsapp.number}?text=${encodeURIComponent(contact.whatsapp.message)}`;
+        }
+
         // Footer links
-        footerWa.href = `https://wa.me/${contact.whatsapp.number}?text=${encodeURIComponent(contact.whatsapp.message)}`;
-        footerInsta.href = contact.instagram.url;
-        footerMail.href = `mailto:${contact.email.address}`;
+        if (footerWa) {
+            footerWa.href = `https://wa.me/${contact.whatsapp.number}?text=${encodeURIComponent(contact.whatsapp.message)}`;
+        }
+        if (footerInsta) {
+            footerInsta.href = contact.instagram.url;
+        }
+        if (footerMail) {
+            footerMail.href = `mailto:${contact.email.address}`;
+        }
     }
 }
 
@@ -75,29 +121,35 @@ function setupGlobalLinks() {
    MOBILE NAVIGATION MENU & SCROLL EFFECTS
    ========================================================================== */
 
-// Toggle Hamburger Menu
-navToggle.addEventListener('click', () => {
-    navToggle.classList.toggle('open');
-    navMenu.classList.toggle('open');
-});
-
-// Close nav menu on link clicks (Mobile UX)
-document.addEventListener('click', (e) => {
-    if (navMenu.classList.contains('open') && !navMenu.contains(e.target) && !navToggle.contains(e.target)) {
-        navToggle.classList.remove('open');
-        navMenu.classList.remove('open');
+function setupNavEvents() {
+    if (navToggle && navMenu) {
+        // Toggle Hamburger Menu
+        navToggle.addEventListener('click', () => {
+            navToggle.classList.toggle('open');
+            navMenu.classList.toggle('open');
+        });
     }
-});
 
-// Shrink header on scroll
-window.addEventListener('scroll', () => {
-    const header = document.querySelector('.luxury-header');
-    if (window.scrollY > 50) {
-        header.classList.add('shrink');
-    } else {
-        header.classList.remove('shrink');
-    }
-});
+    // Close nav menu on link clicks (Mobile UX)
+    document.addEventListener('click', (e) => {
+        if (navMenu && navMenu.classList.contains('open') && !navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+            navToggle.classList.remove('open');
+            navMenu.classList.remove('open');
+        }
+    });
+
+    // Shrink header on scroll
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('.luxury-header');
+        if (header) {
+            if (window.scrollY > 50) {
+                header.classList.add('shrink');
+            } else {
+                header.classList.remove('shrink');
+            }
+        }
+    });
+}
 
 /* ==========================================================================
    ROUTER SYSTEM
@@ -111,7 +163,7 @@ function router() {
     // Parse URL Hash
     const rawHash = window.location.hash || '#/home';
     const cleanHash = rawHash.split('?')[0];
-    
+
     // Parse Query Parameters
     const queryParams = {};
     if (rawHash.includes('?')) {
@@ -162,7 +214,7 @@ function router() {
 function updateNavHighlight(hash) {
     navLinks.forEach(link => {
         const linkHash = link.getAttribute('href').split('?')[0];
-        
+
         // Match home equivalents
         if ((hash === '#/' || hash === '#/home') && linkHash === '#/home') {
             link.classList.add('active');
@@ -179,7 +231,7 @@ function updateNavHighlight(hash) {
    ========================================================================== */
 
 function renderHomeView() {
-    const { hero, brandStory, testimonials } = state.content;
+    const { hero, testimonials } = state.content;
     const featuredProducts = state.products.filter(p => p.featured);
 
     let productsHtml = '';
@@ -231,93 +283,39 @@ function renderHomeView() {
                 <svg width="0" height="0" style="position: absolute;">
                     <defs>
                         <clipPath id="wedge-clip" clipPathUnits="objectBoundingBox">
-                            <path d="M 0.05,0.2 C 0.02,0.2 0,0.24 0,0.28 L 0,0.72 C 0,0.76 0.02,0.8 0.05,0.8 L 0.85,0.98 C 0.92,1 1,0.95 1,0.85 L 1,0.15 C 1,0.05 0.92,0 0.85,0.02 Z" />
+                            <path d="M 0.05,0.28 C 0.02,0.28 0,0.32 0,0.38 L 0,0.62 C 0,0.68 0.02,0.72 0.05,0.72 L 0.85,0.96 C 0.92,0.98 1,0.8 1,0.5 C 1,0.2 0.92,0.02 0.85,0.04 Z" />
                         </clipPath>
                     </defs>
                 </svg>
 
-                <div class="hero-custom-container">
-                    <!-- Left Side: Semi-circular Carousel -->
-                    <div class="hero-left-pane">
-                        <div class="explore-label">
-                            <span>E&nbsp;X&nbsp;P&nbsp;L&nbsp;O&nbsp;R&nbsp;E</span>
-                            <span>O&nbsp;U&nbsp;R</span>
-                            <span>C&nbsp;O&nbsp;L&nbsp;L&nbsp;E&nbsp;C&nbsp;T&nbsp;I&nbsp;O&nbsp;N</span>
-                        </div>
-                        
-                        <div class="carousel-semi-circle">
-                            <!-- Sparkle decorations -->
-                            <div class="sparkle sparkle-1"><i class="fas fa-sparkles">✦</i></div>
-                            <div class="sparkle sparkle-2"><i class="fas fa-sparkles">✦</i></div>
-                            <div class="sparkle sparkle-3"><i class="fas fa-sparkles">✦</i></div>
-                            
-                            <div class="carousel-track" id="carousel-track">
-                                <!-- Dynamic radial items injected in initHeroCarousel -->
-                            </div>
-                        </div>
+                <!-- Centered Orbiting Carousel positioned relative to the screen viewport boundary -->
+                <div class="carousel-semi-circle">
+                    <!-- Central Explore Label -->
+                    <div class="explore-label-center">
+                        <span>Explore</span>
+                        <span>Our</span>
+                        <h3>Collection</h3>
                     </div>
+
+                    <!-- Sparkle decorations -->
+                    <div class="sparkle sparkle-1"><i class="fas fa-sparkles">✦</i></div>
+                    <div class="sparkle sparkle-2"><i class="fas fa-sparkles">✦</i></div>
+                    <div class="sparkle sparkle-3"><i class="fas fa-sparkles">✦</i></div>
+                    
+                    <div class="carousel-track" id="carousel-track">
+                        <!-- Dynamic radial items injected in initHeroCarousel -->
+                    </div>
+                </div>
+
+                <div class="hero-custom-container">
+                    <!-- Left Side Column Placeholder (reserves grid column space) -->
+                    <div class="hero-left-pane"></div>
                     
                     <!-- Right Side: Glowing Text Header and CTA -->
                     <div class="hero-right-pane">
                         <h1 class="brand-title-glow">TRIMETRA</h1>
                         <p class="hero-subtitle">${hero.subtitle}</p>
                         <a href="#/collections" class="gold-btn-custom">Explore Collections</a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Brand Story -->
-            <section class="brand-story-sec">
-                <div class="brand-story-text">
-                    <h2>${brandStory.title}</h2>
-                    ${brandStory.paragraphs.map(p => `<p>${p}</p>`).join('')}
-                    <div>
-                        <a href="#/about" class="outline-btn">Read Our Heritage</a>
-                    </div>
-                </div>
-                <div class="brand-story-img">
-                    <img src="assets/images/hero.png" alt="Trimetra Fine Jewelry Presentation" loading="lazy">
-                </div>
-            </section>
-
-            <!-- Featured Collections Showcase -->
-            <section class="featured-collections-sec">
-                <div class="section-header">
-                    <span class="section-subtitle">Curated Categories</span>
-                    <h2 class="section-title">The Collections</h2>
-                </div>
-                
-                <div class="collections-grid">
-                    <div class="collection-card">
-                        <img src="assets/images/necklace_1.png" alt="Necklaces Collection" class="collection-card-img" loading="lazy">
-                        <div class="collection-card-overlay">
-                            <h3>Necklaces</h3>
-                            <a href="#/collections?filter=necklaces" class="collection-card-link">View Collection</a>
-                        </div>
-                    </div>
-                    
-                    <div class="collection-card">
-                        <img src="assets/images/earrings_1.png" alt="Earrings Collection" class="collection-card-img" loading="lazy">
-                        <div class="collection-card-overlay">
-                            <h3>Earrings</h3>
-                            <a href="#/collections?filter=earrings" class="collection-card-link">View Collection</a>
-                        </div>
-                    </div>
-                    
-                    <div class="collection-card">
-                        <img src="assets/images/ring_1.png" alt="Rings Collection" class="collection-card-img" loading="lazy">
-                        <div class="collection-card-overlay">
-                            <h3>Rings</h3>
-                            <a href="#/collections?filter=rings" class="collection-card-link">View Collection</a>
-                        </div>
-                    </div>
-                    
-                    <div class="collection-card">
-                        <img src="assets/images/bridal_1.png" alt="Bridal Collection" class="collection-card-img" loading="lazy">
-                        <div class="collection-card-overlay">
-                            <h3>Bridal Set</h3>
-                            <a href="#/collections?filter=bridal" class="collection-card-link">View Collection</a>
-                        </div>
                     </div>
                 </div>
             </section>
@@ -361,6 +359,14 @@ function renderHomeView() {
 
     // Initialize custom homepage carousel
     initHeroCarousel();
+
+    // Trigger typewriter animation once the view is rendered
+    setTimeout(() => {
+        const title = document.querySelector('.brand-title-glow');
+        if (title) {
+            title.classList.add('start-typing');
+        }
+    }, 100);
 }
 
 function initHeroCarousel() {
@@ -391,10 +397,10 @@ function initHeroCarousel() {
 
     const items = track.querySelectorAll('.carousel-item');
     const totalItems = items.length;
-    
+
     // Determine separation angle
-    const angleSeparation = 30; // 30 degrees separation
-    
+    const angleSeparation = 45; // 45 degrees separation
+
     // Position items radially around the track center
     function updateItemPositions() {
         items.forEach((item, index) => {
@@ -402,12 +408,14 @@ function initHeroCarousel() {
             item.style.transform = `rotate(${angle}deg)`;
         });
     }
-    
+
     updateItemPositions();
 
-    // Auto-rotation variables
+    // Auto-rotation variables (continuous motion)
     let currentRotation = 0;
-    let autoRotateInterval = null;
+    let isHovered = false;
+    let isTransitioning = false;
+    let transitionTimeout = null;
 
     // Highlight the active item currently at focus (angle 0 relative to viewport)
     function highlightActive() {
@@ -417,7 +425,7 @@ function initHeroCarousel() {
         if (targetIndex < 0) {
             targetIndex += totalItems;
         }
-        
+
         items.forEach((item, index) => {
             if (index === targetIndex) {
                 item.classList.add('active');
@@ -434,52 +442,58 @@ function initHeroCarousel() {
         highlightActive();
     }
 
-    // Set initial focus on first item
-    rotateTrack(0);
-
-    // Auto rotation loop
-    function startAutoRotate() {
-        if (autoRotateInterval) clearInterval(autoRotateInterval);
-        autoRotateInterval = setInterval(() => {
-            // Spin track counterclockwise to bring bottom items up
-            rotateTrack(currentRotation - angleSeparation);
-        }, 4000);
-    }
-
-    function stopAutoRotate() {
-        if (autoRotateInterval) {
-            clearInterval(autoRotateInterval);
-            autoRotateInterval = null;
+    // Continuous loop step
+    function animationStep() {
+        if (!isHovered && !isTransitioning) {
+            currentRotation -= 0.12; // Extremely smooth slow continuous rotation (degrees per frame)
+            track.style.transform = `rotate(${currentRotation}deg)`;
+            highlightActive();
         }
+        requestAnimationFrame(animationStep);
     }
+
+    // Set initial focus and start animation loop
+    rotateTrack(0);
+    requestAnimationFrame(animationStep);
 
     // Listeners for hover pausing
     const leftPane = document.querySelector('.hero-left-pane');
     if (leftPane) {
-        leftPane.addEventListener('mouseenter', stopAutoRotate);
-        leftPane.addEventListener('mouseleave', startAutoRotate);
+        leftPane.addEventListener('mouseenter', () => {
+            isHovered = true;
+        });
+        leftPane.addEventListener('mouseleave', () => {
+            isHovered = false;
+        });
     }
 
     // Listeners for clicking items to slide them to center focus
     items.forEach((item, index) => {
         item.addEventListener('click', (e) => {
-            stopAutoRotate();
-            
-            // We want to bring the clicked item to 0 degrees rotation.
-            // That means the track should be rotated by - (index * angleSeparation) degrees
-            // (modulo 360/total items rotation)
+            if (isTransitioning) return;
+
+            isTransitioning = true;
+
+            // Enable smooth transition temporarily for this click centering
+            track.style.transition = 'transform 1.8s cubic-bezier(0.1, 0.9, 0.2, 1)';
+
+            // Bring the clicked item to 0 degrees rotation.
             let targetAngle = -(index * angleSeparation);
-            
+
             // To prevent large spins, normalize targetAngle near currentRotation
             const delta = targetAngle - (currentRotation % (totalItems * angleSeparation));
             targetAngle = currentRotation + delta;
-            
+
             rotateTrack(targetAngle);
+
+            // After the transition finishes, disable it to restore continuous rendering
+            if (transitionTimeout) clearTimeout(transitionTimeout);
+            transitionTimeout = setTimeout(() => {
+                track.style.transition = 'none';
+                isTransitioning = false;
+            }, 1800);
         });
     });
-
-    // Start carousel auto rotation
-    startAutoRotate();
 }
 
 function renderCollectionsView(initialFilter) {
@@ -488,17 +502,18 @@ function renderCollectionsView(initialFilter) {
     // Outer shell
     appRoot.innerHTML = `
         <div class="collections-page-wrapper fade-in-section">
-            <div class="section-header">
-                <span class="section-subtitle">The Trimetra Catalog</span>
-                <h2 class="section-title">Fine Jewelry Collections</h2>
+            <!-- Dynamic Collection Banner -->
+            <div class="collection-hero-banner" id="collection-hero-banner">
+                <!-- Injected dynamically -->
             </div>
 
             <!-- Filter tabs -->
             <div class="filter-tabs-container">
                 <button class="filter-tab ${state.currentFilter === 'all' ? 'active' : ''}" data-filter="all">All</button>
+                <button class="filter-tab ${state.currentFilter === 'rings' ? 'active' : ''}" data-filter="rings">Rings</button>
                 <button class="filter-tab ${state.currentFilter === 'necklaces' ? 'active' : ''}" data-filter="necklaces">Necklaces</button>
                 <button class="filter-tab ${state.currentFilter === 'earrings' ? 'active' : ''}" data-filter="earrings">Earrings</button>
-                <button class="filter-tab ${state.currentFilter === 'rings' ? 'active' : ''}" data-filter="rings">Rings</button>
+                <button class="filter-tab ${state.currentFilter === 'bracelets' ? 'active' : ''}" data-filter="bracelets">Bracelets</button>
                 <button class="filter-tab ${state.currentFilter === 'bridal' ? 'active' : ''}" data-filter="bridal">Bridal Collection</button>
             </div>
 
@@ -509,7 +524,7 @@ function renderCollectionsView(initialFilter) {
         </div>
     `;
 
-    // Render initial catalog products
+    // Render initial catalog products and banner
     renderFilteredProducts();
 
     // Hook up tab click events
@@ -525,17 +540,30 @@ function renderCollectionsView(initialFilter) {
             const selectedFilter = tab.getAttribute('data-filter');
             state.currentFilter = selectedFilter;
             
-            // Update hash silently/without page refresh if possible, but hash route update is safer
+            // Update hash without page reload
             window.history.pushState(null, '', `#/collections?filter=${selectedFilter}`);
             
-            // Re-render grid
+            // Re-render grid and banner
             renderFilteredProducts();
         });
     });
 }
 
 function renderFilteredProducts() {
+    const bannerContainer = document.getElementById('collection-hero-banner');
     const container = document.getElementById('catalog-products-container');
+    
+    // Update dynamic banner
+    const meta = state.content.collectionMetadata[state.currentFilter] || state.content.collectionMetadata['all'];
+    bannerContainer.style.backgroundImage = `linear-gradient(rgba(26, 26, 26, 0.45), rgba(26, 26, 26, 0.65)), url('${meta.image}')`;
+    bannerContainer.innerHTML = `
+        <div class="collection-banner-content fade-in-text">
+            <span class="collection-banner-subtitle">Trimetra Signature</span>
+            <h1 class="collection-banner-title">${meta.title}</h1>
+            <p class="collection-banner-desc">${meta.description}</p>
+        </div>
+    `;
+
     const filtered = state.currentFilter === 'all' 
         ? state.products 
         : state.products.filter(p => p.collection === state.currentFilter);
@@ -599,12 +627,11 @@ function renderProductDetailsView(productId) {
 
     // Pre-filled WhatsApp Enquiry Message builder
     const waNumber = state.content.contact.whatsapp.number;
-    const waMsgText = `Hi Trimetra, I'm visiting your website and would like to enquire about the following piece:\n\n` + 
-                      `Product: ${product.name}\n` +
-                      `Reference Code: ${product.id}\n` +
-                      `Materials: ${product.materials.join(', ')}\n` +
-                      `Listed Price: ${product.price}\n\n` +
-                      `Please let me know its availability and customisation options. Thank you!`;
+    const waMsgText = `Hi Trimetra, I'm interested in the "${product.name}".\n\n` +
+        `Reference: ${product.id}\n` +
+        `Composition: ${product.materials.join(', ')}\n` +
+        `Listed Price: ${product.price}\n\n` +
+        `Please advise on its availability and how I may purchase this piece. Thank you!`;
     const waLink = `https://wa.me/${waNumber}?text=${encodeURIComponent(waMsgText)}`;
 
     appRoot.innerHTML = `
@@ -673,10 +700,10 @@ function renderProductDetailsView(productId) {
         thumb.addEventListener('click', () => {
             // Remove active classes
             thumbnails.forEach(t => t.classList.remove('active'));
-            
+
             // Set active class
             thumb.classList.add('active');
-            
+
             // Swap source image
             const imgIndex = thumb.getAttribute('data-img-index');
             mainImg.style.opacity = 0;
@@ -689,24 +716,51 @@ function renderProductDetailsView(productId) {
 }
 
 function renderAboutView() {
-    const { brandStory, craftsmanship, vision } = state.content;
+    const { craftsmanship, vision, founderStory, brandJourney, whyChooseUs } = state.content;
+
+    // Why Choose Us cards list
+    let whyCardsHtml = '';
+    whyChooseUs.items.forEach((item, index) => {
+        let iconClass = 'fa-certificate';
+        if (index === 0) iconClass = 'fa-leaf'; // Ethical
+        else if (index === 1) iconClass = 'fa-shield-halved'; // Quality/Weight
+        else if (index === 2) iconClass = 'fa-gem'; // Custom Design
+        
+        whyCardsHtml += `
+            <div class="why-card">
+                <div class="why-card-icon"><i class="fas ${iconClass}"></i></div>
+                <h3>${item.title}</h3>
+                <p>${item.desc}</p>
+            </div>
+        `;
+    });
 
     appRoot.innerHTML = `
         <div class="about-page-wrapper fade-in-section">
-            <!-- Hero banner text -->
+            <!-- Hero Banner -->
             <div class="about-hero-section">
                 <span class="section-subtitle">Since Day One</span>
                 <h1 class="section-title">The Spirit of Trimetra</h1>
             </div>
 
-            <!-- Brand Story -->
+            <!-- Founder Story -->
             <section class="about-intro-grid">
                 <div class="about-intro-text">
-                    <h2>${brandStory.title}</h2>
-                    ${brandStory.paragraphs.map(p => `<p>${p}</p>`).join('')}
+                    <span class="section-subtitle" style="text-align: left; margin-bottom: 10px;">The Visionary Behind the Brand</span>
+                    <h2>${founderStory.title}</h2>
+                    ${founderStory.paragraphs.map(p => `<p>${p}</p>`).join('')}
                 </div>
                 <div class="brand-story-img">
-                    <img src="assets/images/hero.png" alt="Trimetra Heritage Jewelry Display" loading="lazy">
+                    <img src="assets/images/hero.png" alt="Trimetra Founder Jewelry Presentation" loading="lazy">
+                </div>
+            </section>
+
+            <!-- Brand Journey -->
+            <section class="brand-journey-section">
+                <div class="journey-card">
+                    <span class="section-subtitle">Our Heritage</span>
+                    <h2>${brandJourney.title}</h2>
+                    ${brandJourney.paragraphs.map(p => `<p>${p}</p>`).join('')}
                 </div>
             </section>
 
@@ -717,17 +771,28 @@ function renderAboutView() {
                         <img src="assets/images/craftsmanship.png" alt="Master Craftsman setting diamonds" loading="lazy">
                     </div>
                     <div class="craftsmanship-text">
+                        <span class="section-subtitle" style="text-align: left; margin-bottom: 10px;">Heritage Techniques & Precision</span>
                         <h2>${craftsmanship.title}</h2>
-                        <span class="section-subtitle" style="text-align: left; margin-bottom: 20px;">${craftsmanship.subtitle}</span>
                         ${craftsmanship.paragraphs.map(p => `<p>${p}</p>`).join('')}
                     </div>
+                </div>
+            </section>
+
+            <!-- Why Choose Trimetra Section -->
+            <section class="why-choose-section">
+                <div class="section-header">
+                    <span class="section-subtitle">Responsible Luxury</span>
+                    <h2 class="section-title">${whyChooseUs.title}</h2>
+                </div>
+                <div class="why-choose-grid">
+                    ${whyCardsHtml}
                 </div>
             </section>
 
             <!-- Vision section -->
             <section class="vision-section" id="vision">
                 <div class="vision-card">
-                    <i class="far fa-eye"></i>
+                    <div class="vision-icon"><i class="far fa-eye"></i></div>
                     <h2>${vision.title}</h2>
                     ${vision.paragraphs.map(p => `<p>${p}</p>`).join('')}
                 </div>
@@ -857,13 +922,13 @@ function renderContactView() {
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-        
+
         // Show status feedback
         feedback.style.display = 'block';
         setTimeout(() => {
             feedback.style.opacity = 1;
         }, 10);
-        
+
         // Reset form
         form.reset();
 

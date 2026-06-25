@@ -69,5 +69,68 @@
       "hours": "Mon - Sat: 10:00 AM - 6:00 PM (By Appointment Only)",
       "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.617512345678!2d-73.97968!3d40.75797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQ1JzI4LjciTiA3M8KwNTgnNDYuOCJX!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
     }
+  },
+  "founderStory": {
+    "title": "The Founder's Story",
+    "paragraphs": [
+      "Trimetra was founded by Yashwardhan, a visionary gemologist and master jeweler. Intrigued by the intersection of natural mineral crystallization and classical geometric symmetry, Yashwardhan established Trimetra to revive mathematical purity in fine jewelry design.",
+      "\"A gemstone is a window into the deep history of our planet,\" says Yashwardhan. \"Our role as craftsmen is simply to build a perfect frame that honors that journey. At Trimetra, we combine mathematical symmetry with traditional hands-on carving to sculpt statements that endure.\""
+    ]
+  },
+  "brandJourney": {
+    "title": "Our Brand Journey",
+    "paragraphs": [
+      "What began as a private appointment-only design studio in the heart of the Diamond District has grown into a renowned luxury house. Trimetra has maintained a steadfast refusal to participate in high-volume mass production. Instead, we remain a high-end workshop focusing on limited editions and custom commissions.",
+      "From our first iconic Aurelia necklace to our expansion into tiaras and cuffs, our brand has stayed true to local, clean manufacturing, preserving the slow-artistry of traditional jewelry setting."
+    ]
+  },
+  "whyChooseUs": {
+    "title": "Why Choose Trimetra",
+    "items": [
+      {
+        "title": "Ethically Sourced Gems",
+        "desc": "100% of our diamonds, South Sea pearls, and emeralds are responsibly sourced from vetted mining cooperatives under conflict-free certification systems."
+      },
+      {
+        "title": "Generational Heirloom Weight",
+        "desc": "Unlike mass-market hollow settings, every Trimetra piece is cast with substantial gold and platinum density, featuring double-pronged secure gemstone settings designed to last centuries."
+      },
+      {
+        "title": "Bespoke Design Atelier",
+        "desc": "Our patrons enjoy direct access to our master designers. We specialize in custom ring sizing, gemstone upscaling, and personalized engraving options."
+      }
+    ]
+  },
+  "collectionMetadata": {
+    "all": {
+      "title": "Fine Jewelry Collections",
+      "description": "Discover our complete catalog of signature rings, necklaces, earrings, cuffs, and bridal jewelry handcrafted with conflict-free diamonds, grade-AAA pearls, and solid 18k gold.",
+      "image": "assets/images/hero.png"
+    },
+    "necklaces": {
+      "title": "Necklaces & Pendants",
+      "description": "Elegantly draped chains, collars, and brilliant pendants handcrafted in 18k gold and platinum.",
+      "image": "assets/images/necklace_1.png"
+    },
+    "earrings": {
+      "title": "Earrings & Drops",
+      "description": "From delicate studs to dramatic diamond drops, designed to capture light with every movement.",
+      "image": "assets/images/earrings_1.png"
+    },
+    "rings": {
+      "title": "Fine Rings & Bands",
+      "description": "Exquisite solitaire engagement rings, eternity bands, and custom statement rings.",
+      "image": "assets/images/ring_1.png"
+    },
+    "bracelets": {
+      "title": "Bracelets & Cuffs",
+      "description": "Timeless tennis bracelets, structured cuffs, and delicate chain bracelets designed for everyday luxury.",
+      "image": "assets/images/bracelet_1.png"
+    },
+    "bridal": {
+      "title": "The Bridal Collection",
+      "description": "Heirloom-quality tiaras, sets, and engagement rings crafted to make your special day unforgettable.",
+      "image": "assets/images/bridal_1.png"
+    }
   }
 }
