@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Trimetra - Exquisite fine jewelry handcrafted in 18k solid gold, G-grade diamonds, and South Sea pearls. Discover our necklaces, earrings, rings, and bridal collections.">
+    <title>Trimetra | Timeless Fine Jewelry</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Premium Header/Navigation -->
+    <header class="luxury-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <a href="#/home" class="brand-logo">TRIMETRA</a>
+            </div>
+            
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu">
+                <span class="hamburger"></span>
+            </button>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#/home" class="nav-link active">Home</a></li>
+                    <li><a href="#/collections" class="nav-link">Collections</a></li>
+                    <li><a href="#/about" class="nav-link">About Us</a></li>
+                    <li><a href="#/contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area where views are dynamically rendered -->
+    <main id="app-root">
+        <!-- Loader / Initial content prior to JS execution -->
+        <div class="page-loader">
+            <div class="loader-spinner"></div>
+            <p>Loading Trimetra...</p>
+        </div>
+    </main>
+
+    <!-- Floating WhatsApp CTA Widget -->
+    <a href="https://wa.me/15557390123" target="_blank" rel="noopener noreferrer" class="whatsapp-floating-cta" id="global-whatsapp-cta" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="tooltip-text">Enquire Now</span>
+    </a>
+
+    <!-- Footer -->
+    <footer class="luxury-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2 class="footer-logo">TRIMETRA</h2>
+                <p class="footer-tagline">Timeless Elegance, Crafted for Generations</p>
+                <div class="footer-socials">
+                    <a href="https://instagram.com/trimetra.luxury" target="_blank" rel="noopener noreferrer" id="footer-insta" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/15557390123" target="_blank" rel="noopener noreferrer" id="footer-wa" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="mailto:concierge@trimetra-luxury.com" id="footer-mail" aria-label="Email"><i class="far fa-envelope"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links-grid">
+                <div class="footer-links-col">
+                    <h3>Collections</h3>
+                    <ul>
+                        <li><a href="#/collections?filter=necklaces">Necklaces</a></li>
+                        <li><a href="#/collections?filter=earrings">Earrings</a></li>
+                        <li><a href="#/collections?filter=rings">Rings</a></li>
+                        <li><a href="#/collections?filter=bridal">Bridal Collection</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-col">
+                    <h3>About</h3>
+                    <ul>
+                        <li><a href="#/about">Our Story</a></li>
+                        <li><a href="#/about#craftsmanship">Craftsmanship</a></li>
+                        <li><a href="#/about#vision">Our Vision</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-col">
+                    <h3>Concierge</h3>
+                    <ul>
+                        <li><a href="#/contact">Contact Us</a></li>
+                        <li><a href="#/contact">Bespoke Consultations</a></li>
+                        <li><a href="#/contact">Store Location</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Trimetra Luxury. All rights reserved. | Handcrafted Authenticity</p>
+        </div>
+    </footer>
+
+    <!-- App Router and Controller JS -->
+    <script src="app.js"></script>
+</body>
+</html>

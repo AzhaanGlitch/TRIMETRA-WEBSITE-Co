@@ -1,0 +1,73 @@
+{
+  "brand": {
+    "name": "Trimetra",
+    "tagline": "Timeless Elegance, Crafted for Generations"
+  },
+  "hero": {
+    "title": "Sculpted in Gold. Defined by Brilliance.",
+    "subtitle": "Discover Trimetra's fine jewelry collection, handcrafted with conflict-free diamonds, grade-AAA pearls, and solid 18k gold.",
+    "ctaText": "Explore Collections",
+    "ctaLink": "#/collections"
+  },
+  "brandStory": {
+    "title": "The Trimetra Story",
+    "paragraphs": [
+      "Founded on the principles of design purity, mathematical precision, and exceptional hand-craftsmanship, Trimetra creates fine jewelry that transcends fleeting trends. The name Trimetra is derived from the fusion of symmetry, material integrity, and artistic vision.",
+      "Each design starts with a hand-drawn sketch and is brought to life by master artisans who have spent decades perfecting their craft. We source only the finest raw materials—ethically and sustainably—to ensure that every piece is not only beautiful but also a responsible heirloom for the future."
+    ]
+  },
+  "craftsmanship": {
+    "title": "Artisanal Craftsmanship",
+    "subtitle": "Where heritage techniques meet modern precision.",
+    "paragraphs": [
+      "At Trimetra, we believe jewelry is a form of wearable sculpture. Our workshop blends age-old metalworking techniques—like hand-milgrain, detailed filigree, and claw-setting—with high-precision modern tools.",
+      "Every diamond and gemstone is inspected individually by our certified gemologists and hand-set under stereomicroscopes to ensure absolute stability and maximum brilliance. This meticulous attention to detail is why a Trimetra piece retains its fire and luster for a lifetime."
+    ]
+  },
+  "vision": {
+    "title": "Our Vision",
+    "paragraphs": [
+      "To be a global beacon of responsible luxury, creating exquisite, high-end jewelry that honors the natural beauty of gemstones while upholding the highest standards of environmental and social ethics.",
+      "We aim to redefine modern heirlooms, making jewelry that tells a deeply personal story of elegance, power, and heritage."
+    ]
+  },
+  "testimonials": [
+    {
+      "name": "Sophia Varma",
+      "role": "Verified Buyer",
+      "text": "The Aurelia Pendant is absolutely breath-taking. The filigree work is so delicate and catches the light beautifully. The experience of buying was seamless, and the custom WhatsApp consultation was incredibly helpful.",
+      "rating": 5
+    },
+    {
+      "name": "Marcus & Elena Lindqvist",
+      "role": "Bridal Collection Clients",
+      "text": "We ordered the Empress Bridal Set for our wedding. The craftsmanship is flawless, and it felt like wearing a piece of art. Trimetra's team went above and beyond to deliver it ahead of schedule.",
+      "rating": 5
+    },
+    {
+      "name": "Devika Sen",
+      "role": "Collector",
+      "text": "I appreciate the transparency in material sourcing. Knowing my Colombian emerald drops are conflict-free makes them even more special. The weight and balance of the earrings are perfect.",
+      "rating": 5
+    }
+  ],
+  "contact": {
+    "whatsapp": {
+      "display": "+1 (555) 739-0123",
+      "number": "15557390123",
+      "message": "Hello, I am visiting your website and would like to make an enquiry."
+    },
+    "instagram": {
+      "handle": "@trimetra.luxury",
+      "url": "https://instagram.com/trimetra.luxury"
+    },
+    "email": {
+      "address": "concierge@trimetra-luxury.com"
+    },
+    "location": {
+      "address": "Penthouse Suite 4, The Diamond District, 5th Avenue, New York, NY 10017",
+      "hours": "Mon - Sat: 10:00 AM - 6:00 PM (By Appointment Only)",
+      "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.617512345678!2d-73.97968!3d40.75797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQ1JzI4LjciTiA3M8KwNTgnNDYuOCJX!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
+    }
+  }
+}
