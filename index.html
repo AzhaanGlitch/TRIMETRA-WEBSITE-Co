@@ -11,35 +11,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
-    <!-- CSS Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <!-- Site favicon / logo icon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/logo.png">
+    <link rel="apple-touch-icon" href="assets/images/logo.png">
+    <link rel="mask-icon" href="assets/images/logo.png" color="#bfa06c">
     
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Dynamic Header Component -->
-    <div id="header-placeholder"></div>
-
-    <!-- Main Content Area where views are dynamically rendered -->
-    <main id="app-root">
-        <!-- Loader / Initial content prior to JS execution -->
-        <div class="page-loader">
-            <div class="loader-spinner"></div>
-            <p>Loading Trimetra...</p>
-        </div>
-    </main>
-
-    <!-- Floating WhatsApp CTA Widget -->
-    <a href="https://wa.me/15557390123" target="_blank" rel="noopener noreferrer" class="whatsapp-floating-cta" id="global-whatsapp-cta" aria-label="Chat on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-        <span class="tooltip-text">Enquire Now</span>
-    </a>
-
-    <!-- Dynamic Footer Component -->
-    <div id="footer-placeholder"></div>
-
-    <!-- App Router and Controller JS -->
-    <script src="app.js"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>

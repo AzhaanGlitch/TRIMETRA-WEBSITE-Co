@@ -27,8 +27,8 @@
   "vision": {
     "title": "Our Vision",
     "paragraphs": [
-      "To be a global beacon of responsible luxury, creating exquisite, high-end jewelry that honors the natural beauty of gemstones while upholding the highest standards of environmental and social ethics.",
-      "We aim to redefine modern heirlooms, making jewelry that tells a deeply personal story of elegance, power, and heritage."
+      "Our vision is to establish Trimetra as one of India's most trusted luxury jewellery brands, where every creation reflects beauty, authenticity, and excellence. We aspire to expand across India and international markets while continuing to innovate, inspire, and create jewellery that becomes a cherished part of every customer's story.",
+      "Trimetra isn't just jewellery. It's trust, transformed into timeless elegance."
     ]
   },
   "testimonials": [
@@ -53,8 +53,8 @@
   ],
   "contact": {
     "whatsapp": {
-      "display": "+1 (555) 739-0123",
-      "number": "15557390123",
+      "display": "+91 9867492023",
+      "number": "9867492023",
       "message": "Hello, I am visiting your website and would like to make an enquiry."
     },
     "instagram": {
@@ -62,42 +62,45 @@
       "url": "https://instagram.com/trimetra.luxury"
     },
     "email": {
-      "address": "concierge@trimetra-luxury.com"
+      "address": "trimetrajewel@gmail.com"
     },
     "location": {
-      "address": "Penthouse Suite 4, The Diamond District, 5th Avenue, New York, NY 10017",
+      "address": "Shop No. 3, 2nd Floor, Calian House, Shaikh Memon Street, Above Mumbadevi Jalebiwala, Zaveri Bazaar, Mumbai - 400002",
       "hours": "Mon - Sat: 10:00 AM - 6:00 PM (By Appointment Only)",
-      "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.617512345678!2d-73.97968!3d40.75797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQ1JzI4LjciTiA3M8KwNTgnNDYuOCJX!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
+      "mapEmbedUrl": "https://www.google.com/maps?q=Shop%20No.%203%2C%202nd%20Floor%2C%20Calian%20House%2C%20Shaikh%20Memon%20Street%2C%20Above%20Mumbadevi%20Jalebiwala%2C%20Zaveri%20Bazaar%2C%20Mumbai%20-%20400002&output=embed"
     }
   },
   "founderStory": {
-    "title": "The Founder's Story",
+    "title": "The Story of Trimetra",
     "paragraphs": [
-      "Trimetra was founded by Yashwardhan, a visionary gemologist and master jeweler. Intrigued by the intersection of natural mineral crystallization and classical geometric symmetry, Yashwardhan established Trimetra to revive mathematical purity in fine jewelry design.",
-      "\"A gemstone is a window into the deep history of our planet,\" says Yashwardhan. \"Our role as craftsmen is simply to build a perfect frame that honors that journey. At Trimetra, we combine mathematical symmetry with traditional hands-on carving to sculpt statements that endure.\""
-    ]
-  },
-  "brandJourney": {
-    "title": "Our Brand Journey",
-    "paragraphs": [
-      "What began as a private appointment-only design studio in the heart of the Diamond District has grown into a renowned luxury house. Trimetra has maintained a steadfast refusal to participate in high-volume mass production. Instead, we remain a high-end workshop focusing on limited editions and custom commissions.",
-      "From our first iconic Aurelia necklace to our expansion into tiaras and cuffs, our brand has stayed true to local, clean manufacturing, preserving the slow-artistry of traditional jewelry setting."
+      "Trimetra was born from a legacy of trust in the precious metals industry. Backed by years of experience through Sachchiyay Mata Bullion Pvt. Ltd. and Osiya Bullion & Jewellers LLP, our journey began in the bullion market, where purity, transparency, and integrity are the foundation of every transaction.",
+      "Over the years, we have built strong relationships with jewellers, investors, and customers across India by delivering certified precious metals with uncompromising quality. This trust inspired us to create Trimetra, a brand that brings the same credibility and excellence from bullion into the world of fine jewellery.",
+      "At Trimetra, we believe jewellery is more than an ornament; it is a celebration of life's milestones, emotions, and timeless memories. Every piece is thoughtfully designed by combining modern aesthetics with exceptional craftsmanship, ensuring elegance, comfort, and lasting value.",
+      "What truly sets Trimetra apart is our unwavering commitment to purity, transparent pricing, superior craftsmanship, and customer-first service. Our deep roots in the bullion industry allow us to maintain the highest standards of quality while offering jewellery that customers can wear with pride and confidence."
     ]
   },
   "whyChooseUs": {
     "title": "Why Choose Trimetra",
     "items": [
       {
-        "title": "Ethically Sourced Gems",
-        "desc": "100% of our diamonds, South Sea pearls, and emeralds are responsibly sourced from vetted mining cooperatives under conflict-free certification systems."
+        "title": "Trust and Transparency",
+        "desc": "Clear communication, honest guidance, and transparent practices form the foundation of every Trimetra relationship."
       },
       {
-        "title": "Generational Heirloom Weight",
-        "desc": "Unlike mass-market hollow settings, every Trimetra piece is cast with substantial gold and platinum density, featuring double-pronged secure gemstone settings designed to last centuries."
+        "title": "Certified Purity",
+        "desc": "Our roots in bullion help us uphold strict standards of purity, authenticity, and material confidence."
       },
       {
-        "title": "Bespoke Design Atelier",
-        "desc": "Our patrons enjoy direct access to our master designers. We specialize in custom ring sizing, gemstone upscaling, and personalized engraving options."
+        "title": "Timeless Design",
+        "desc": "Each piece is created with refined proportions and enduring elegance so it remains meaningful across generations."
+      },
+      {
+        "title": "Exceptional Craftsmanship",
+        "desc": "Thoughtful detailing, skilled finishing, and careful construction define every jewellery piece we create."
+      },
+      {
+        "title": "Long-term Relationships",
+        "desc": "We build lasting customer relationships through dependable service, care, and a customer-first approach."
       }
     ]
   },
