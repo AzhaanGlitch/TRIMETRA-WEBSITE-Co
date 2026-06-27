@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import FeaturedCarousel from '../components/FeaturedCarousel.jsx';
-import HeroCarousel from '../components/HeroCarousel.jsx';
 import SectionHeader from '../components/SectionHeader.jsx';
 import { whatsappLink } from '../utils/assets.js';
 
@@ -35,8 +34,6 @@ export default function Home({ products, content }) {
                         </clipPath>
                     </defs>
                 </svg>
-
-                <HeroCarousel />
 
                 <div className="hero-cta-overlay">
                     <h2 className="hero-cta-title">

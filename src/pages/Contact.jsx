@@ -9,7 +9,26 @@ export default function Contact({ contact }) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        event.currentTarget.reset();
+        const form = event.currentTarget;
+        const name = form.elements['form-name'].value;
+        const email = form.elements['form-email'].value;
+        const phone = form.elements['form-phone'].value || 'N/A';
+        const interest = form.elements['form-interest'].value || 'N/A';
+        const message = form.elements['form-message'].value || 'N/A';
+
+        const formattedText = `Hello Trimetra, I would like to gain more info.
+
+*Details:*
+- *Name:* ${name}
+- *Email:* ${email}
+- *Phone:* ${phone}
+- *Collection Interest:* ${interest}
+- *Special Notes/Booking Date:* ${message}`;
+
+        const url = whatsappLink(contact.whatsapp.number, formattedText);
+        window.open(url, '_blank');
+
+        form.reset();
         setSubmitted(true);
         window.setTimeout(() => setSubmitted(false), 5000);
     };

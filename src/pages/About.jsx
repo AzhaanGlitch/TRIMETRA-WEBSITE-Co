@@ -2,7 +2,7 @@ import SectionHeader from '../components/SectionHeader.jsx';
 import { useScrollReveal } from '../hooks/useScrollReveal.js';
 import { imageUrl } from '../utils/assets.js';
 
-const icons = ['fa-handshake', 'fa-certificate', 'fa-infinity', 'fa-gem', 'fa-heart'];
+const icons = ['fa-handshake', 'fa-certificate', 'fa-infinity', 'fa-gem', 'fa-heart', 'fa-seedling'];
 
 export default function About({ content }) {
     const { vision, founderStory, whyChooseUs } = content;
