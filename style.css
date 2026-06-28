@@ -3,43 +3,50 @@
    ========================================================================== */
 
 :root {
-    /* Color Palette - Magenta Luxury Theme */
-    --color-magenta: #650B38;
-    --color-antique-gold: #D0AA6C;
-    --color-soft-white: #FAFAF9;
-    --color-baby-pink: #e2b7c5;
-    --color-warm-beige: #DDD0B6;
+    /* Base Color Palette */
+    --burgundy: #620335;
+    --gold: #D5A361;
+    --blush-pink: #FFBED0;
+    --black: #000000;
+    --white: #FFFFFF;
 
-    --bg-primary: var(--color-magenta);
-    /* Deep magenta background */
-    --bg-secondary: #7A1648;
-    /* Magenta panel background */
-    --bg-tertiary: #52072D;
-    /* Dark magenta surface background */
+    /* Theme Mappings */
+    --color-magenta: var(--burgundy);
+    --color-antique-gold: var(--gold);
+    --color-soft-white: var(--white);
+    --color-baby-pink: var(--blush-pink);
+    --color-warm-beige: var(--blush-pink);
 
-    --color-gold: var(--color-antique-gold);
-    /* Antique gold */
-    --color-gold-hover: #B88F50;
-    /* Darker gold hover */
-    --color-gold-dark: #9A733C;
-    --color-dark-purple: var(--color-magenta);
-    /* Deep magenta for dark text and accents */
-    --color-cream-white: var(--color-soft-white);
+    --bg-primary: var(--burgundy);
+    /* Deep burgundy background */
+    --bg-secondary: var(--black);
+    /* Dark panel background */
+    --bg-tertiary: var(--black);
+    /* Dark surface background */
+
+    --color-gold: var(--gold);
+    /* Gold */
+    --color-gold-hover: var(--gold);
+    /* Gold hover */
+    --color-gold-dark: var(--gold);
+    --color-dark-purple: var(--burgundy);
+    /* Deep burgundy for dark text and accents */
+    --color-cream-white: var(--white);
     /* Soft white from the palette */
 
-    --text-primary: var(--color-soft-white);
+    --text-primary: var(--white);
     /* Soft white text */
-    --text-secondary: var(--color-warm-beige);
+    --text-secondary: var(--blush-pink);
     /* Warm beige secondary text */
-    --text-muted: var(--color-baby-pink);
+    --text-muted: var(--blush-pink);
     /* Baby pink muted text */
 
-    --border-color: rgba(208, 170, 108, 0.22);
-    /* Soft antique gold border */
-    --border-color-hover: rgba(208, 170, 108, 0.48);
+    --border-color: rgba(213, 163, 97, 0.22);
+    /* Soft gold border */
+    --border-color-hover: rgba(213, 163, 97, 0.48);
 
-    --glass-bg: rgba(101, 11, 56, 0.32);
-    /* Magenta glassmorphism background */
+    --glass-bg: rgba(98, 3, 53, 0.32);
+    /* Burgundy glassmorphism background */
     --glass-blur: blur(20px);
 
     /* Typography */
@@ -1072,40 +1079,7 @@ p {
     border-color: var(--text-primary);
 }
 
-/* Collections page — card text colours */
-.collections-page-wrapper .product-card-collection {
-    color: var(--color-soft-white);
-    /* type label → white */
-}
 
-.collections-page-wrapper .product-card-title {
-    color: var(--color-magenta);
-    /* jewellery name → magenta */
-}
-
-.collections-page-wrapper .product-card-materials {
-    color: var(--color-soft-white);
-    /* description → white */
-    opacity: 0.85;
-}
-
-.collections-page-wrapper .product-card-price {
-    color: var(--color-magenta);
-    /* price → white */
-}
-
-.collections-page-wrapper .product-card-btn {
-    color: var(--color-soft-white);
-    /* "Details →" → white */
-}
-
-.collections-page-wrapper .product-card-btn:hover {
-    color: var(--color-gold);
-}
-
-.collections-page-wrapper .product-card-footer {
-    border-top-color: rgba(255, 255, 255, 0.15);
-}
 
 /* Product Catalog Grid */
 /* ==========================================================================
@@ -1214,8 +1188,9 @@ p {
 }
 
 .product-card-img-wrap {
-    aspect-ratio: 1/1;
     width: 100%;
+    height: 250px;
+    flex-shrink: 0;
     overflow: hidden;
     position: relative;
     margin-bottom: 20px;
@@ -1262,17 +1237,19 @@ p {
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: var(--color-gold);
+    color: var(--color-soft-white);
 }
 
 .product-card-title {
     font-size: 1.5rem;
     line-height: 1.25;
+    color: var(--color-magenta);
 }
 
 .product-card-materials {
     font-size: 0.85rem;
-    color: var(--text-muted);
+    color: var(--color-soft-white);
+    opacity: 0.85;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1287,29 +1264,34 @@ p {
     gap: 10px;
     margin-top: 15px;
     padding-top: 15px;
-    border-top: 1px solid rgba(170, 148, 112, 0.15);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
     width: 100%;
 }
 
 .product-card-price {
     font-size: 1.15rem;
     font-weight: 500;
-    color: var(--text-primary);
+    color: var(--color-magenta);
 }
 
 .product-card-btn {
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--color-gold);
+    color: var(--color-soft-white);
     display: flex;
     align-items: center;
     gap: 6px;
     font-weight: 500;
+    transition: var(--transition-quick);
 }
 
 .product-card-btn i {
     transition: var(--transition-quick);
+}
+
+.product-card:hover .product-card-btn {
+    color: var(--color-gold);
 }
 
 .product-card:hover .product-card-btn i {
@@ -1535,7 +1517,7 @@ p {
    ========================================================================== */
 
 .about-page-wrapper {
-    padding: 60px 40px;
+    padding: 130px 40px 60px;
 }
 
 .about-hero-section {
@@ -2566,9 +2548,12 @@ p {
 
     .featured-collections-sec,
     .testimonials-sec,
-    .about-page-wrapper,
     .contact-page-wrapper {
         padding: 80px 30px;
+    }
+
+    .about-page-wrapper {
+        padding: 110px 30px 60px;
     }
 
 
@@ -3090,12 +3075,12 @@ p {
     flex: 1 1 280px;
     max-width: 360px;
     min-width: 260px;
-    --text-primary: var(--color-soft-white);
-    --text-secondary: rgba(250, 250, 249, 0.82);
-    --text-muted: rgba(250, 250, 249, 0.64);
-    background: var(--bg-secondary);
+    --text-primary: var(--gold);
+    --text-secondary: rgba(255, 255, 255, 0.85);
+    --text-muted: var(--blush-pink);
+    background: var(--burgundy);
     padding: 40px 30px;
-    border: 1px solid rgba(250, 250, 249, 0.12);
+    border: 1px solid rgba(213, 163, 97, 0.15);
     border-radius: 2px;
     text-align: center;
     position: relative;
@@ -3112,7 +3097,7 @@ p {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(208, 170, 108, 0.12), transparent 38%);
+    background: linear-gradient(135deg, rgba(213, 163, 97, 0.12), transparent 38%);
     opacity: 0;
     transition: opacity 0.35s ease;
     pointer-events: none;
@@ -3120,8 +3105,8 @@ p {
 
 .why-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.18);
-    border-color: var(--color-gold);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.25);
+    border-color: var(--gold);
 }
 
 .why-card:hover::before {
@@ -3130,7 +3115,7 @@ p {
 
 .why-card-icon {
     font-size: 2.2rem;
-    color: var(--color-gold);
+    color: var(--gold);
     margin-bottom: 25px;
     transition:
         transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
@@ -3139,7 +3124,7 @@ p {
 
 .why-card:hover .why-card-icon {
     transform: translateY(-4px) scale(1.08) rotate(-3deg);
-    filter: drop-shadow(0 0 12px rgba(208, 170, 108, 0.28));
+    filter: drop-shadow(0 0 12px rgba(213, 163, 97, 0.28));
 }
 
 .why-card h3 {

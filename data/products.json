@@ -7,8 +7,7 @@
     "materials": ["18k Yellow Gold", "0.45ct Round Brilliant Diamond (VVS1, E)", "Adjustable 16-18 inch gold chain"],
     "price": "$2,850",
     "images": [
-      "assets/images/necklace_1.png",
-      "assets/images/necklace_1_detail.png"
+      "assets/images/necklace_1.png"
     ],
     "featured": true
   },
@@ -20,7 +19,33 @@
     "materials": ["18k White Gold Clasp", "Grade AAA South Sea Pearls (10-12mm)", "0.15ct Pavé Diamonds"],
     "price": "$4,200",
     "images": [
-      "assets/images/necklace_2.png"
+      "assets/images/necklace_2_a.png",
+      "assets/images/necklace_2_b.png"
+    ],
+    "featured": false
+  },
+  {
+    "id": "TRM-NC-003",
+    "name": "Vesper Sapphire Halo Necklace",
+    "collection": "necklaces",
+    "description": "An enchanting deep royal blue sapphire oval center stone, surrounded by a double halo of sparkling diamonds, suspended from a delicate 18k white gold chain.",
+    "materials": ["18k White Gold Chain", "1.8ct Cushion-cut Royal Blue Sapphire", "0.65ct Halo & Pendant Diamonds"],
+    "price": "$5,600",
+    "images": [
+      "assets/images/necklace_3_a.png",
+      "assets/images/necklace_3_b.png"
+    ],
+    "featured": false
+  },
+  {
+    "id": "TRM-NC-004",
+    "name": "Starlight Diamond Necklace",
+    "collection": "necklaces",
+    "description": "An architectural pendant in solid white gold, with micro-pavé diamonds arranged in geometric patterns resembling the night sky.",
+    "materials": ["18k White Gold", "2.4ct Pavé-set Diamonds (VS2, F-G)", "Adjustable 16-18 inch gold chain"],
+    "price": "$9,200",
+    "images": [
+      "assets/images/necklace_4.png"
     ],
     "featured": false
   },
@@ -33,7 +58,8 @@
     "price": "$7,900",
     "images": [
       "assets/images/earrings_1.png",
-      "assets/images/earrings_1_detail.png"
+      "assets/images/earrings_1_b.png",
+      "assets/images/earrings_1_c.png"
     ],
     "featured": true
   },
@@ -51,53 +77,15 @@
   },
   {
     "id": "TRM-RG-001",
-    "name": "Vesper Sapphire Halo Ring",
+    "name": "Golden Bloom Ring",
     "collection": "rings",
-    "description": "An enchanting deep royal blue sapphire oval center stone, surrounded by a double halo of sparkling diamonds, set in a polished 18k white gold band.",
-    "materials": ["18k White Gold", "1.8ct Cushion-cut Royal Blue Sapphire", "0.65ct Halo & Band Diamonds"],
-    "price": "$5,600",
+    "description": "An elegant solid gold ring adorned with delicate, hand-sculpted golden flowers set with brilliant-cut diamonds.",
+    "materials": ["18k Yellow Gold", "0.6ct Round Brilliant Diamonds"],
+    "price": "$3,400",
     "images": [
-      "assets/images/ring_1.png",
-      "assets/images/ring_1_detail.png"
+      "assets/images/ring_1.png"
     ],
     "featured": true
-  },
-  {
-    "id": "TRM-RG-002",
-    "name": "Marquise Horizon Band",
-    "collection": "rings",
-    "description": "An elegant, modern eternity band featuring alternating marquise and round brilliant cut diamonds set horizontally in solid rose gold.",
-    "materials": ["18k Rose Gold", "1.2ct Marquise and Round Diamonds (VS, G-H)"],
-    "price": "$3,100",
-    "images": [
-      "assets/images/ring_2.png"
-    ],
-    "featured": false
-  },
-  {
-    "id": "TRM-BD-001",
-    "name": "Empress Bridal Tiara & Set",
-    "collection": "bridal",
-    "description": "The crown jewel of our Bridal Collection. A magnificent matching set featuring a delicate platinum necklace, matching drop earrings, and a heirloom-quality tiara encrusted with brilliant-cut diamonds.",
-    "materials": ["Platinum 950", "8.5ct Total Weight Premium White Diamonds (VVS, D-F)", "Handmade custom filigree work"],
-    "price": "$24,000",
-    "images": [
-      "assets/images/bridal_1.png",
-      "assets/images/bridal_1_detail.png"
-    ],
-    "featured": true
-  },
-  {
-    "id": "TRM-BD-002",
-    "name": "Eternal Promise Set",
-    "collection": "bridal",
-    "description": "A classic matching engagement ring and wedding band pair. The engagement ring features a stunning 2.0-carat round brilliant diamond solitaire on a platinum band, complemented by a channel-set eternity wedding band.",
-    "materials": ["Platinum 950", "2.0ct Center Round Brilliant Diamond (VVS2, E)", "0.75ct Eternity Band Diamonds"],
-    "price": "$18,500",
-    "images": [
-      "assets/images/bridal_2.png"
-    ],
-    "featured": false
   },
   {
     "id": "TRM-BR-001",
@@ -107,20 +95,20 @@
     "materials": ["18k Yellow Gold", "0.6ct Round Brilliant Diamonds", "Adjustable 7-8 inch safety clasp"],
     "price": "$3,400",
     "images": [
-      "assets/images/bracelet_1.png"
+      "assets/images/bracelet_11.png"
     ],
     "featured": true
   },
   {
-    "id": "TRM-BR-002",
-    "name": "Starlight Diamond Cuff",
-    "collection": "bracelets",
-    "description": "An architectural open cuff in solid white gold, with micro-pavé diamonds arranged in geometric patterns resembling the night sky.",
-    "materials": ["18k White Gold", "2.4ct Pavé-set Diamonds (VS2, F-G)", "Flexible inner hinge"],
-    "price": "$9,200",
+    "id": "TRM-BD-001",
+    "name": "Empress Bridal Tiara & Set",
+    "collection": "bridal",
+    "description": "The crown jewel of our Bridal Collection. A magnificent matching set featuring a delicate platinum necklace, matching drop earrings, and a heirloom-quality tiara encrusted with brilliant-cut diamonds.",
+    "materials": ["Platinum 950", "8.5ct Total Weight Premium White Diamonds (VVS, D-F)", "Handmade custom filigree work"],
+    "price": "$24,000",
     "images": [
-      "assets/images/bracelet_2.png"
+      "assets/images/bridal_1_detail.png"
     ],
-    "featured": false
+    "featured": true
   }
 ]

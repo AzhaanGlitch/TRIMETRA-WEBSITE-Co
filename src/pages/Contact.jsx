@@ -93,26 +93,26 @@ export default function Contact({ contact }) {
                         <div className="form-grid">
                             <div className="form-group">
                                 <label htmlFor="form-name">First & Last Name</label>
-                                <input type="text" id="form-name" required placeholder="Jane Doe" />
+                                <input type="text" id="form-name" required />
                             </div>
                             <div className="form-group">
                                 <label htmlFor="form-email">Email Address</label>
-                                <input type="email" id="form-email" required placeholder="jane@example.com" />
+                                <input type="email" id="form-email" required />
                             </div>
                         </div>
                         <div className="form-grid">
                             <div className="form-group">
                                 <label htmlFor="form-phone">Phone Number</label>
-                                <input type="tel" id="form-phone" placeholder="+1 (555) 000-0000" />
+                                <input type="tel" id="form-phone" />
                             </div>
                             <div className="form-group">
                                 <label htmlFor="form-interest">Collection Interest</label>
-                                <input type="text" id="form-interest" placeholder="e.g. Bridal Tiara Set" />
+                                <input type="text" id="form-interest" />
                             </div>
                         </div>
                         <div className="form-group full-width" style={{ marginBottom: 25 }}>
                             <label htmlFor="form-message">Special Notes / Desired Booking Date</label>
-                            <textarea id="form-message" rows="5" placeholder="Let us know your availability, custom needs, and preferred schedule..." />
+                            <textarea id="form-message" rows="5" />
                         </div>
 
                         <button type="submit" className="gold-btn form-submit-btn">Send Request</button>

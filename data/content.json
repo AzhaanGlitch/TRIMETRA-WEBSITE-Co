@@ -128,12 +128,12 @@
     "bracelets": {
       "title": "Bracelets & Cuffs",
       "description": "Timeless tennis bracelets, structured cuffs, and delicate chain bracelets designed for everyday luxury.",
-      "image": "assets/images/bracelet_1.png"
+      "image": "assets/images/bracelet_11.png"
     },
     "bridal": {
       "title": "The Bridal Collection",
       "description": "Heirloom-quality tiaras, sets, and engagement rings crafted to make your special day unforgettable.",
-      "image": "assets/images/bridal_1.png"
+      "image": "assets/images/bridal_1_detail.png"
     }
   }
 }
