@@ -2095,7 +2095,7 @@ p {
     align-items: center;
     justify-content: center;
     gap: 22px;
-    padding: 40px;
+    padding: 140px 40px 40px;
     background: radial-gradient(ellipse at 58% 52%, rgba(60, 5, 35, 0.62) 0%, transparent 68%);
     text-align: center;
     pointer-events: none;
@@ -3061,14 +3061,111 @@ p {
     background: var(--color-baby-pink);
 }
 
-.why-choose-grid {
-    max-width: var(--max-width);
+/* 3D curved carousel styling */
+.why-choose-carousel-container {
+    perspective: 1200px;
+    position: relative;
+    width: 100%;
+    height: 480px;
     margin: 50px auto 0;
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
-    align-items: stretch;
-    gap: 30px;
+    overflow: visible;
+    max-width: var(--max-width);
+    padding: 0 80px;
+}
+
+.why-choose-carousel-track {
+    position: relative;
+    width: 100%;
+    max-width: 360px; /* Base card width */
+    height: 380px;
+    transform-style: preserve-3d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.why-choose-carousel-card-wrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 4s linear, 
+                opacity 4s linear, 
+                z-index 4s step-end;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    cursor: pointer;
+}
+
+.why-choose-carousel-card-wrap.position-diff-0 {
+    transform: translate3d(0, 0, 100px) rotateY(0deg) scale(1.05);
+    z-index: 10;
+    opacity: 1;
+    pointer-events: auto;
+    /* Snap z-index to front immediately to keep it layered on top during transition */
+    transition: transform 4s linear, 
+                opacity 4s linear, 
+                z-index 0s;
+}
+
+.why-choose-carousel-card-wrap.position-diff--1 {
+    transform: translate3d(-92%, 0, 0) rotateY(25deg) scale(0.85);
+    z-index: 8;
+    opacity: 0.75;
+}
+
+.why-choose-carousel-card-wrap.position-diff-1 {
+    transform: translate3d(92%, 0, 0) rotateY(-25deg) scale(0.85);
+    z-index: 8;
+    opacity: 0.75;
+}
+
+.why-choose-carousel-card-wrap.position-diff--2 {
+    transform: translate3d(-175%, 0, -100px) rotateY(45deg) scale(0.7);
+    z-index: 6;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.why-choose-carousel-card-wrap.position-diff-2 {
+    transform: translate3d(175%, 0, -100px) rotateY(-45deg) scale(0.7);
+    z-index: 6;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.why-choose-carousel-card-wrap .why-card {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(213, 163, 97, 0.3);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-quick);
+}
+
+.carousel-dot.active {
+    background: var(--gold);
+    width: 24px;
+    border-radius: 4px;
 }
 
 .why-card {
@@ -3214,15 +3311,62 @@ p {
         font-size: 0.95rem;
     }
 
-    .why-choose-grid {
-        gap: 25px;
-        margin-top: 40px;
+    .why-choose-carousel-container {
+        height: 440px;
+        padding: 0 10px;
+        margin-top: 30px;
+    }
+    
+    .why-choose-carousel-track {
+        max-width: 290px;
+        height: 340px;
     }
 
-    .why-card {
-        flex-basis: 100%;
-        max-width: 520px;
-        padding: 35px 25px;
+    .why-choose-carousel-card-wrap.position-diff--1 {
+        transform: translate3d(-52%, 0, -40px) rotateY(20deg) scale(0.8);
+    }
+
+    .why-choose-carousel-card-wrap.position-diff-1 {
+        transform: translate3d(52%, 0, -40px) rotateY(-20deg) scale(0.8);
+    }
+
+    .why-choose-carousel-card-wrap.position-diff--2 {
+        transform: translate3d(-102%, 0, -80px) rotateY(35deg) scale(0.68);
+    }
+
+    .why-choose-carousel-card-wrap.position-diff-2 {
+        transform: translate3d(102%, 0, -80px) rotateY(-35deg) scale(0.68);
+    }
+
+
+
+    @media (max-width: 576px) {
+        .why-choose-carousel-container {
+            height: 420px;
+        }
+
+        .why-choose-carousel-track {
+            max-width: 245px;
+            height: 310px;
+        }
+
+        .why-choose-carousel-card-wrap.position-diff--1 {
+            transform: translate3d(-30%, 0, -40px) rotateY(15deg) scale(0.8);
+            opacity: 0.55;
+        }
+
+        .why-choose-carousel-card-wrap.position-diff-1 {
+            transform: translate3d(30%, 0, -40px) rotateY(-15deg) scale(0.8);
+            opacity: 0.55;
+        }
+
+        .why-choose-carousel-card-wrap.position-diff--2,
+        .why-choose-carousel-card-wrap.position-diff-2 {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+
     }
 
     .vision-section {
