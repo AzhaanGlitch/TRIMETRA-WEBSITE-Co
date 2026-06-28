@@ -50,28 +50,30 @@ export default function Home({ products, content }) {
                 </div>
             </section>
 
-            <section className="testimonials-sec" style={{ paddingBottom: 0 }}>
+            <section className="featured-carousel-section">
                 <SectionHeader eyebrow="Exceptional Masterpieces" title="Featured Creations" />
                 <FeaturedCarousel products={featuredProducts} />
             </section>
 
-            <section className="testimonials-sec">
-                <SectionHeader eyebrow="Stories from our clients" title="Testimonials" />
-                <div className="testimonials-grid">
-                    {content.testimonials.map((testimonial) => (
-                        <div className="testimonial-card" key={testimonial.name}>
-                            <div className="testimonial-rating">
-                                {Array.from({ length: testimonial.rating }).map((_, index) => (
-                                    <i className="fas fa-star" key={index} />
-                                ))}
+            <section className="testimonials-burgundy-section">
+                <div className="testimonials-container">
+                    <SectionHeader eyebrow="Stories from our clients" title="Testimonials" />
+                    <div className="testimonials-grid">
+                        {content.testimonials.map((testimonial) => (
+                            <div className="testimonial-card" key={testimonial.name}>
+                                <div className="testimonial-rating">
+                                    {Array.from({ length: testimonial.rating }).map((_, index) => (
+                                        <i className="fas fa-star" key={index} />
+                                    ))}
+                                </div>
+                                <p className="testimonial-text">"{testimonial.text}"</p>
+                                <div className="testimonial-author">
+                                    <h4>{testimonial.name}</h4>
+                                    <span>{testimonial.role}</span>
+                                </div>
                             </div>
-                            <p className="testimonial-text">"{testimonial.text}"</p>
-                            <div className="testimonial-author">
-                                <h4>{testimonial.name}</h4>
-                                <span>{testimonial.role}</span>
-                            </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
             </section>
 

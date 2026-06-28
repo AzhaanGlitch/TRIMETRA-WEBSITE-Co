@@ -128,21 +128,5 @@
       "assets/images/bracelet_11.webp"
     ],
     "featured": true
-  },
-  {
-    "id": "TRM-BD-001",
-    "name": "Empress Bridal Tiara & Set",
-    "collection": "bridal",
-    "description": "The crown jewel of our Bridal Collection. A magnificent matching set featuring a delicate platinum necklace, matching drop earrings, and a heirloom-quality tiara encrusted with brilliant-cut diamonds.",
-    "materials": [
-      "Platinum 950",
-      "8.5ct Total Weight Premium White Diamonds (VVS, D-F)",
-      "Handmade custom filigree work"
-    ],
-    "price": "$24,000",
-    "images": [
-      "assets/images/bridal_1_detail.webp"
-    ],
-    "featured": true
   }
 ]

@@ -183,7 +183,8 @@ p {
 
 .header-container {
     position: relative;
-    z-index: 2; /* sit above the overlay */
+    z-index: 2;
+    /* sit above the overlay */
     max-width: var(--max-width);
     height: 100%;
     margin: 0 auto;
@@ -332,7 +333,7 @@ p {
     background: rgba(255, 255, 255, 0.06);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid var(--color-gold);
     padding: 80px 40px 40px;
     margin-top: auto;
 }
@@ -1047,6 +1048,26 @@ p {
    VIEW: COLLECTIONS PAGE
    ========================================================================== */
 
+.collections-page-global-wrapper {
+    background-color: var(--color-baby-pink);
+    width: 100%;
+    min-height: calc(100vh - var(--header-height));
+    display: flex;
+    flex-direction: column;
+}
+
+.collections-page-global-wrapper .filter-tab {
+    border-color: var(--color-magenta);
+    color: var(--color-magenta);
+}
+
+.collections-page-global-wrapper .filter-tab:hover,
+.collections-page-global-wrapper .filter-tab.active {
+    background: var(--color-magenta) !important;
+    color: var(--color-baby-pink) !important;
+    border-color: var(--color-magenta) !important;
+}
+
 .collections-page-wrapper {
     padding: 120px 40px;
     width: 100%;
@@ -1404,7 +1425,7 @@ p {
     --text-primary: var(--color-magenta);
     --text-secondary: rgba(101, 11, 56, 0.78);
     --text-muted: rgba(101, 11, 56, 0.62);
-    background: var(--color-baby-pink);
+    background: var(--white);
     border: 1px solid rgba(101, 11, 56, 0.18);
     padding: 40px;
     display: flex;
@@ -1509,6 +1530,22 @@ p {
     background: var(--color-gold-dark);
     box-shadow: 0 10px 25px rgba(208, 170, 108, 0.25);
     transform: translateY(-2px);
+}
+
+.product-details-page-wrapper {
+    background-color: var(--color-baby-pink);
+    width: 100%;
+    min-height: calc(100vh - var(--header-height));
+    display: flex;
+    flex-direction: column;
+}
+
+.product-details-page-wrapper .back-link {
+    color: var(--color-magenta) !important;
+}
+
+.product-details-page-wrapper .back-link:hover {
+    color: var(--color-gold) !important;
 }
 
 /* ==========================================================================
@@ -1627,7 +1664,7 @@ p {
 }
 
 .image-lift:hover {
-    transform: translateY(-8px) rotateX(1deg) rotateY(-1.5deg);
+    transform: translateY(-8px);
     border-color: var(--color-gold);
     box-shadow: 0 26px 55px rgba(0, 0, 0, 0.22);
 }
@@ -1724,7 +1761,7 @@ p {
     --text-primary: var(--color-magenta);
     --text-secondary: rgba(101, 11, 56, 0.78);
     --text-muted: rgba(101, 11, 56, 0.62);
-    background: var(--color-baby-pink);
+    background: var(--white);
     border: 1px solid rgba(101, 11, 56, 0.18);
     padding: 60px 40px;
     position: relative;
@@ -1804,6 +1841,36 @@ p {
    VIEW: CONTACT PAGE
    ========================================================================== */
 
+.contact-page-global-wrapper {
+    background-color: var(--color-baby-pink);
+    width: 100%;
+    min-height: calc(100vh - var(--header-height));
+    display: flex;
+    flex-direction: column;
+}
+
+/* Connect With Us Header Typography */
+.contact-page-global-wrapper .section-title {
+    color: var(--color-magenta) !important;
+}
+
+.contact-page-global-wrapper .section-subtitle {
+    color: var(--color-magenta) !important;
+    opacity: 0.85;
+}
+
+.contact-page-global-wrapper .section-title::after {
+    background: var(--color-magenta) !important;
+}
+
+.contact-page-global-wrapper .contact-intro h2 {
+    color: var(--color-magenta) !important;
+}
+
+.contact-page-global-wrapper .contact-intro p {
+    color: rgba(98, 3, 53, 0.85) !important;
+}
+
 .contact-page-wrapper {
     padding: 120px 40px;
     width: 100%;
@@ -1860,27 +1927,31 @@ p {
     display: flex;
     align-items: flex-start;
     gap: 20px;
-    padding: 16px 0;
-    border-bottom: 1px solid rgba(208, 170, 108, 0.08);
+    padding: 24px;
+    background: var(--color-magenta);
+    border-radius: 16px;
+    border: 1px solid rgba(213, 163, 97, 0.25);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    --text-muted: rgba(255, 255, 255, 0.7);
     transition:
         transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
         border-color 0.35s ease,
-        background 0.35s ease;
+        box-shadow 0.35s ease;
 }
 
 .contact-method-item:hover {
-    transform: translateX(8px);
-    border-color: rgba(208, 170, 108, 0.28);
-    background: linear-gradient(90deg, rgba(208, 170, 108, 0.06), transparent);
+    transform: translateY(-5px);
+    border-color: var(--color-gold);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
 }
 
 .contact-method-icon {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    border: 1px solid var(--border-color);
-    background: var(--color-baby-pink);
-    color: var(--color-gold);
+    border: 1px solid var(--color-gold);
+    background: var(--color-gold);
+    color: var(--color-magenta);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1894,25 +1965,33 @@ p {
 }
 
 .contact-method-item:hover .contact-method-icon {
-    border-color: var(--color-gold);
-    background: rgba(208, 170, 108, 0.05);
-    transform: translateY(-3px) scale(1.06);
-    box-shadow: 0 12px 28px rgba(208, 170, 108, 0.12);
+    border-color: var(--white);
+    background: var(--white);
+    transform: translateY(-3px) scale(1.08);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15);
 }
 
 .contact-method-details h4 {
     font-size: 1.1rem;
     margin-bottom: 5px;
+    color: var(--color-gold) !important;
+    font-weight: 600;
 }
 
 .contact-method-details p,
 .contact-method-details a {
     font-size: 0.95rem;
-    color: var(--text-secondary);
+    color: var(--white) !important;
 }
 
 .contact-method-details a:hover {
-    color: var(--color-gold);
+    color: var(--color-gold) !important;
+    text-decoration: underline;
+}
+
+.contact-hours-text {
+    color: var(--white) !important;
+    font-weight: 500;
 }
 
 /* Luxury Form styling */
@@ -1920,7 +1999,7 @@ p {
     --text-primary: var(--color-magenta);
     --text-secondary: rgba(101, 11, 56, 0.78);
     --text-muted: rgba(101, 11, 56, 0.62);
-    background: var(--color-baby-pink) !important;
+    background: var(--white) !important;
     border: 1px solid rgba(101, 11, 56, 0.18);
     padding: 50px;
     position: relative;
@@ -2033,7 +2112,7 @@ p {
 /* Map Location display */
 .map-section {
     margin-top: 80px;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--color-magenta);
     padding: 15px;
     background: var(--color-baby-pink);
     transition:
@@ -2059,7 +2138,7 @@ p {
 
 .map-section:hover {
     transform: translateY(-6px);
-    border-color: rgba(208, 170, 108, 0.38);
+    border-color: var(--color-magenta);
     box-shadow: 0 26px 60px rgba(0, 0, 0, 0.2);
 }
 
@@ -2105,31 +2184,30 @@ p {
     font-size: clamp(2.4rem, 8.5vw, 6.5rem);
     font-weight: 600;
     letter-spacing: clamp(0.08em, 1.8vw, 0.22em);
-    text-indent: clamp(0.08em, 1.8vw, 0.22em); /* Compensate for letter-spacing to center it perfectly */
+    text-indent: clamp(0.08em, 1.8vw, 0.22em);
+    /* Compensate for letter-spacing to center it perfectly */
     margin: 0;
     line-height: 1.15;
     min-height: 1.1em;
-    
+
     /* Luxury Gold Shimmer & Glow */
-    background: linear-gradient(
-        to right,
-        #D0AA6C 20%,
-        #FFF6E5 40%,
-        #FFF6E5 60%,
-        #D0AA6C 80%
-    );
+    background: linear-gradient(to right,
+            #D0AA6C 20%,
+            #FFF6E5 40%,
+            #FFF6E5 60%,
+            #D0AA6C 80%);
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: goldShimmer 4s linear infinite;
-    filter: drop-shadow(0 0 15px rgba(208, 170, 108, 0.5)) 
-            drop-shadow(0 4px 20px rgba(0, 0, 0, 0.6));
+    filter: drop-shadow(0 0 15px rgba(207, 175, 125, 0.5)) drop-shadow(0 4px 20px rgba(0, 0, 0, 0.6));
 }
 
 @keyframes goldShimmer {
     0% {
         background-position: 0% center;
     }
+
     100% {
         background-position: -200% center;
     }
@@ -2984,25 +3062,23 @@ p {
     font-size: 3.5rem;
     font-weight: 300;
     letter-spacing: 0.1em;
-    text-indent: 0.1em; /* Compensate for letter-spacing alignment */
+    text-indent: 0.1em;
+    /* Compensate for letter-spacing alignment */
     text-transform: uppercase;
     margin-bottom: 20px;
     line-height: 1.15;
-    
+
     /* Gold Shimmer & Glow */
-    background: linear-gradient(
-        to right,
-        #D0AA6C 20%,
-        #FFF6E5 40%,
-        #FFF6E5 60%,
-        #D0AA6C 80%
-    );
+    background: linear-gradient(to right,
+            #D0AA6C 20%,
+            #FFF6E5 40%,
+            #FFF6E5 60%,
+            #D0AA6C 80%);
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: goldShimmer 4s linear infinite;
-    filter: drop-shadow(0 0 15px rgba(208, 170, 108, 0.45)) 
-            drop-shadow(0 4px 15px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(0 0 15px rgba(208, 170, 108, 0.45)) drop-shadow(0 4px 15px rgba(0, 0, 0, 0.5));
 }
 
 .collection-banner-desc {
@@ -3078,7 +3154,8 @@ p {
 .why-choose-carousel-track {
     position: relative;
     width: 100%;
-    max-width: 360px; /* Base card width */
+    max-width: 360px;
+    /* Base card width */
     height: 380px;
     transform-style: preserve-3d;
     display: flex;
@@ -3091,9 +3168,9 @@ p {
     position: absolute;
     width: 100%;
     height: 100%;
-    transition: transform 4s linear, 
-                opacity 4s linear, 
-                z-index 4s step-end;
+    transition: transform 4s linear,
+        opacity 4s linear,
+        z-index 4s step-end;
     transform-style: preserve-3d;
     backface-visibility: hidden;
     cursor: pointer;
@@ -3105,9 +3182,9 @@ p {
     opacity: 1;
     pointer-events: auto;
     /* Snap z-index to front immediately to keep it layered on top during transition */
-    transition: transform 4s linear, 
-                opacity 4s linear, 
-                z-index 0s;
+    transition: transform 4s linear,
+        opacity 4s linear,
+        z-index 0s;
 }
 
 .why-choose-carousel-card-wrap.position-diff--1 {
@@ -3315,7 +3392,7 @@ p {
         padding: 0 10px;
         margin-top: 30px;
     }
-    
+
     .why-choose-carousel-track {
         max-width: 290px;
         height: 340px;
@@ -3385,7 +3462,10 @@ p {
    MOBILE RESPONSIVENESS FIXES
    ========================================================================== */
 /* Prevent any horizontal page layout overflow */
-html, body, #root, #app-root,
+html,
+body,
+#root,
+#app-root,
 .about-page-wrapper,
 .collections-page-wrapper,
 .product-details-container,
@@ -3400,11 +3480,11 @@ html, body, #root, #app-root,
     .hero-cta-overlay {
         padding: 100px 20px 40px;
     }
-    
+
     .hero-cta-tagline {
         font-size: 1.05rem;
     }
-    
+
     .hero-banner-custom {
         height: 90vh;
     }
@@ -3445,16 +3525,16 @@ html, body, #root, #app-root,
         padding: 80px 15px 30px;
         gap: 15px;
     }
-    
+
     .hero-cta-tagline {
         font-size: 0.95rem;
     }
-    
+
     .hero-banner-custom {
         height: 80vh;
         min-height: 400px;
     }
-    
+
     .hero-cta-btn {
         padding: 10px 20px;
         font-size: 0.8rem;
@@ -3471,8 +3551,8 @@ html, body, #root, #app-root,
         line-height: 1.25 !important;
         letter-spacing: 0.03em !important;
     }
-    
-    .testimonials-grid, 
+
+    .testimonials-grid,
     .product-catalog-grid {
         padding: 0 10px;
     }
@@ -3495,16 +3575,46 @@ html, body, #root, #app-root,
 .brand-journey-section,
 .testimonial-card,
 .vision-card,
-.contact-form-panel {
+.featured-carousel-section {
     color: var(--color-magenta) !important;
 }
 
-.why-choose-section h1, .why-choose-section h2, .why-choose-section h3, .why-choose-section h4, .why-choose-section p, .why-choose-section span,
-.brand-story-sec h1, .brand-story-sec h2, .brand-story-sec h3, .brand-story-sec h4, .brand-story-sec p, .brand-story-sec span,
-.brand-journey-section h1, .brand-journey-section h2, .brand-journey-section h3, .brand-journey-section h4, .brand-journey-section p, .brand-journey-section span,
-.testimonial-card h1, .testimonial-card h2, .testimonial-card h3, .testimonial-card h4, .testimonial-card p, .testimonial-card span,
-.vision-card h1, .vision-card h2, .vision-card h3, .vision-card h4, .vision-card p, .vision-card span,
-.contact-form-panel h1, .contact-form-panel h2, .contact-form-panel h3, .contact-form-panel h4, .contact-form-panel p, .contact-form-panel span {
+.why-choose-section h1,
+.why-choose-section h2,
+.why-choose-section h3,
+.why-choose-section h4,
+.why-choose-section p,
+.why-choose-section span,
+.brand-story-sec h1,
+.brand-story-sec h2,
+.brand-story-sec h3,
+.brand-story-sec h4,
+.brand-story-sec p,
+.brand-story-sec span,
+.brand-journey-section h1,
+.brand-journey-section h2,
+.brand-journey-section h3,
+.brand-journey-section h4,
+.brand-journey-section p,
+.brand-journey-section span,
+.testimonial-card h1,
+.testimonial-card h2,
+.testimonial-card h3,
+.testimonial-card h4,
+.testimonial-card p,
+.testimonial-card span,
+.vision-card h1,
+.vision-card h2,
+.vision-card h3,
+.vision-card h4,
+.vision-card p,
+.vision-card span,
+.featured-carousel-section h1,
+.featured-carousel-section h2,
+.featured-carousel-section h3,
+.featured-carousel-section h4,
+.featured-carousel-section p,
+.featured-carousel-section span {
     color: var(--color-magenta) !important;
 }
 
@@ -3512,8 +3622,10 @@ html, body, #root, #app-root,
 .why-choose-section .section-subtitle,
 .brand-journey-section .section-subtitle,
 .testimonial-card .testimonial-rating,
-.vision-card .vision-icon {
-    color: #b07d3c !important; /* Higher contrast gold/bronze tint */
+.vision-card .vision-icon,
+.featured-carousel-section .section-subtitle {
+    color: #b07d3c !important;
+    /* Higher contrast gold/bronze tint */
 }
 
 .contact-form-panel label {
@@ -3535,7 +3647,8 @@ html, body, #root, #app-root,
 
 /* Ensure form submission response doesn't disappear */
 .contact-form-panel .submit-success {
-    color: #2e7d32 !important; /* solid forest green */
+    color: #2e7d32 !important;
+    /* solid forest green */
 }
 
 /* Explicitly restore text colors for dark cards inside light-background sections */
@@ -3545,4 +3658,172 @@ html, body, #root, #app-root,
 
 .why-choose-section .why-card p {
     color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* ==========================================================================
+   BURGUNDY TESTIMONIALS SECTION (Burgundy Background, Golden Cards)
+   ========================================================================== */
+
+.testimonials-burgundy-section {
+    background-color: var(--color-magenta);
+    padding: 120px 40px;
+    width: 100%;
+}
+
+.testimonials-burgundy-section .testimonials-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.testimonials-burgundy-section .testimonial-card {
+    background: var(--color-gold) !important;
+    border: 1px solid rgba(98, 3, 53, 0.22) !important;
+    color: var(--color-magenta) !important;
+    --text-primary: var(--color-magenta);
+    --text-secondary: rgba(98, 3, 53, 0.85);
+    --text-muted: rgba(98, 3, 53, 0.65);
+}
+
+.testimonials-burgundy-section .testimonial-card:hover {
+    border-color: rgba(98, 3, 53, 0.35) !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3) !important;
+}
+
+.testimonials-burgundy-section .testimonial-card h4 {
+    color: var(--color-magenta) !important;
+}
+
+.testimonials-burgundy-section .testimonial-card span {
+    color: rgba(98, 3, 53, 0.75) !important;
+}
+
+.testimonials-burgundy-section .testimonial-card .testimonial-text {
+    color: var(--color-magenta) !important;
+}
+
+.testimonials-burgundy-section .testimonial-card .testimonial-rating {
+    color: var(--color-magenta) !important;
+}
+
+
+
+/* ==========================================================================
+   WHITE STORY BOX (About Us Page)
+   ========================================================================== */
+
+.white-story-box {
+    background: var(--white) !important;
+    color: var(--color-magenta) !important;
+    border: 1px solid rgba(98, 3, 53, 0.22) !important;
+    padding: 50px 40px !important;
+    border-radius: 16px !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15) !important;
+    transition: var(--transition-smooth) !important;
+}
+
+.white-story-box:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.22) !important;
+}
+
+.white-story-box h2 {
+    color: var(--color-magenta) !important;
+}
+
+.white-story-box h2::after {
+    background: var(--color-magenta) !important;
+}
+
+.white-story-box p {
+    color: rgba(98, 3, 53, 0.85) !important;
+}
+
+.white-story-box .section-subtitle {
+    color: var(--color-magenta) !important;
+    opacity: 0.85;
+}
+
+/* ==========================================================================
+   FEATURED CAROUSEL SECTION (Baby Pink Background, Burgundy Cards)
+   ========================================================================== */
+
+.featured-carousel-section {
+    background-color: var(--color-baby-pink);
+    padding: 120px 40px 60px;
+    width: 100%;
+    border-bottom: 1px solid rgba(98, 3, 53, 0.12);
+}
+
+.featured-carousel-section .section-title::after {
+    background: var(--color-magenta) !important;
+}
+
+.featured-carousel-section .fc-marquee-fade-left {
+    background: linear-gradient(to right, var(--color-baby-pink) 0%, transparent 100%) !important;
+}
+
+.featured-carousel-section .fc-marquee-fade-right {
+    background: linear-gradient(to left, var(--color-baby-pink) 0%, transparent 100%) !important;
+}
+
+/* Burgundy Carousel & Collections Cards */
+.featured-carousel-section .product-card,
+.collections-page-global-wrapper .product-card {
+    background: var(--color-magenta) !important;
+    border: 1px solid rgba(213, 163, 97, 0.25) !important;
+}
+
+.featured-carousel-section .product-card:hover,
+.collections-page-global-wrapper .product-card:hover {
+    border-color: var(--color-gold) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+}
+
+.featured-carousel-section .product-card-title,
+.collections-page-global-wrapper .product-card-title {
+    color: var(--white) !important;
+}
+
+.featured-carousel-section .product-card-collection,
+.collections-page-global-wrapper .product-card-collection {
+    color: var(--color-gold) !important;
+}
+
+.featured-carousel-section .product-card-materials,
+.collections-page-global-wrapper .product-card-materials {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.featured-carousel-section .product-card-footer,
+.collections-page-global-wrapper .product-card-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+.featured-carousel-section .product-card-btn,
+.collections-page-global-wrapper .product-card-btn {
+    color: var(--color-gold) !important;
+}
+
+.featured-carousel-section .product-card-btn:hover,
+.collections-page-global-wrapper .product-card-btn:hover {
+    color: var(--white) !important;
+}
+
+/* Baby Pink Buttons (Check our Collection & Chat with Concierge) */
+.hero-cta-btn,
+.home-cta-banner .gold-btn {
+    background: var(--color-baby-pink) !important;
+    color: var(--color-magenta) !important;
+    border: 1px solid var(--color-magenta) !important;
+    box-shadow: 0 4px 15px rgba(98, 3, 53, 0.15) !important;
+    transition: var(--transition-smooth) !important;
+}
+
+.hero-cta-btn:hover,
+.home-cta-banner .gold-btn:hover {
+    background: var(--white) !important;
+    color: var(--color-magenta) !important;
+    border-color: var(--color-magenta) !important;
+    box-shadow: 0 8px 25px rgba(98, 3, 53, 0.25) !important;
+    transform: translateY(-2px) !important;
 }

@@ -32,7 +32,7 @@ export default function About({ content }) {
             </div>
 
             <section className="about-intro-grid reveal-on-scroll">
-                <div className="about-intro-text reveal-on-scroll reveal-slide-left" style={{ '--reveal-delay': '120ms' }}>
+                <div className="about-intro-text white-story-box reveal-on-scroll reveal-slide-left" style={{ '--reveal-delay': '120ms' }}>
                     <span className="section-subtitle" style={{ textAlign: 'left', marginBottom: 10 }}>The Visionary Behind the Brand</span>
                     <h2>{founderStory.title}</h2>
                     {founderStory.paragraphs.map((paragraph, index) => (
