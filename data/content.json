@@ -13,14 +13,14 @@
     "title": "The Trimetra Story",
     "paragraphs": [
       "Founded on the principles of design purity, mathematical precision, and exceptional hand-craftsmanship, Trimetra creates fine jewelry that transcends fleeting trends. The name Trimetra is derived from the fusion of symmetry, material integrity, and artistic vision.",
-      "Each design starts with a hand-drawn sketch and is brought to life by master artisans who have spent decades perfecting their craft. We source only the finest raw materials—ethically and sustainably—to ensure that every piece is not only beautiful but also a responsible heirloom for the future."
+      "Each design starts with a hand-drawn sketch and is brought to life by master artisans who have spent decades perfecting their craft. We source only the finest raw materials\u2014ethically and sustainably\u2014to ensure that every piece is not only beautiful but also a responsible heirloom for the future."
     ]
   },
   "craftsmanship": {
     "title": "Artisanal Craftsmanship",
     "subtitle": "Where heritage techniques meet modern precision.",
     "paragraphs": [
-      "At Trimetra, we believe jewelry is a form of wearable sculpture. Our workshop blends age-old metalworking techniques—like hand-milgrain, detailed filigree, and claw-setting—with high-precision modern tools.",
+      "At Trimetra, we believe jewelry is a form of wearable sculpture. Our workshop blends age-old metalworking techniques\u2014like hand-milgrain, detailed filigree, and claw-setting\u2014with high-precision modern tools.",
       "Every diamond and gemstone is inspected individually by our certified gemologists and hand-set under stereomicroscopes to ensure absolute stability and maximum brilliance. This meticulous attention to detail is why a Trimetra piece retains its fire and luster for a lifetime."
     ]
   },
@@ -108,32 +108,32 @@
     "all": {
       "title": "Fine Jewellery Collections",
       "description": "Discover our complete catalog of signature rings, necklaces, earrings, cuffs, and bridal jewelry handcrafted with conflict-free diamonds, grade-AAA pearls, and solid 18k gold.",
-      "image": "assets/images/hero.png"
+      "image": "assets/images/hero.webp"
     },
     "necklaces": {
       "title": "Necklaces & Pendants",
       "description": "Elegantly draped chains, collars, and brilliant pendants handcrafted in 18k gold and platinum.",
-      "image": "assets/images/necklace_1.png"
+      "image": "assets/images/necklace_1.webp"
     },
     "earrings": {
       "title": "Earrings & Drops",
       "description": "From delicate studs to dramatic diamond drops, designed to capture light with every movement.",
-      "image": "assets/images/earrings_1.png"
+      "image": "assets/images/earrings_1.webp"
     },
     "rings": {
       "title": "Fine Rings & Bands",
       "description": "Exquisite solitaire engagement rings, eternity bands, and custom statement rings.",
-      "image": "assets/images/ring_1.png"
+      "image": "assets/images/ring_1.webp"
     },
     "bracelets": {
       "title": "Bracelets & Cuffs",
       "description": "Timeless tennis bracelets, structured cuffs, and delicate chain bracelets designed for everyday luxury.",
-      "image": "assets/images/bracelet_11.png"
+      "image": "assets/images/bracelet_11.webp"
     },
     "bridal": {
       "title": "The Bridal Collection",
       "description": "Heirloom-quality tiaras, sets, and engagement rings crafted to make your special day unforgettable.",
-      "image": "assets/images/bridal_1_detail.png"
+      "image": "assets/images/bridal_1_detail.webp"
     }
   }
 }

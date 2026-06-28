@@ -15,7 +15,6 @@ export default function ProductCard({ product, featured = false, compactMaterial
                 <p className="product-card-materials">{materials}</p>
             </div>
             <div className="product-card-footer">
-                <span className="product-card-price">{product.price}</span>
                 <a href={`#/product/${product.id}`} className="product-card-btn">
                     Details <i className="fas fa-arrow-right" />
                 </a>

@@ -12,8 +12,7 @@ export default function ProductDetails({ products, content, productId }) {
 
     const message = `Hi Trimetra, I'm interested in the "${product.name}".\n\n`
         + `Reference: ${product.id}\n`
-        + `Composition: ${product.materials.join(', ')}\n`
-        + `Listed Price: ${product.price}\n\n`
+        + `Composition: ${product.materials.join(', ')}\n\n`
         + 'Please advise on its availability and how I may purchase this piece. Thank you!';
 
     return (
@@ -49,7 +48,6 @@ export default function ProductDetails({ products, content, productId }) {
                         <span className="product-detail-id">REF: {product.id}</span>
                     </div>
 
-                    <span className="product-detail-price">{product.price}</span>
                     <div className="divider" />
 
                     <div className="product-desc-wrap">

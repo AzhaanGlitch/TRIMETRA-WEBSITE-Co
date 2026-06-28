@@ -4,10 +4,14 @@
     "name": "Aurelia Diamond Pendant",
     "collection": "necklaces",
     "description": "An exquisite 18k solid yellow gold necklace featuring a brilliant-cut center diamond surrounded by delicate filigree work. Handcrafted to reflect the timeless craftsmanship of Trimetra.",
-    "materials": ["18k Yellow Gold", "0.45ct Round Brilliant Diamond (VVS1, E)", "Adjustable 16-18 inch gold chain"],
+    "materials": [
+      "18k Yellow Gold",
+      "0.45ct Round Brilliant Diamond (VVS1, E)",
+      "Adjustable 16-18 inch gold chain"
+    ],
     "price": "$2,850",
     "images": [
-      "assets/images/necklace_1.png"
+      "assets/images/necklace_1.webp"
     ],
     "featured": true
   },
@@ -15,12 +19,16 @@
     "id": "TRM-NC-002",
     "name": "Luna Pearl Choker",
     "collection": "necklaces",
-    "description": "Luminous South Sea pearls hand-selected for their mirror-like luster, strung together with a signature 18k white gold clasp encrusted with micro-pavé diamonds.",
-    "materials": ["18k White Gold Clasp", "Grade AAA South Sea Pearls (10-12mm)", "0.15ct Pavé Diamonds"],
+    "description": "Luminous South Sea pearls hand-selected for their mirror-like luster, strung together with a signature 18k white gold clasp encrusted with micro-pav\u00e9 diamonds.",
+    "materials": [
+      "18k White Gold Clasp",
+      "Grade AAA South Sea Pearls (10-12mm)",
+      "0.15ct Pav\u00e9 Diamonds"
+    ],
     "price": "$4,200",
     "images": [
-      "assets/images/necklace_2_a.png",
-      "assets/images/necklace_2_b.png"
+      "assets/images/necklace_2_a.webp",
+      "assets/images/necklace_2_b.webp"
     ],
     "featured": false
   },
@@ -29,11 +37,15 @@
     "name": "Vesper Sapphire Halo Necklace",
     "collection": "necklaces",
     "description": "An enchanting deep royal blue sapphire oval center stone, surrounded by a double halo of sparkling diamonds, suspended from a delicate 18k white gold chain.",
-    "materials": ["18k White Gold Chain", "1.8ct Cushion-cut Royal Blue Sapphire", "0.65ct Halo & Pendant Diamonds"],
+    "materials": [
+      "18k White Gold Chain",
+      "1.8ct Cushion-cut Royal Blue Sapphire",
+      "0.65ct Halo & Pendant Diamonds"
+    ],
     "price": "$5,600",
     "images": [
-      "assets/images/necklace_3_a.png",
-      "assets/images/necklace_3_b.png"
+      "assets/images/necklace_3_a.webp",
+      "assets/images/necklace_3_b.webp"
     ],
     "featured": false
   },
@@ -41,11 +53,15 @@
     "id": "TRM-NC-004",
     "name": "Starlight Diamond Necklace",
     "collection": "necklaces",
-    "description": "An architectural pendant in solid white gold, with micro-pavé diamonds arranged in geometric patterns resembling the night sky.",
-    "materials": ["18k White Gold", "2.4ct Pavé-set Diamonds (VS2, F-G)", "Adjustable 16-18 inch gold chain"],
+    "description": "An architectural pendant in solid white gold, with micro-pav\u00e9 diamonds arranged in geometric patterns resembling the night sky.",
+    "materials": [
+      "18k White Gold",
+      "2.4ct Pav\u00e9-set Diamonds (VS2, F-G)",
+      "Adjustable 16-18 inch gold chain"
+    ],
     "price": "$9,200",
     "images": [
-      "assets/images/necklace_4.png"
+      "assets/images/necklace_4.webp"
     ],
     "featured": false
   },
@@ -54,12 +70,16 @@
     "name": "Elysian Emerald Drops",
     "collection": "earrings",
     "description": "Breathtaking teardrop Colombian emeralds suspended from line-styled diamond clusters in platinum settings. Designed to sway elegantly with every step.",
-    "materials": ["Platinum 950", "2.1ct Pear-cut Colombian Emeralds (Total Weight)", "0.8ct Round Brilliant Diamonds"],
+    "materials": [
+      "Platinum 950",
+      "2.1ct Pear-cut Colombian Emeralds (Total Weight)",
+      "0.8ct Round Brilliant Diamonds"
+    ],
     "price": "$7,900",
     "images": [
-      "assets/images/earrings_1.png",
-      "assets/images/earrings_1_b.png",
-      "assets/images/earrings_1_c.png"
+      "assets/images/earrings_1.webp",
+      "assets/images/earrings_1_b.webp",
+      "assets/images/earrings_1_c.webp"
     ],
     "featured": true
   },
@@ -68,10 +88,13 @@
     "name": "Solitude Gold Studs",
     "collection": "earrings",
     "description": "Timeless solitaire studs showcasing hand-set princess-cut diamonds in a minimalist four-prong 18k yellow gold basket.",
-    "materials": ["18k Yellow Gold", "1.0ct Princess-cut Diamonds (Pair, VS2, F)"],
+    "materials": [
+      "18k Yellow Gold",
+      "1.0ct Princess-cut Diamonds (Pair, VS2, F)"
+    ],
     "price": "$1,950",
     "images": [
-      "assets/images/earrings_2.png"
+      "assets/images/earrings_2.webp"
     ],
     "featured": false
   },
@@ -80,10 +103,13 @@
     "name": "Golden Bloom Ring",
     "collection": "rings",
     "description": "An elegant solid gold ring adorned with delicate, hand-sculpted golden flowers set with brilliant-cut diamonds.",
-    "materials": ["18k Yellow Gold", "0.6ct Round Brilliant Diamonds"],
+    "materials": [
+      "18k Yellow Gold",
+      "0.6ct Round Brilliant Diamonds"
+    ],
     "price": "$3,400",
     "images": [
-      "assets/images/ring_1.png"
+      "assets/images/ring_1.webp"
     ],
     "featured": true
   },
@@ -92,10 +118,14 @@
     "name": "Golden Bloom Bracelet",
     "collection": "bracelets",
     "description": "A fluid 18k solid gold chain bracelet adorned with delicate, hand-sculpted golden flowers set with brilliant-cut diamonds.",
-    "materials": ["18k Yellow Gold", "0.6ct Round Brilliant Diamonds", "Adjustable 7-8 inch safety clasp"],
+    "materials": [
+      "18k Yellow Gold",
+      "0.6ct Round Brilliant Diamonds",
+      "Adjustable 7-8 inch safety clasp"
+    ],
     "price": "$3,400",
     "images": [
-      "assets/images/bracelet_11.png"
+      "assets/images/bracelet_11.webp"
     ],
     "featured": true
   },
@@ -104,10 +134,14 @@
     "name": "Empress Bridal Tiara & Set",
     "collection": "bridal",
     "description": "The crown jewel of our Bridal Collection. A magnificent matching set featuring a delicate platinum necklace, matching drop earrings, and a heirloom-quality tiara encrusted with brilliant-cut diamonds.",
-    "materials": ["Platinum 950", "8.5ct Total Weight Premium White Diamonds (VVS, D-F)", "Handmade custom filigree work"],
+    "materials": [
+      "Platinum 950",
+      "8.5ct Total Weight Premium White Diamonds (VVS, D-F)",
+      "Handmade custom filigree work"
+    ],
     "price": "$24,000",
     "images": [
-      "assets/images/bridal_1_detail.png"
+      "assets/images/bridal_1_detail.webp"
     ],
     "featured": true
   }

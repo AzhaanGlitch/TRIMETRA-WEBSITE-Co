@@ -42,9 +42,7 @@ export default function Home({ products, content }) {
                     </h2>
                     <p className="hero-cta-tagline">Trust, transformed into timeless elegance.</p>
                     <a
-                        href={whatsappLink(content.contact.whatsapp.number, 'Hello Trimetra, I would like to consult on a custom/bespoke jewelry piece.')}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href="#/collections"
                         className="gold-btn hero-cta-btn"
                     >
                         <i className="fas fa-shopping-bag" /> Check our Collection

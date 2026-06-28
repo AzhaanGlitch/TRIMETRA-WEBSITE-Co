@@ -40,7 +40,7 @@ export default function About({ content }) {
                     ))}
                 </div>
                 <div className="brand-story-img image-lift reveal-on-scroll reveal-slide-right" style={{ '--reveal-delay': '220ms' }}>
-                    <img src={imageUrl('assets/images/hero.png')} alt="Trimetra Founder Jewelry Presentation" loading="lazy" />
+                    <img src={imageUrl('assets/images/hero.webp')} alt="Trimetra Founder Jewelry Presentation" loading="lazy" />
                 </div>
             </section>
 
