@@ -3869,12 +3869,9 @@ body,
     background: var(--color-magenta) !important;
 }
 
-.featured-carousel-section .fc-marquee-fade-left {
-    background: linear-gradient(to right, var(--white) 0%, transparent 100%) !important;
-}
-
+.featured-carousel-section .fc-marquee-fade-left,
 .featured-carousel-section .fc-marquee-fade-right {
-    background: linear-gradient(to left, var(--white) 0%, transparent 100%) !important;
+    display: none !important;
 }
 
 /* Burgundy Carousel & Collections Cards */
