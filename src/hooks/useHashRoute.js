@@ -3,12 +3,19 @@ import { useEffect, useMemo, useState } from 'react';
 function parseHash() {
     const rawHash = window.location.hash || '#/home';
     const route = rawHash.slice(1) || '/home';
-    const [pathPart, queryString = ''] = route.split('?');
+    const [pathWithQuery, anchor = ''] = route.split('#');
+    const [pathPart, queryString = ''] = pathWithQuery.split('?');
     const query = Object.fromEntries(new URLSearchParams(queryString));
 
+    let path = pathPart || '/home';
+    if (path.length > 1 && path.endsWith('/')) {
+        path = path.slice(0, -1);
+    }
+
     return {
-        path: pathPart || '/home',
+        path,
         query,
+        anchor,
         rawHash
     };
 }
@@ -18,8 +25,13 @@ export function useHashRoute() {
 
     useEffect(() => {
         const handleRouteChange = () => {
-            setRoute(parseHash());
-            window.scrollTo({ top: 0, behavior: 'instant' });
+            const parsed = parseHash();
+            setRoute((prevRoute) => {
+                if (prevRoute.path !== parsed.path) {
+                    window.scrollTo({ top: 0, behavior: 'instant' });
+                }
+                return parsed;
+            });
         };
 
         window.addEventListener('hashchange', handleRouteChange);

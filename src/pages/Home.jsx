@@ -40,7 +40,7 @@ export default function Home({ products, content }) {
                         <span className="typewriter-text">{typedText}</span>
                         <span className={`typewriter-cursor${typedText.length >= HERO_TITLE.length ? ' done' : ''}`}>|</span>
                     </h2>
-                    <p className="hero-cta-tagline">Trust, transformed into timeless elegance.</p>
+                    <p className="hero-cta-tagline">Trust Transformed into Timeless Elegance</p>
                     <a
                         href="#/collections"
                         className="gold-btn hero-cta-btn"
@@ -53,6 +53,21 @@ export default function Home({ products, content }) {
             <section className="featured-carousel-section">
                 <SectionHeader eyebrow="Exceptional Masterpieces" title="Featured Creations" />
                 <FeaturedCarousel products={featuredProducts} />
+            </section>
+
+            <section className="home-cta-banner">
+                <div className="home-cta-content">
+                    <h2>Bespoke Creations</h2>
+                    <p>Looking for a custom length, specific diamond grade, or a completely personalized design? Connect with our master concierge via WhatsApp for dedicated advice.</p>
+                    <a
+                        href={whatsappLink(content.contact.whatsapp.number, 'Hello Trimetra, I would like to consult on a custom/bespoke jewelry piece.')}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="gold-btn"
+                    >
+                        <i className="fab fa-whatsapp" /> Chat with Concierge
+                    </a>
+                </div>
             </section>
 
             <section className="testimonials-burgundy-section">
@@ -74,21 +89,6 @@ export default function Home({ products, content }) {
                             </div>
                         ))}
                     </div>
-                </div>
-            </section>
-
-            <section className="home-cta-banner">
-                <div className="home-cta-content">
-                    <h2>Bespoke Creations</h2>
-                    <p>Looking for a custom length, specific diamond grade, or a completely personalized design? Connect with our master concierge via WhatsApp for dedicated advice.</p>
-                    <a
-                        href={whatsappLink(content.contact.whatsapp.number, 'Hello Trimetra, I would like to consult on a custom/bespoke jewelry piece.')}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="gold-btn"
-                    >
-                        <i className="fab fa-whatsapp" /> Chat with Concierge
-                    </a>
                 </div>
             </section>
         </div>

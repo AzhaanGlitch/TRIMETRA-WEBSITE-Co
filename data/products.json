@@ -13,12 +13,13 @@
     "images": [
       "assets/images/necklace_1.webp"
     ],
+    "objectPosition": "center 90%",
     "featured": true
   },
   {
     "id": "TRM-NC-002",
     "name": "Luna Pearl Choker",
-    "collection": "necklaces",
+    "collection": "sets",
     "description": "Luminous South Sea pearls hand-selected for their mirror-like luster, strung together with a signature 18k white gold clasp encrusted with micro-pavé diamonds.",
     "materials": [
       "18k White Gold Clasp",
@@ -27,8 +28,8 @@
     ],
     "price": "$4,200",
     "images": [
-      "assets/images/necklace_2_a.webp",
-      "assets/images/necklace_2_b.webp"
+      "assets/images/set_2_a.webp",
+      "assets/images/set_2_b.webp"
     ],
     "featured": false
   },
@@ -44,9 +45,10 @@
     ],
     "price": "$5,600",
     "images": [
-      "assets/images/necklace_3_a.webp",
-      "assets/images/necklace_3_b.webp"
+      "assets/images/necklace_2_a.webp",
+      "assets/images/necklace_2_b.webp"
     ],
+    "objectPosition": "center 90%",
     "featured": false
   },
   {
@@ -61,7 +63,7 @@
     ],
     "price": "$9,200",
     "images": [
-      "assets/images/necklace_4.webp"
+      "assets/images/necklace_3.webp"
     ],
     "featured": false
   },
@@ -264,7 +266,7 @@
   {
     "id": "TRM-BD-001",
     "name": "Empress Kundan & Pearl Bridal Set",
-    "collection": "bridal",
+    "collection": "sets",
     "description": "A majestic bridal collar set featuring five rows of pristine seed pearls holding a grand central medallion crafted in 22k yellow gold. Encrusted with brilliant polki diamonds and a border of rich green emerald inlay (meenakari). Comes with matching crescent drop earrings.",
     "materials": [
       "22k Yellow Gold",

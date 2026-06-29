@@ -107,7 +107,7 @@
   "collectionMetadata": {
     "all": {
       "title": "Fine Jewellery Collections",
-      "description": "Discover our complete catalog of signature rings, necklaces, earrings, cuffs, and bridal jewelry handcrafted with conflict-free diamonds, grade-AAA pearls, and solid 18k gold.",
+      "description": "Discover our complete catalog of signature rings, necklaces, earrings, cuffs, and jewelry sets handcrafted with conflict-free diamonds, grade-AAA pearls, and solid 18k gold.",
       "image": "assets/images/hero.webp"
     },
     "necklaces": {
@@ -130,10 +130,11 @@
       "description": "Timeless tennis bracelets, structured cuffs, and delicate chain bracelets designed for everyday luxury.",
       "image": "assets/images/bracelet_11.webp"
     },
-    "bridal": {
-      "title": "The Bridal Collection",
-      "description": "Heirloom-quality tiaras, sets, and engagement rings crafted to make your special day unforgettable.",
-      "image": "assets/images/bridal_1_detail.webp"
+    "sets": {
+      "title": "Signature Jewelry Sets",
+      "description": "Heirloom-quality kundan, diamond, and pearl sets crafted to celebrate life's most precious milestones.",
+      "image": "assets/images/set_a.webp",
+      "backgroundPosition": "center 30%"
     }
   }
 }

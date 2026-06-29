@@ -8,7 +8,7 @@ const filters = [
     { id: 'necklaces', label: 'Necklaces' },
     { id: 'earrings', label: 'Earrings' },
     { id: 'bracelets', label: 'Bracelets' },
-    { id: 'bridal', label: 'Bridal' }
+    { id: 'sets', label: 'Sets' }
 ];
 
 export default function Collections({ products, content, initialFilter }) {
@@ -35,7 +35,8 @@ export default function Collections({ products, content, initialFilter }) {
                 <div
                     className="collection-hero-banner"
                     style={{
-                        backgroundImage: `linear-gradient(rgba(26, 26, 26, 0.45), rgba(26, 26, 26, 0.65)), url('${imageUrl(meta.image)}')`
+                        backgroundImage: `linear-gradient(rgba(26, 26, 26, 0.45), rgba(26, 26, 26, 0.65)), url('${imageUrl(meta.image)}')`,
+                        backgroundPosition: meta.backgroundPosition || 'center'
                     }}
                 >
                     <div className="collection-banner-content fade-in-text">

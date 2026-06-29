@@ -18,6 +18,25 @@ export default function About({ content }) {
         return () => clearInterval(timer);
     }, [activeIndex]);
 
+    useEffect(() => {
+        const handleHashScroll = () => {
+            const hashParts = window.location.hash.split('#');
+            const anchorId = hashParts[2];
+            if (anchorId) {
+                const element = document.getElementById(anchorId);
+                if (element) {
+                    setTimeout(() => {
+                        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 300);
+                }
+            }
+        };
+
+        handleHashScroll();
+        window.addEventListener('hashchange', handleHashScroll);
+        return () => window.removeEventListener('hashchange', handleHashScroll);
+    }, []);
+
 
 
     const handleCardClick = (index) => {
@@ -44,7 +63,7 @@ export default function About({ content }) {
                 </div>
             </section>
 
-            <section className="why-choose-section reveal-on-scroll">
+            <section className="why-choose-section reveal-on-scroll" id="why-choose-us">
                 <div className="reveal-on-scroll">
                     <SectionHeader eyebrow="Responsible Luxury" title={whyChooseUs.title} />
                 </div>

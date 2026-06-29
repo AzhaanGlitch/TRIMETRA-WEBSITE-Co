@@ -1069,16 +1069,16 @@ p {
 
 .collections-page-global-wrapper .filter-tab {
     border-color: var(--color-gold);
-    color: var(--color-gold);
-    background: transparent;
+    color: var(--burgundy);
+    background: var(--color-gold);
     font-weight: 600;
 }
 
 .collections-page-global-wrapper .filter-tab:hover,
 .collections-page-global-wrapper .filter-tab.active {
-    background: var(--color-gold) !important;
-    color: var(--color-magenta) !important;
-    border-color: var(--color-gold) !important;
+    background: var(--burgundy) !important;
+    color: var(--color-gold) !important;
+    border-color: var(--burgundy) !important;
 }
 
 .collections-page-wrapper {
@@ -1192,10 +1192,15 @@ p {
 
 /* ── existing grid (used on Collections page) ── */
 .product-catalog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
+    display: flex;
+    flex-wrap: wrap;
     gap: 40px 30px;
     justify-content: center;
+}
+
+.product-catalog-grid .product-card {
+    width: 320px;
+    max-width: 100%;
 }
 
 
@@ -3697,9 +3702,13 @@ body,
    ========================================================================== */
 
 .testimonials-burgundy-section {
-    background-color: var(--color-magenta);
+    background-color: var(--white) !important;
     padding: 120px 40px;
     width: 100%;
+}
+
+.testimonials-burgundy-section .section-title {
+    color: var(--burgundy) !important;
 }
 
 .testimonials-burgundy-section .testimonials-container {
@@ -3708,33 +3717,33 @@ body,
 }
 
 .testimonials-burgundy-section .testimonial-card {
-    background: var(--color-gold) !important;
-    border: 1px solid rgba(98, 3, 53, 0.22) !important;
-    color: var(--color-magenta) !important;
-    --text-primary: var(--color-magenta);
-    --text-secondary: rgba(98, 3, 53, 0.85);
-    --text-muted: rgba(98, 3, 53, 0.65);
+    background: var(--burgundy) !important;
+    border: 2px solid var(--color-gold) !important;
+    color: var(--white) !important;
+    --text-primary: var(--white);
+    --text-secondary: rgba(255, 255, 255, 0.85);
+    --text-muted: rgba(255, 255, 255, 0.65);
 }
 
 .testimonials-burgundy-section .testimonial-card:hover {
-    border-color: rgba(98, 3, 53, 0.35) !important;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3) !important;
+    border-color: var(--color-gold) !important;
+    box-shadow: 0 15px 35px rgba(213, 163, 97, 0.25) !important;
 }
 
 .testimonials-burgundy-section .testimonial-card h4 {
-    color: var(--color-magenta) !important;
+    color: var(--color-gold) !important;
 }
 
 .testimonials-burgundy-section .testimonial-card span {
-    color: rgba(98, 3, 53, 0.75) !important;
+    color: rgba(255, 255, 255, 0.7) !important;
 }
 
 .testimonials-burgundy-section .testimonial-card .testimonial-text {
-    color: var(--color-magenta) !important;
+    color: var(--white) !important;
 }
 
 .testimonials-burgundy-section .testimonial-card .testimonial-rating {
-    color: var(--color-magenta) !important;
+    color: var(--color-gold) !important;
 }
 
 

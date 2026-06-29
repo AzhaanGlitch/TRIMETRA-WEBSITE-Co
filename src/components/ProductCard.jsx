@@ -7,7 +7,13 @@ export default function ProductCard({ product, featured = false, compactMaterial
         <div className="product-card fade-in-section">
             {featured && <div className="product-card-badge">Featured</div>}
             <div className="product-card-img-wrap">
-                <img src={imageUrl(product.images[0])} alt={product.name} className="product-card-img" loading="lazy" />
+                <img
+                    src={imageUrl(product.images[0])}
+                    alt={product.name}
+                    className="product-card-img"
+                    loading="lazy"
+                    style={{ objectPosition: product.objectPosition || 'center' }}
+                />
             </div>
             <div className="product-card-info">
                 <span className="product-card-collection">{product.collection}</span>

@@ -33,7 +33,7 @@ export default function Footer({ content }) {
                         <li><a href="#/collections?filter=earrings">Earrings</a></li>
                         <li><a href="#/collections?filter=rings">Rings</a></li>
                         <li><a href="#/collections?filter=bracelets">Bracelets</a></li>
-                        <li><a href="#/collections?filter=bridal">Bridal</a></li>
+                        <li><a href="#/collections?filter=sets">Sets</a></li>
                     </ul>
                 </div>
 
@@ -42,6 +42,7 @@ export default function Footer({ content }) {
                     <ul>
                         <li><a href="#/about">Our Story</a></li>
                         <li><a href="#/about#vision">Our Vision</a></li>
+                        <li><a href="#/about#why-choose-us">Why Choose Us</a></li>
                     </ul>
                 </div>
 
@@ -49,7 +50,6 @@ export default function Footer({ content }) {
                     <h3>Concierge</h3>
                     <ul>
                         <li><a href="#/contact">Contact Us</a></li>
-                        <li><a href="#/contact">Bespoke Consultations</a></li>
                         <li><a href="#/contact">Store Location</a></li>
                     </ul>
                 </div>
