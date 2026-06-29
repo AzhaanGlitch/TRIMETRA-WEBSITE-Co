@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import Lenis from 'lenis';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import FloatingWhatsApp from './components/FloatingWhatsApp.jsx';
@@ -39,6 +41,30 @@ function getPage(route) {
 
 export default function App() {
     const route = useHashRoute();
+
+    useEffect(() => {
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            smoothWheel: true,
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+
+        return () => {
+            lenis.destroy();
+        };
+    }, []);
+
+    // Scroll to top on route change
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [route.path]);
 
     return (
         <>

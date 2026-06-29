@@ -3919,3 +3919,20 @@ body,
     box-shadow: 0 8px 25px rgba(98, 3, 53, 0.25) !important;
     transform: translateY(-2px) !important;
 }
+
+/* Lenis smooth scrolling support */
+html.lenis, html.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+html.lenis-smooth body {
+    scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+    pointer-events: none;
+}
