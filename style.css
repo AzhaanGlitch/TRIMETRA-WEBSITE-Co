@@ -1054,6 +1054,7 @@ p {
 
 .home-cta-content h2 {
     font-size: 3rem;
+    color: var(--color-gold) !important;
 }
 
 .home-cta-content p {
@@ -1591,18 +1592,6 @@ p {
     color: var(--burgundy) !important;
 }
 
-.about-page-wrapper .why-card {
-    background: var(--white) !important;
-    border: 1px solid rgba(98, 3, 53, 0.12) !important;
-    color: var(--burgundy) !important;
-    box-shadow: 0 8px 24px rgba(98, 3, 53, 0.08) !important;
-}
-
-.about-page-wrapper .why-card h3,
-.about-page-wrapper .why-card p,
-.about-page-wrapper .why-card-icon {
-    color: var(--burgundy) !important;
-}
 
 .about-hero-section {
     max-width: var(--max-width);
