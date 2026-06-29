@@ -1215,8 +1215,10 @@ p {
     will-change: transform;
 }
 
-.fc-marquee-track:hover {
-    animation-play-state: paused;
+@media (hover: hover) {
+    .fc-marquee-track:hover {
+        animation-play-state: paused;
+    }
 }
 
 @keyframes fcScroll {
@@ -4007,17 +4009,25 @@ html.lenis-smooth body {
 /* Mobile responsiveness overrides for new header, rates bar, and tooltip elements */
 @media (max-width: 768px) {
     .live-rates-bar {
-        font-size: 0.62rem !important;
-        height: 28px !important;
-        letter-spacing: 0.04em !important;
+        font-size: 0.65rem !important;
+        height: 30px !important;
+        overflow: hidden !important;
+        white-space: nowrap !important;
+        display: block !important;
+        line-height: 30px !important;
+    }
+    .live-rates-content {
+        display: inline-block !important;
+        padding-left: 100%;
+        animation: marqueeRates 22s linear infinite !important;
     }
     .luxury-header {
-        top: 38px !important;
+        top: 40px !important;
         width: calc(100% - 20px) !important;
         height: 75px !important;
     }
     .luxury-header.shrink {
-        top: 32px !important;
+        top: 34px !important;
         height: 60px !important;
     }
     .brand-logo .site-logo {
@@ -4031,4 +4041,9 @@ html.lenis-smooth body {
         padding: 6px 12px !important;
         font-size: 0.75rem !important;
     }
+}
+
+@keyframes marqueeRates {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-100%, 0, 0); }
 }

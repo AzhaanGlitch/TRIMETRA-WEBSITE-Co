@@ -15,8 +15,6 @@ export default function FeaturedCarousel({ products }) {
             <div
                 ref={trackRef}
                 className="fc-marquee-track"
-                onMouseEnter={() => { if (trackRef.current) trackRef.current.style.animationPlayState = 'paused'; }}
-                onMouseLeave={() => { if (trackRef.current) trackRef.current.style.animationPlayState = 'running'; }}
             >
                 {items.map((product, i) => (
                     <div className="fc-marquee-item" key={`${product.id}-${i}`}>
