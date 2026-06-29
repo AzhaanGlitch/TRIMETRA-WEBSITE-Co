@@ -1139,7 +1139,7 @@ p {
 }
 
 .collections-page-wrapper {
-    padding: 120px 40px;
+    padding: 160px 40px 120px;
     width: 100%;
     max-width: var(--max-width);
     margin: 0 auto;
@@ -1414,7 +1414,7 @@ p {
 .product-details-container {
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 120px 40px;
+    padding: 160px 40px 120px;
 }
 
 .back-link {
@@ -1628,7 +1628,7 @@ p {
    ========================================================================== */
 
 .about-page-wrapper {
-    padding: 130px 40px 60px;
+    padding: 170px 40px 60px;
     background: var(--blush-pink) !important;
     color: var(--burgundy) !important;
 }
@@ -1966,7 +1966,7 @@ p {
 }
 
 .contact-page-wrapper {
-    padding: 120px 40px;
+    padding: 160px 40px 120px;
     width: 100%;
     max-width: var(--max-width);
     margin: 0 auto;
