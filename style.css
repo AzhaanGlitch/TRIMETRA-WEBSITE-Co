@@ -58,7 +58,7 @@
 
     /* Grid/Layout */
     --max-width: 1400px;
-    --header-height: 80px;
+    --header-height: 95px;
 
     /* Transitions */
     --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
@@ -80,7 +80,6 @@ html {
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    cursor: url('assets/images/gold-glitter-cursor.svg') 0 0, auto !important;
 }
 
 body {
@@ -90,7 +89,6 @@ body {
     flex-direction: column;
     background: var(--bg-primary);
     position: relative;
-    cursor: url('assets/images/gold-glitter-cursor.svg') 0 0, auto !important;
 }
 
 body::before {
@@ -102,7 +100,7 @@ body::before {
 }
 
 a, button, input[type="submit"], input[type="button"], select, textarea, [role="button"], .why-choose-carousel-card-wrap, .fc-marquee-item, .filter-tab {
-    cursor: url('assets/images/gold-glitter-cursor.svg') 0 0, pointer !important;
+    cursor: pointer;
 }
 
 #app-root {
@@ -158,22 +156,67 @@ p {
    LAYOUT: HEADER & NAVIGATION
    ========================================================================== */
 
+/* Live Rates Announcement Bar */
+.live-rates-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 32px;
+    background: var(--burgundy);
+    color: var(--white);
+    font-size: 0.72rem;
+    font-family: var(--font-body);
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+    border-bottom: 1px solid rgba(213, 163, 97, 0.2);
+    letter-spacing: 0.1em;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.live-rates-content {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.live-pulse {
+    display: inline-block;
+    color: #4cd964;
+    font-size: 0.65rem;
+    animation: livePulseAnim 1.8s infinite ease-in-out;
+}
+
+@keyframes livePulseAnim {
+    0%, 100% {
+        opacity: 0.45;
+        transform: scale(0.9);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+}
+
 .luxury-header {
     position: fixed;
-    top: 20px;
+    top: 52px;
     left: 50%;
     transform: translateX(-50%);
     width: calc(100% - 40px);
     max-width: var(--max-width);
     height: var(--header-height);
-    --text-primary: var(--color-magenta);
-    --text-secondary: rgba(98, 3, 53, 0.75);
-    background: rgba(255, 255, 255, 0.72);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border: 2px solid var(--color-gold);
+    --text-primary: var(--white);
+    --text-secondary: rgba(255, 255, 255, 0.82);
+    background: rgba(98, 3, 53, 0.82);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--color-gold);
     border-radius: 100px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
     z-index: 1000;
     transition: var(--transition-smooth);
 }
@@ -184,7 +227,7 @@ p {
 
 .luxury-header.shrink {
     height: 65px;
-    top: 10px;
+    top: 42px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.22);
 }
 
@@ -211,15 +254,15 @@ p {
 }
 
 .brand-logo .site-logo {
-    max-height: 48px;
+    max-height: 60px;
     width: auto;
     display: block;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25));
     transition: var(--transition-smooth);
 }
 
 .luxury-header.shrink .brand-logo .site-logo {
-    max-height: 40px;
+    max-height: 46px;
 }
 
 .brand-logo:hover .site-logo {
@@ -272,7 +315,7 @@ p {
 
 .nav-link:hover,
 .nav-link.active {
-    color: var(--text-primary);
+    color: var(--color-gold) !important;
 }
 
 .nav-link:hover::after,
@@ -583,8 +626,16 @@ p {
 }
 
 .whatsapp-floating-cta:hover {
-    transform: scale(1.1) rotate(15deg);
+    transform: scale(1.1);
     box-shadow: 0 15px 30px rgba(208, 170, 108, 0.45);
+}
+
+.whatsapp-floating-cta i {
+    transition: transform 0.4s ease;
+}
+
+.whatsapp-floating-cta:hover i {
+    transform: rotate(15deg);
 }
 
 .whatsapp-floating-cta .tooltip-text {
@@ -2808,7 +2859,7 @@ p {
         max-width: 300px;
         height: auto;
         max-height: 0;
-        background: var(--white);
+        background: rgba(98, 3, 53, 0.95) !important;
         border: 2px solid var(--color-gold);
         border-radius: 20px;
         padding: 0 30px;
@@ -3951,4 +4002,33 @@ html.lenis-smooth body {
 }
 .lenis.lenis-scrolling iframe {
     pointer-events: none;
+}
+
+/* Mobile responsiveness overrides for new header, rates bar, and tooltip elements */
+@media (max-width: 768px) {
+    .live-rates-bar {
+        font-size: 0.62rem !important;
+        height: 28px !important;
+        letter-spacing: 0.04em !important;
+    }
+    .luxury-header {
+        top: 38px !important;
+        width: calc(100% - 20px) !important;
+        height: 75px !important;
+    }
+    .luxury-header.shrink {
+        top: 32px !important;
+        height: 60px !important;
+    }
+    .brand-logo .site-logo {
+        max-height: 48px !important;
+    }
+    .luxury-header.shrink .brand-logo .site-logo {
+        max-height: 38px !important;
+    }
+    .whatsapp-floating-cta .tooltip-text {
+        right: 65px !important;
+        padding: 6px 12px !important;
+        font-size: 0.75rem !important;
+    }
 }
