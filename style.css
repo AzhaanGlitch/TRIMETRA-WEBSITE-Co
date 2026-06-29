@@ -9,44 +9,47 @@
     --blush-pink: #FFBED0;
     --black: #000000;
     --white: #FFFFFF;
+    --pearl-white: #FAF9F6;
+    --off-white: #F7F5F0;
+    --champagne-gold: #D5A361;
 
     /* Theme Mappings */
     --color-magenta: var(--burgundy);
-    --color-antique-gold: var(--gold);
-    --color-soft-white: var(--white);
+    --color-antique-gold: var(--champagne-gold);
+    --color-soft-white: var(--pearl-white);
     --color-baby-pink: var(--blush-pink);
-    --color-warm-beige: var(--blush-pink);
+    --color-warm-beige: var(--off-white);
 
-    --bg-primary: var(--burgundy);
-    /* Deep burgundy background */
-    --bg-secondary: var(--black);
-    /* Dark panel background */
-    --bg-tertiary: var(--black);
-    /* Dark surface background */
+    --bg-primary: var(--pearl-white);
+    /* Pearl white background */
+    --bg-secondary: var(--white);
+    /* White panel background */
+    --bg-tertiary: var(--off-white);
+    /* Off-white surface background */
 
-    --color-gold: var(--gold);
+    --color-gold: var(--champagne-gold);
     /* Gold */
-    --color-gold-hover: var(--gold);
+    --color-gold-hover: #C59351;
     /* Gold hover */
-    --color-gold-dark: var(--gold);
+    --color-gold-dark: #A57331;
     --color-dark-purple: var(--burgundy);
     /* Deep burgundy for dark text and accents */
     --color-cream-white: var(--white);
     /* Soft white from the palette */
 
-    --text-primary: var(--white);
-    /* Soft white text */
-    --text-secondary: var(--blush-pink);
-    /* Warm beige secondary text */
-    --text-muted: var(--blush-pink);
-    /* Baby pink muted text */
+    --text-primary: #1A1A1A;
+    /* Dark charcoal text */
+    --text-secondary: #4A4A4A;
+    /* Secondary charcoal text */
+    --text-muted: #7A7A7A;
+    /* Muted text */
 
-    --border-color: rgba(213, 163, 97, 0.22);
-    /* Soft gold border */
-    --border-color-hover: rgba(213, 163, 97, 0.48);
+    --border-color: rgba(98, 3, 53, 0.12);
+    /* Soft burgundy border */
+    --border-color-hover: rgba(98, 3, 53, 0.28);
 
-    --glass-bg: rgba(98, 3, 53, 0.32);
-    /* Burgundy glassmorphism background */
+    --glass-bg: rgba(255, 255, 255, 0.75);
+    /* White glassmorphism background */
     --glass-blur: blur(20px);
 
     /* Typography */
@@ -165,7 +168,9 @@ p {
     height: var(--header-height);
     --text-primary: var(--color-magenta);
     --text-secondary: rgba(98, 3, 53, 0.75);
-    background: var(--white);
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     border: 2px solid var(--color-gold);
     border-radius: 100px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
@@ -332,20 +337,20 @@ p {
    ========================================================================== */
 
 .luxury-footer {
-    --bg-secondary: var(--color-magenta);
-    /* Deep magenta background for logo contrast */
-    --text-primary: var(--color-soft-white);
+    --bg-secondary: var(--burgundy);
+    /* Deep burgundy background */
+    --text-primary: var(--white);
     /* Soft white footer text */
-    --text-secondary: rgba(250, 250, 249, 0.82);
+    --text-secondary: rgba(255, 255, 255, 0.82);
     /* Muted soft white links */
-    --text-muted: rgba(250, 250, 249, 0.62);
+    --text-muted: rgba(255, 255, 255, 0.62);
     /* Subtle footer captions */
     --border-color: rgba(255, 255, 255, 0.15);
-    background: rgba(255, 255, 255, 0.06);
+    background: var(--burgundy) !important;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-top: 1px solid var(--color-gold);
-    padding: 80px 40px 40px;
+    padding: 40px 40px 20px;
     margin-top: auto;
 }
 
@@ -355,7 +360,7 @@ p {
     display: grid;
     grid-template-columns: 1.5fr repeat(3, 1fr);
     gap: 60px;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
 }
 
 .footer-brand {
@@ -425,7 +430,7 @@ p {
 .footer-bottom {
     max-width: var(--max-width);
     margin: 0 auto;
-    padding-top: 40px;
+    padding-top: 20px;
     border-top: 1px solid rgba(234, 181, 199, 0.18);
     display: flex;
     justify-content: space-between;
@@ -1572,6 +1577,31 @@ p {
 
 .about-page-wrapper {
     padding: 130px 40px 60px;
+    background: var(--blush-pink) !important;
+    color: var(--burgundy) !important;
+}
+
+.about-page-wrapper h1,
+.about-page-wrapper h2,
+.about-page-wrapper h3,
+.about-page-wrapper h4,
+.about-page-wrapper p,
+.about-page-wrapper span,
+.about-page-wrapper .section-subtitle {
+    color: var(--burgundy) !important;
+}
+
+.about-page-wrapper .why-card {
+    background: var(--white) !important;
+    border: 1px solid rgba(98, 3, 53, 0.12) !important;
+    color: var(--burgundy) !important;
+    box-shadow: 0 8px 24px rgba(98, 3, 53, 0.08) !important;
+}
+
+.about-page-wrapper .why-card h3,
+.about-page-wrapper .why-card p,
+.about-page-wrapper .why-card-icon {
+    color: var(--burgundy) !important;
 }
 
 .about-hero-section {
@@ -3170,7 +3200,7 @@ p {
     --text-primary: var(--color-magenta);
     --text-secondary: rgba(101, 11, 56, 0.78);
     --text-muted: rgba(101, 11, 56, 0.62);
-    background: var(--color-baby-pink);
+    background: #FAF9F6 !important;
 }
 
 /* 3D curved carousel styling */
@@ -3840,7 +3870,7 @@ body,
    ========================================================================== */
 
 .featured-carousel-section {
-    background-color: var(--color-baby-pink);
+    background-color: var(--white) !important;
     padding: 120px 40px 60px;
     width: 100%;
     border-bottom: 1px solid rgba(98, 3, 53, 0.12);
@@ -3851,11 +3881,11 @@ body,
 }
 
 .featured-carousel-section .fc-marquee-fade-left {
-    background: linear-gradient(to right, var(--color-baby-pink) 0%, transparent 100%) !important;
+    background: linear-gradient(to right, var(--white) 0%, transparent 100%) !important;
 }
 
 .featured-carousel-section .fc-marquee-fade-right {
-    background: linear-gradient(to left, var(--color-baby-pink) 0%, transparent 100%) !important;
+    background: linear-gradient(to left, var(--white) 0%, transparent 100%) !important;
 }
 
 /* Burgundy Carousel & Collections Cards */
