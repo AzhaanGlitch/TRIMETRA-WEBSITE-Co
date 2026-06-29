@@ -32,6 +32,8 @@ export default function Footer({ content }) {
                         <li><a href="#/collections?filter=necklaces">Necklaces</a></li>
                         <li><a href="#/collections?filter=earrings">Earrings</a></li>
                         <li><a href="#/collections?filter=rings">Rings</a></li>
+                        <li><a href="#/collections?filter=bracelets">Bracelets</a></li>
+                        <li><a href="#/collections?filter=bridal">Bridal</a></li>
                     </ul>
                 </div>
 

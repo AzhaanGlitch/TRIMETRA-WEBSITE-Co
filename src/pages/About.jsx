@@ -31,8 +31,8 @@ export default function About({ content }) {
                 <h1 className="section-title">The Spirit of Trimetra</h1>
             </div>
 
-            <section className="about-intro-grid reveal-on-scroll">
-                <div className="about-intro-text white-story-box reveal-on-scroll reveal-slide-left" style={{ '--reveal-delay': '120ms' }}>
+            <section className="about-intro-grid white-story-box reveal-on-scroll">
+                <div className="about-intro-text reveal-on-scroll reveal-slide-left" style={{ '--reveal-delay': '120ms' }}>
                     <span className="section-subtitle" style={{ textAlign: 'left', marginBottom: 10 }}>The Visionary Behind the Brand</span>
                     <h2>{founderStory.title}</h2>
                     {founderStory.paragraphs.map((paragraph, index) => (
@@ -40,7 +40,7 @@ export default function About({ content }) {
                     ))}
                 </div>
                 <div className="brand-story-img image-lift reveal-on-scroll reveal-slide-right" style={{ '--reveal-delay': '220ms' }}>
-                    <img src={imageUrl('assets/images/hero.webp')} alt="Trimetra Founder Jewelry Presentation" loading="lazy" />
+                    <img src={imageUrl('assets/images/logo@4x.png')} alt="Trimetra Logo" loading="lazy" />
                 </div>
             </section>
 

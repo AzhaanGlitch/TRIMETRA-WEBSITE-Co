@@ -19,11 +19,11 @@
     "id": "TRM-NC-002",
     "name": "Luna Pearl Choker",
     "collection": "necklaces",
-    "description": "Luminous South Sea pearls hand-selected for their mirror-like luster, strung together with a signature 18k white gold clasp encrusted with micro-pav\u00e9 diamonds.",
+    "description": "Luminous South Sea pearls hand-selected for their mirror-like luster, strung together with a signature 18k white gold clasp encrusted with micro-pavé diamonds.",
     "materials": [
       "18k White Gold Clasp",
       "Grade AAA South Sea Pearls (10-12mm)",
-      "0.15ct Pav\u00e9 Diamonds"
+      "0.15ct Pavé Diamonds"
     ],
     "price": "$4,200",
     "images": [
@@ -53,10 +53,10 @@
     "id": "TRM-NC-004",
     "name": "Starlight Diamond Necklace",
     "collection": "necklaces",
-    "description": "An architectural pendant in solid white gold, with micro-pav\u00e9 diamonds arranged in geometric patterns resembling the night sky.",
+    "description": "An architectural pendant in solid white gold, with micro-pavé diamonds arranged in geometric patterns resembling the night sky.",
     "materials": [
       "18k White Gold",
-      "2.4ct Pav\u00e9-set Diamonds (VS2, F-G)",
+      "2.4ct Pavé-set Diamonds (VS2, F-G)",
       "Adjustable 16-18 inch gold chain"
     ],
     "price": "$9,200",
@@ -99,6 +99,138 @@
     "featured": false
   },
   {
+    "id": "TRM-ER-003",
+    "name": "Jharokha Ruby & Polki Studs",
+    "collection": "earrings",
+    "description": "Elegant triangular studs inspired by royal Jharokha archways, featuring vibrant hand-cut rubies bordering a central polki diamond floral cluster.",
+    "materials": [
+      "18k Yellow Gold",
+      "Natural Rubies",
+      "Uncut Polki Diamonds"
+    ],
+    "price": "$2,450",
+    "images": [
+      "assets/images/earrings_3.webp"
+    ],
+    "featured": false
+  },
+  {
+    "id": "TRM-ER-004",
+    "name": "Mayura Filigree Dome Studs",
+    "collection": "earrings",
+    "description": "Dazzling round dome-style studs featuring intricate yellow gold filigree work radiating from a brilliant-cut center diamond, bordered by a delicate halo.",
+    "materials": [
+      "18k Yellow Gold",
+      "1.25ct Brilliant-cut Center Diamonds",
+      "Micro-pavé Diamonds"
+    ],
+    "price": "$3,200",
+    "images": [
+      "assets/images/earrings_4.webp"
+    ],
+    "featured": false
+  },
+  {
+    "id": "TRM-ER-005",
+    "name": "Rajkumari Meenakari Polki Studs",
+    "collection": "earrings",
+    "description": "Exquisite round floral-shaped studs showcasing a large central slice of polki diamond enclosed in a vibrant crimson red enamel border (meenakari) and surrounded by a pear-cut polki diamond halo.",
+    "materials": [
+      "18k Yellow Gold",
+      "Premium Polki Diamond Slices",
+      "Hand-painted Enamel (Meenakari)",
+      "0.9ct Brilliant-cut Accent Diamonds"
+    ],
+    "price": "$4,800",
+    "images": [
+      "assets/images/earrings_5.webp",
+      "assets/images/earrings_6.webp"
+    ],
+    "featured": true
+  },
+  {
+    "id": "TRM-ER-006",
+    "name": "Nirvana Pear Polki Studs",
+    "collection": "earrings",
+    "description": "Timeless floral cluster studs featuring a magnificent pear-shaped (teardrop) central polki diamond slice, outlined in a delicate pavé diamond border and framed by round polki petals.",
+    "materials": [
+      "18k Yellow Gold",
+      "Pear-shaped Polki Diamonds",
+      "0.4ct Pavé Accent Diamonds"
+    ],
+    "price": "$3,600",
+    "images": [
+      "assets/images/earrings_7.webp"
+    ],
+    "featured": false
+  },
+  {
+    "id": "TRM-ER-007",
+    "name": "Gulbahar Sunflower Ruby Studs",
+    "collection": "earrings",
+    "description": "A masterclass in color and form, these sunflower-inspired studs feature a central uncut polki diamond bordered in gold, with vibrant pinkish-purple ruby beads radiating outwards as delicate petals.",
+    "materials": [
+      "18k Yellow Gold",
+      "Central Polki Diamonds",
+      "Fine Ruby Beads (Tumbles)",
+      "Pavé Diamonds"
+    ],
+    "price": "$3,850",
+    "images": [
+      "assets/images/earrings_8.webp"
+    ],
+    "featured": true
+  },
+  {
+    "id": "TRM-ER-008",
+    "name": "Empress Kundan Crescent Drops",
+    "collection": "earrings",
+    "description": "Royal crescent-shaped drop earrings featuring a brilliant kundan cluster, a green emerald-inlay crescent (meenakari), and hanging south sea pearl drops. Perfectly matching the Empress Bridal Set.",
+    "materials": [
+      "22k Yellow Gold",
+      "Uncut Kundan/Polki Diamonds",
+      "Emerald Inlay",
+      "South Sea Pearl Drops"
+    ],
+    "price": "$5,200",
+    "images": [
+      "assets/images/earrings_9.webp"
+    ],
+    "featured": false
+  },
+  {
+    "id": "TRM-ER-009",
+    "name": "Padma Dainty Lotus Studs",
+    "collection": "earrings",
+    "description": "Delicate and lightweight floral studs crafted in yellow gold, showcasing a central brilliant-cut diamond surrounded by a ring of ten pear-shaped uncut diamonds.",
+    "materials": [
+      "18k Yellow Gold",
+      "Uncut Polki Diamonds",
+      "Brilliant-cut Accent Diamonds"
+    ],
+    "price": "$1,650",
+    "images": [
+      "assets/images/earrings_10.webp"
+    ],
+    "featured": false
+  },
+  {
+    "id": "TRM-ER-010",
+    "name": "Devika Cushion Halo Studs",
+    "collection": "earrings",
+    "description": "A contemporary blend of vintage and modern aesthetics, featuring cushion-cut polki diamonds surrounded by a double square halo of micro-pavé diamonds.",
+    "materials": [
+      "18k Yellow Gold",
+      "Cushion-cut Polki Diamonds",
+      "0.55ct Micro-pavé Diamonds"
+    ],
+    "price": "$2,900",
+    "images": [
+      "assets/images/earrings_11.webp"
+    ],
+    "featured": false
+  },
+  {
     "id": "TRM-RG-001",
     "name": "Golden Bloom Ring",
     "collection": "rings",
@@ -126,6 +258,25 @@
     "price": "$3,400",
     "images": [
       "assets/images/bracelet_11.webp"
+    ],
+    "featured": true
+  },
+  {
+    "id": "TRM-BD-001",
+    "name": "Empress Kundan & Pearl Bridal Set",
+    "collection": "bridal",
+    "description": "A majestic bridal collar set featuring five rows of pristine seed pearls holding a grand central medallion crafted in 22k yellow gold. Encrusted with brilliant polki diamonds and a border of rich green emerald inlay (meenakari). Comes with matching crescent drop earrings.",
+    "materials": [
+      "22k Yellow Gold",
+      "Uncut Polki Diamonds",
+      "Hand-set Seed Pearls",
+      "Colombian Emerald Inlay (Meenakari)"
+    ],
+    "price": "$18,500",
+    "images": [
+      "assets/images/set_a.webp",
+      "assets/images/set_b.webp",
+      "assets/images/set_c.webp"
     ],
     "featured": true
   }

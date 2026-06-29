@@ -7,7 +7,8 @@ const filters = [
     { id: 'rings', label: 'Rings' },
     { id: 'necklaces', label: 'Necklaces' },
     { id: 'earrings', label: 'Earrings' },
-    { id: 'bracelets', label: 'Bracelets' }
+    { id: 'bracelets', label: 'Bracelets' },
+    { id: 'bridal', label: 'Bridal' }
 ];
 
 export default function Collections({ products, content, initialFilter }) {
