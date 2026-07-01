@@ -46,6 +46,56 @@ export default function Home({ products, content }) {
                 </div>
             </div>
 
+            <div className="home-trust-strip">
+                <div className="trust-strip-marquee">
+                    <div className="trust-strip-track">
+                        {/* First Set */}
+                        <div className="trust-strip-item">
+                            <i className="fas fa-award" />
+                            <span>925 Sterling Silver</span>
+                        </div>
+                        <div className="trust-strip-divider" />
+                        <div className="trust-strip-item">
+                            <i className="fas fa-gem" />
+                            <span>Gold Plated Jewellery</span>
+                        </div>
+                        <div className="trust-strip-divider" />
+                        <div className="trust-strip-item">
+                            <i className="fas fa-certificate" />
+                            <span>BIS Hallmarked</span>
+                        </div>
+                        <div className="trust-strip-divider" />
+                        <div className="trust-strip-item">
+                            <i className="fas fa-feather-alt" />
+                            <span>Handcrafted Designs</span>
+                        </div>
+                        <div className="trust-strip-divider" />
+
+                        {/* Second Set (Duplicated for infinite marquee loop) */}
+                        <div className="trust-strip-item">
+                            <i className="fas fa-award" />
+                            <span>925 Sterling Silver</span>
+                        </div>
+                        <div className="trust-strip-divider" />
+                        <div className="trust-strip-item">
+                            <i className="fas fa-gem" />
+                            <span>Gold Plated Jewellery</span>
+                        </div>
+                        <div className="trust-strip-divider" />
+                        <div className="trust-strip-item">
+                            <i className="fas fa-certificate" />
+                            <span>BIS Hallmarked</span>
+                        </div>
+                        <div className="trust-strip-divider" />
+                        <div className="trust-strip-item">
+                            <i className="fas fa-feather-alt" />
+                            <span>Handcrafted Designs</span>
+                        </div>
+                        <div className="trust-strip-divider" />
+                    </div>
+                </div>
+            </div>
+
             <section className="featured-carousel-section">
                 <SectionHeader eyebrow="Exceptional Masterpieces" title="Our Collections" />
                 <div className="home-collections-circle-wrapper">
