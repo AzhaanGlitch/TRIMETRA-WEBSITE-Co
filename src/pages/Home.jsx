@@ -1,8 +1,34 @@
 import SectionHeader from '../components/SectionHeader.jsx';
 import { whatsappLink, imageUrl } from '../utils/assets.js';
 
-export default function Home({ products, content }) {
+function TestimonialSpotlightCard({ testimonial }) {
+    const handleMouseMove = (event) => {
+        const rect = event.currentTarget.getBoundingClientRect();
+        event.currentTarget.style.setProperty('--spotlight-x', `${event.clientX - rect.left}px`);
+        event.currentTarget.style.setProperty('--spotlight-y', `${event.clientY - rect.top}px`);
+    };
 
+    return (
+        <article className="testimonial-spotlight-card" onMouseMove={handleMouseMove}>
+            <div className="testimonial-quote-mark">“</div>
+            <div className="testimonial-rating">
+                {Array.from({ length: testimonial.rating }).map((_, index) => (
+                    <i className="fas fa-star" key={index} />
+                ))}
+            </div>
+            <p className="testimonial-text">{testimonial.text}</p>
+            <div className="testimonial-author">
+                <div className="testimonial-author-seal">{testimonial.name.charAt(0)}</div>
+                <div>
+                    <h4>{testimonial.name}</h4>
+                    <span>{testimonial.role}</span>
+                </div>
+            </div>
+        </article>
+    );
+}
+
+export default function Home({ products, content }) {
     return (
         <div className="home-page-wrapper fade-in-section">
             <div className="hero-banner-custom" style={{ position: 'relative' }}>
@@ -22,24 +48,23 @@ export default function Home({ products, content }) {
 
             <section className="featured-carousel-section">
                 <SectionHeader eyebrow="Exceptional Masterpieces" title="Our Collections" />
-                <div className="home-categories-grid">
+                <div className="home-collections-circle-wrapper">
                     {Object.entries(content.collectionMetadata).filter(([key]) => key !== 'all').map(([key, value]) => (
                         <a
                             href={`#/collections?filter=${key}`}
-                            className="home-category-card"
+                            className="home-collection-circle-card"
                             key={key}
                         >
-                            <div className="home-category-img-wrap">
+                            <div className="circle-image-wrap">
                                 <img
-                                    src={imageUrl(value.image)}
+                                    src={imageUrl(key === 'sets' ? 'assets/images/set_2_a.webp' : value.image)}
                                     alt={value.title}
-                                    className="home-category-img"
+                                    className="circle-image"
                                     loading="lazy"
+                                    style={{ objectPosition: value.backgroundPosition || 'center' }}
                                 />
-                                <div className="home-category-text-overlay">
-                                    <h3>{value.title}</h3>
-                                </div>
                             </div>
+                            <span className="circle-label">{value.title}</span>
                         </a>
                     ))}
                 </div>
@@ -65,18 +90,7 @@ export default function Home({ products, content }) {
                     <SectionHeader eyebrow="Stories from our clients" title="Testimonials" />
                     <div className="testimonials-grid">
                         {content.testimonials.map((testimonial) => (
-                            <div className="testimonial-card" key={testimonial.name}>
-                                <div className="testimonial-rating">
-                                    {Array.from({ length: testimonial.rating }).map((_, index) => (
-                                        <i className="fas fa-star" key={index} />
-                                    ))}
-                                </div>
-                                <p className="testimonial-text">"{testimonial.text}"</p>
-                                <div className="testimonial-author">
-                                    <h4>{testimonial.name}</h4>
-                                    <span>{testimonial.role}</span>
-                                </div>
-                            </div>
+                            <TestimonialSpotlightCard testimonial={testimonial} key={testimonial.name} />
                         ))}
                     </div>
                 </div>

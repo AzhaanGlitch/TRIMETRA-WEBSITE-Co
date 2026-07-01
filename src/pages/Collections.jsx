@@ -1,6 +1,46 @@
 import { useEffect, useMemo, useState } from 'react';
-import ProductCard from '../components/ProductCard.jsx';
 import { imageUrl } from '../utils/assets.js';
+
+function ProductPortrait({ product }) {
+    const [isRecentlyViewed, setIsRecentlyViewed] = useState(false);
+    const materials = product.materials.slice(0, 2).join(' / ');
+
+    useEffect(() => {
+        try {
+            const saved = localStorage.getItem('trimetra_recently_viewed');
+            const ids = saved ? JSON.parse(saved) : [];
+            setIsRecentlyViewed(ids.includes(product.id));
+        } catch (e) {
+            setIsRecentlyViewed(false);
+        }
+    }, [product.id]);
+
+    return (
+        <a href={`#/product/${product.id}`} className="collection-product-portrait">
+            <figure className="collection-product-frame">
+                {isRecentlyViewed && (
+                    <span className="collection-recently-viewed-tag">
+                        <i className="far fa-clock" /> Recently Viewed
+                    </span>
+                )}
+                <img
+                    src={imageUrl(product.images[0])}
+                    alt={product.name}
+                    loading="lazy"
+                    style={{ objectPosition: product.objectPosition || 'center' }}
+                />
+            </figure>
+            <div className="collection-product-caption">
+                <span>{product.collection}</span>
+                <h3>{product.name}</h3>
+                <p>{materials}</p>
+                <strong>
+                    View Piece <i className="fas fa-arrow-right" />
+                </strong>
+            </div>
+        </a>
+    );
+}
 
 export default function Collections({ products, content, initialFilter }) {
     const [currentFilter, setCurrentFilter] = useState(initialFilter || 'all');
@@ -33,7 +73,13 @@ export default function Collections({ products, content, initialFilter }) {
                     </div>
                 </div>
 
-                <div className="product-catalog-grid" style={{ marginTop: '50px' }}>
+                <div className="collection-display-heading">
+                    <span>Curated Display</span>
+                    <h2>{currentFilter === 'all' ? 'A Gallery Of Signature Pieces' : `${meta.title} Showcase`}</h2>
+                    <p>Browse each design as an editorial display piece, with composition and craftsmanship taking focus.</p>
+                </div>
+
+                <div className="collection-product-display">
                     {filteredProducts.length === 0 ? (
                         <div className="empty-catalog">
                             <i className="far fa-gem" />
@@ -41,7 +87,9 @@ export default function Collections({ products, content, initialFilter }) {
                             <p>We are currently updating our collection.</p>
                         </div>
                     ) : (
-                        filteredProducts.map((product) => <ProductCard key={product.id} product={product} />)
+                        filteredProducts.map((product) => (
+                            <ProductPortrait key={product.id} product={product} />
+                        ))
                     )}
                 </div>
             </div>

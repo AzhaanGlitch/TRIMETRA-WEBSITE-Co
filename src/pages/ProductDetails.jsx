@@ -81,6 +81,77 @@ export default function ProductDetails({ products, content, productId, addToRece
                     </div>
                 </div>
             </div>
+
+            {/* Campaigns Collage Section */}
+            <section className="campaigns-collage-section fade-in-section">
+                <div className="campaigns-header">
+                    <span className="campaigns-subtitle">Editorial Campaigns</span>
+                    <h2 className="campaigns-title">The Victorian Heirloom</h2>
+                </div>
+                
+                <div className="campaigns-grid-collage">
+                    <div className="collage-item item-large">
+                        <div className="collage-img-wrap">
+                            <img src={imageUrl('assets/images/craftsmanship.webp')} alt="Victorian Heirloom" />
+                        </div>
+                        <div className="collage-content-overlay">
+                            <span className="collage-tag">Exclusive Edition</span>
+                            <h3>The Victorian Heirloom</h3>
+                            <p>A tribute to royal heritage and intricate craftsmanship, meticulously designed for timeless elegance.</p>
+                        </div>
+                    </div>
+
+                    <a href="#/collections?filter=sets" className="collage-item item-medium">
+                        <div className="collage-img-wrap">
+                            <img src={imageUrl('assets/images/set_a.webp')} alt="Bridal Sets" />
+                        </div>
+                        <div className="collage-content-overlay">
+                            <h3>Signature Sets</h3>
+                            <span className="collage-link-label">Explore Collection <i className="fas fa-chevron-right" /></span>
+                        </div>
+                    </a>
+
+                    <a href="#/collections?filter=earrings" className="collage-item item-small">
+                        <div className="collage-img-wrap">
+                            <img src={imageUrl('assets/images/earrings_1.webp')} alt="Fine Earrings" />
+                        </div>
+                        <div className="collage-content-overlay">
+                            <h3>Earrings</h3>
+                            <span className="collage-link-label">Explore <i className="fas fa-chevron-right" /></span>
+                        </div>
+                    </a>
+
+                    <a href="#/collections?filter=rings" className="collage-item item-small">
+                        <div className="collage-img-wrap">
+                            <img src={imageUrl('assets/images/ring_1.webp')} alt="Bespoke Rings" />
+                        </div>
+                        <div className="collage-content-overlay">
+                            <h3>Rings</h3>
+                            <span className="collage-link-label">Explore <i className="fas fa-chevron-right" /></span>
+                        </div>
+                    </a>
+
+                    <a href="#/collections?filter=bracelets" className="collage-item item-medium-b">
+                        <div className="collage-img-wrap">
+                            <img src={imageUrl('assets/images/bracelet_11.webp')} alt="Luxury Bracelets" />
+                        </div>
+                        <div className="collage-content-overlay">
+                            <h3>Bangles & Bracelets</h3>
+                            <span className="collage-link-label">Explore Collection <i className="fas fa-chevron-right" /></span>
+                        </div>
+                    </a>
+
+                    <a href="#/collections?filter=necklaces" className="collage-item item-medium">
+                        <div className="collage-img-wrap">
+                            <img src={imageUrl('assets/images/necklace_3.webp')} alt="Heritage Necklaces" />
+                        </div>
+                        <div className="collage-content-overlay">
+                            <h3>Necklaces</h3>
+                            <span className="collage-link-label">Explore Collection <i className="fas fa-chevron-right" /></span>
+                        </div>
+                    </a>
+                </div>
+            </section>
         </div>
     );
 }

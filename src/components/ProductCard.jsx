@@ -30,9 +30,17 @@ export default function ProductCard({ product, featured = false, compactMaterial
                     <img
                         src={imageUrl(product.images[0])}
                         alt={product.name}
-                        className="product-card-img"
+                        className={`product-card-img primary-image ${product.images[1] ? 'has-hover' : ''}`}
                         loading="lazy"
                     />
+                    {product.images[1] && (
+                        <img
+                            src={imageUrl(product.images[1])}
+                            alt={`${product.name} alternate view`}
+                            className="product-card-img hover-image"
+                            loading="lazy"
+                        />
+                    )}
                 </div>
                 <div className="product-card-info">
                     <span className="product-card-collection">{product.collection}</span>
@@ -48,4 +56,3 @@ export default function ProductCard({ product, featured = false, compactMaterial
         </div>
     );
 }
-
