@@ -32,7 +32,6 @@ export default function ProductCard({ product, featured = false, compactMaterial
                         alt={product.name}
                         className="product-card-img"
                         loading="lazy"
-                        style={{ objectPosition: product.objectPosition || 'center' }}
                     />
                 </div>
                 <div className="product-card-info">
