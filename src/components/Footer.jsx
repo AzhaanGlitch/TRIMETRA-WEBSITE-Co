@@ -7,11 +7,23 @@ export default function Footer({ content }) {
         <footer className="luxury-footer">
             <div className="footer-container">
                 <div className="footer-brand">
-                    <a href="#/home" className="footer-logo">
-                        <img src={imageUrl('assets/images/logo.png')} alt="TRIMETRA logo" className="site-logo footer-site-logo" />
-                    </a>
-                    <p className="footer-subunit" style={{ fontSize: '0.85rem', color: 'var(--color-gold)', fontWeight: '700', margin: '5px 0 10px', letterSpacing: '0.05em', textTransform: 'uppercase' }}>A unit by Osiya Bullion</p>
-                    <p className="footer-address" style={{ fontSize: '0.85rem', color: 'rgba(255, 255, 255, 0.72)', lineHeight: '1.5', marginBottom: '20px' }}>
+                    <div className="footer-logo-group" style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+                        <a href="#/home" className="footer-logo" style={{ display: 'inline-block' }}>
+                            <img src={imageUrl('assets/images/logo.png')} alt="TRIMETRA logo" className="site-logo footer-site-logo" />
+                        </a>
+                        <p className="footer-subunit" style={{ 
+                            fontFamily: 'var(--font-heading)',
+                            fontSize: '0.75rem',
+                            color: 'var(--color-gold)',
+                            fontWeight: '500',
+                            letterSpacing: '0.18em',
+                            textTransform: 'uppercase',
+                            margin: '0',
+                            opacity: '0.9',
+                            lineHeight: '1.2'
+                        }}>A unit by Osiya Bullion</p>
+                    </div>
+                    <p className="footer-address" style={{ fontSize: '0.85rem', color: 'rgba(255, 255, 255, 0.72)', lineHeight: '1.5', marginBottom: '20px', marginTop: '10px' }}>
                         Shop No. 3, 2nd Floor, Calian House,<br />
                         Shaikh Memon Street, Above Mumbadevi Jalebiwala,<br />
                         Zaveri Bazaar, Mumbai - 400002

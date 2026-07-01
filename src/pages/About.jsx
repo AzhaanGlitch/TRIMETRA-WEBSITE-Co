@@ -37,7 +37,6 @@ export default function About({ content }) {
 
             <section className="about-intro-grid white-story-box reveal-on-scroll">
                 <div className="about-intro-text reveal-on-scroll reveal-slide-left" style={{ '--reveal-delay': '120ms' }}>
-                    <span className="section-subtitle" style={{ textAlign: 'left', marginBottom: 10 }}>The Visionary Behind the Brand</span>
                     <h2>{founderStory.title}</h2>
                     {founderStory.paragraphs.map((paragraph, index) => (
                         <p className="text-reveal-line" style={{ '--reveal-delay': `${220 + index * 120}ms` }} key={paragraph}>{paragraph}</p>
@@ -52,7 +51,7 @@ export default function About({ content }) {
                 <div className="reveal-on-scroll">
                     <SectionHeader eyebrow="Responsible Luxury" title={whyChooseUs.title} />
                 </div>
-                
+
                 <div className="why-choose-grid">
                     {whyChooseUs.items.map((item, index) => (
                         <div className="why-card" key={item.title}>
