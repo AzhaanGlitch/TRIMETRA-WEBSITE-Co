@@ -1325,18 +1325,6 @@ p {
     transition: var(--transition-smooth);
 }
 
-.product-card-img.fit-black-contain {
-    object-fit: contain !important;
-    background-color: #000000 !important;
-    padding: 10px;
-}
-
-.product-card-img.fit-grey-contain {
-    object-fit: contain !important;
-    background-color: #f7f7f7 !important;
-    padding: 10px;
-}
-
 .product-card:hover .product-card-img {
     transform: scale(1.06);
 }

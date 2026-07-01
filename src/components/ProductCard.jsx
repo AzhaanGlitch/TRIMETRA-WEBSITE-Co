@@ -17,13 +17,6 @@ export default function ProductCard({ product, featured = false, compactMaterial
         }
     }, [product.id]);
 
-    let customClass = '';
-    if (product.id === 'TRM-ER-008') {
-        customClass = 'fit-black-contain';
-    } else if (product.id === 'TRM-ER-007' || product.id === 'TRM-ER-003') {
-        customClass = 'fit-grey-contain';
-    }
-
     return (
         <div className="product-card fade-in-section">
             <a href={`#/product/${product.id}`} className="product-card-link-wrapper">
@@ -37,7 +30,7 @@ export default function ProductCard({ product, featured = false, compactMaterial
                     <img
                         src={imageUrl(product.images[0])}
                         alt={product.name}
-                        className={`product-card-img ${customClass}`}
+                        className="product-card-img"
                         loading="lazy"
                     />
                 </div>
