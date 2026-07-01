@@ -1315,17 +1315,30 @@ p {
     border-radius: 10px;
 }
 
+.product-card-img-blur-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(15px) brightness(0.65) saturate(1.2);
+    transform: scale(1.1);
+    z-index: 1;
+}
+
 .product-card-img {
+    position: relative;
     width: 100%;
     height: 100%;
     object-fit: contain;
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
+    z-index: 2;
     transition: var(--transition-smooth);
 }
 
 .product-card:hover .product-card-img {
-    transform: scale(1.04);
+    transform: scale(1.05);
 }
 
 .product-card-badge {
@@ -1340,7 +1353,7 @@ p {
     letter-spacing: 0.1em;
     padding: 4px 10px;
     border-radius: 4px;
-    z-index: 2;
+    z-index: 10;
 }
 
 .product-card-badge.recently-viewed-badge {

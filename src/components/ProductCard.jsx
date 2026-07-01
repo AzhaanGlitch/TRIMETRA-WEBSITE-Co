@@ -29,6 +29,12 @@ export default function ProductCard({ product, featured = false, compactMaterial
                     )}
                     <img
                         src={imageUrl(product.images[0])}
+                        alt=""
+                        className="product-card-img-blur-bg"
+                        loading="lazy"
+                    />
+                    <img
+                        src={imageUrl(product.images[0])}
                         alt={product.name}
                         className="product-card-img"
                         loading="lazy"
