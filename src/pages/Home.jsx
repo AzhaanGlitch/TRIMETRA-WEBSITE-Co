@@ -13,7 +13,7 @@ export default function Home({ products, content }) {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentSlide((prev) => (prev + 1) % slides.length);
-        }, 10000);
+        }, 5000);
 
         return () => clearInterval(interval);
     }, [slides.length]);
