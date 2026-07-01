@@ -62,7 +62,7 @@ export default function Collections({ products, content, initialFilter }) {
                 <div
                     className="collection-hero-banner"
                     style={{
-                        backgroundImage: `radial-gradient(circle at top left, rgba(234, 181, 199, 0.25) 0%, rgba(98, 3, 53, 0.75) 55%, rgba(98, 3, 53, 0.92) 100%), url('${imageUrl(meta.image)}')`,
+                        backgroundImage: `radial-gradient(circle, rgba(0, 0, 0, 0.5) 0%, rgba(55, 2, 30, 0.8) 60%, rgba(10, 0, 5, 0.95) 100%), url('${imageUrl(meta.image)}')`,
                         backgroundPosition: meta.backgroundPosition || 'center'
                     }}
                 >
