@@ -1,10 +1,16 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ErrorPage from './ErrorPage.jsx';
 import { imageUrl, whatsappLink } from '../utils/assets.js';
 
-export default function ProductDetails({ products, content, productId }) {
+export default function ProductDetails({ products, content, productId, addToRecentlyViewed }) {
     const product = products.find((item) => item.id === productId);
     const [selectedImage, setSelectedImage] = useState(0);
+
+    useEffect(() => {
+        if (product && addToRecentlyViewed) {
+            addToRecentlyViewed(product.id);
+        }
+    }, [product, addToRecentlyViewed]);
 
     if (!product) {
         return <ErrorPage message="Product details could not be found. Check if the code is correct." />;

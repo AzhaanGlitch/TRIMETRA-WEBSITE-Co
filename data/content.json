@@ -1,7 +1,7 @@
 {
   "brand": {
     "name": "Trimetra",
-    "tagline": "Timeless Elegance, Crafted for Generations"
+    "tagline": "Exclusive Silver Jewellery"
   },
   "hero": {
     "title": "Sculpted in Gold. Defined by Brilliance.",
@@ -14,14 +14,6 @@
     "paragraphs": [
       "Founded on the principles of design purity, mathematical precision, and exceptional hand-craftsmanship, Trimetra creates fine jewelry that transcends fleeting trends. The name Trimetra is derived from the fusion of symmetry, material integrity, and artistic vision.",
       "Each design starts with a hand-drawn sketch and is brought to life by master artisans who have spent decades perfecting their craft. We source only the finest raw materials\u2014ethically and sustainably\u2014to ensure that every piece is not only beautiful but also a responsible heirloom for the future."
-    ]
-  },
-  "craftsmanship": {
-    "title": "Artisanal Craftsmanship",
-    "subtitle": "Where heritage techniques meet modern precision.",
-    "paragraphs": [
-      "At Trimetra, we believe jewelry is a form of wearable sculpture. Our workshop blends age-old metalworking techniques\u2014like hand-milgrain, detailed filigree, and claw-setting\u2014with high-precision modern tools.",
-      "Every diamond and gemstone is inspected individually by our certified gemologists and hand-set under stereomicroscopes to ensure absolute stability and maximum brilliance. This meticulous attention to detail is why a Trimetra piece retains its fire and luster for a lifetime."
     ]
   },
   "vision": {
@@ -65,9 +57,9 @@
       "address": "trimetrajewel@gmail.com"
     },
     "location": {
-      "address": "Shop No. 3, 2nd Floor, Calian House, Shaikh Memon Street, Above Mumbadevi Jalebiwala, Zaveri Bazaar, Mumbai - 400002",
-      "hours": "Mon - Sat: 10:00 AM - 6:00 PM (By Appointment Only)",
-      "mapEmbedUrl": "https://www.google.com/maps?q=Shop%20No.%203%2C%202nd%20Floor%2C%20Calian%20House%2C%20Shaikh%20Memon%20Street%2C%20Above%20Mumbadevi%20Jalebiwala%2C%20Zaveri%20Bazaar%2C%20Mumbai%20-%20400002&output=embed"
+      "address": "03, Ground floor, Zarine building, 4th Road, opp. Bhabha Hospital, Bandra W, Mumbai 400050",
+      "hours": "Mon - Sat: 10:00 AM - 7:00 PM (By Appointment Only)",
+      "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d21487.134978818376!2d72.83457704894452!3d19.061490269925656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s03%2C%20Ground%20floor%2C%20Zarine%20building%2C%204th%20Road%2C%20opp.%20Bhabha%20Hospital%2C%20Bandra%20W%2C%20Mumbai%20400050!5e1!3m2!1sen!2sin!4v1782890304323!5m2!1sen!2sin"
     }
   },
   "founderStory": {
@@ -113,7 +105,7 @@
     "necklaces": {
       "title": "Necklaces & Pendants",
       "description": "Elegantly draped chains, collars, and brilliant pendants handcrafted in 18k gold and platinum.",
-      "image": "assets/images/necklace_1.webp"
+      "image": "assets/images/necklace_3.webp"
     },
     "earrings": {
       "title": "Earrings & Drops",
@@ -121,17 +113,17 @@
       "image": "assets/images/earrings_1.webp"
     },
     "rings": {
-      "title": "Fine Rings & Bands",
+      "title": "Fine Rings",
       "description": "Exquisite solitaire engagement rings, eternity bands, and custom statement rings.",
       "image": "assets/images/ring_1.webp"
     },
     "bracelets": {
-      "title": "Bracelets & Cuffs",
+      "title": "Bracelets",
       "description": "Timeless tennis bracelets, structured cuffs, and delicate chain bracelets designed for everyday luxury.",
       "image": "assets/images/bracelet_11.webp"
     },
     "sets": {
-      "title": "Signature Jewelry Sets",
+      "title": "Signature Jewellery Sets",
       "description": "Heirloom-quality kundan, diamond, and pearl sets crafted to celebrate life's most precious milestones.",
       "image": "assets/images/set_a.webp",
       "backgroundPosition": "center 30%"

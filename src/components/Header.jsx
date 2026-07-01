@@ -3,7 +3,6 @@ import { imageUrl } from '../utils/assets.js';
 
 const navItems = [
     { href: '#/home', label: 'Home', match: '/home' },
-    { href: '#/collections', label: 'Collections', match: '/collections' },
     { href: '#/about', label: 'About Us', match: '/about' },
     { href: '#/contact', label: 'Contact', match: '/contact' }
 ];
@@ -48,7 +47,7 @@ export default function Header({ currentPath }) {
         <>
             <div className="live-rates-bar">
                 <span className="live-rates-content">
-                    <span className="live-pulse">🟢</span> Live Rate (per g) &nbsp;|&nbsp; Gold 24K: <strong>₹{gold24.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</strong> &nbsp;|&nbsp; Gold 22K: <strong>₹{gold22.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</strong> &nbsp;|&nbsp; Silver: <strong>₹{silver.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</strong>
+                    <span className="live-pulse">🟢</span> Live Rate (per g) &nbsp;|&nbsp; Silver: <strong>₹{silver.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</strong>|&nbsp; Gold 24K: <strong>₹{gold24.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</strong> &nbsp;|&nbsp; Gold 22K: <strong>₹{gold22.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</strong>
                 </span>
             </div>
 

@@ -2,32 +2,19 @@ import { useEffect, useMemo, useState } from 'react';
 import ProductCard from '../components/ProductCard.jsx';
 import { imageUrl } from '../utils/assets.js';
 
-const filters = [
-    { id: 'all', label: 'All' },
-    { id: 'rings', label: 'Rings' },
-    { id: 'necklaces', label: 'Necklaces' },
-    { id: 'earrings', label: 'Earrings' },
-    { id: 'bracelets', label: 'Bracelets' },
-    { id: 'sets', label: 'Sets' }
-];
-
 export default function Collections({ products, content, initialFilter }) {
-    const [currentFilter, setCurrentFilter] = useState(initialFilter);
+    const [currentFilter, setCurrentFilter] = useState(initialFilter || 'all');
 
     useEffect(() => {
-        setCurrentFilter(initialFilter);
+        setCurrentFilter(initialFilter || 'all');
     }, [initialFilter]);
 
     const meta = content.collectionMetadata[currentFilter] || content.collectionMetadata.all;
+
     const filteredProducts = useMemo(() => {
         if (currentFilter === 'all') return products;
         return products.filter((product) => product.collection === currentFilter);
     }, [currentFilter, products]);
-
-    const handleFilter = (filter) => {
-        setCurrentFilter(filter);
-        window.location.hash = `#/collections?filter=${filter}`;
-    };
 
     return (
         <div className="collections-page-global-wrapper">
@@ -46,25 +33,12 @@ export default function Collections({ products, content, initialFilter }) {
                     </div>
                 </div>
 
-                <div className="filter-tabs-container">
-                    {filters.map((filter) => (
-                        <button
-                            type="button"
-                            className={`filter-tab${currentFilter === filter.id ? ' active' : ''}`}
-                            key={filter.id}
-                            onClick={() => handleFilter(filter.id)}
-                        >
-                            {filter.label}
-                        </button>
-                    ))}
-                </div>
-
-                <div className="product-catalog-grid">
+                <div className="product-catalog-grid" style={{ marginTop: '50px' }}>
                     {filteredProducts.length === 0 ? (
                         <div className="empty-catalog">
                             <i className="far fa-gem" />
                             <h3>No jewelry pieces found</h3>
-                            <p>We are currently updating our collection. Please select another category.</p>
+                            <p>We are currently updating our collection.</p>
                         </div>
                     ) : (
                         filteredProducts.map((product) => <ProductCard key={product.id} product={product} />)

@@ -1,7 +1,7 @@
 [
   {
     "id": "TRM-NC-001",
-    "name": "Aurelia Diamond Pendant",
+    "name": "Aurelia Pendant",
     "collection": "necklaces",
     "description": "An exquisite 18k solid yellow gold necklace featuring a brilliant-cut center diamond surrounded by delicate filigree work. Handcrafted to reflect the timeless craftsmanship of Trimetra.",
     "materials": [
@@ -18,7 +18,7 @@
   },
   {
     "id": "TRM-NC-002",
-    "name": "Luna Pearl Choker",
+    "name": "Luna Choker",
     "collection": "sets",
     "description": "Luminous South Sea pearls hand-selected for their mirror-like luster, strung together with a signature 18k white gold clasp encrusted with micro-pavé diamonds.",
     "materials": [
@@ -35,7 +35,7 @@
   },
   {
     "id": "TRM-NC-003",
-    "name": "Vesper Sapphire Halo Necklace",
+    "name": "Vesper Sapphire Necklace",
     "collection": "necklaces",
     "description": "An enchanting deep royal blue sapphire oval center stone, surrounded by a double halo of sparkling diamonds, suspended from a delicate 18k white gold chain.",
     "materials": [
@@ -53,7 +53,7 @@
   },
   {
     "id": "TRM-NC-004",
-    "name": "Starlight Diamond Necklace",
+    "name": "Starlight Necklace",
     "collection": "necklaces",
     "description": "An architectural pendant in solid white gold, with micro-pavé diamonds arranged in geometric patterns resembling the night sky.",
     "materials": [
@@ -102,7 +102,7 @@
   },
   {
     "id": "TRM-ER-003",
-    "name": "Jharokha Ruby & Polki Studs",
+    "name": "Jharokha Ruby Studs",
     "collection": "earrings",
     "description": "Elegant triangular studs inspired by royal Jharokha archways, featuring vibrant hand-cut rubies bordering a central polki diamond floral cluster.",
     "materials": [
@@ -118,7 +118,7 @@
   },
   {
     "id": "TRM-ER-004",
-    "name": "Mayura Filigree Dome Studs",
+    "name": "Mayura Dome Studs",
     "collection": "earrings",
     "description": "Dazzling round dome-style studs featuring intricate yellow gold filigree work radiating from a brilliant-cut center diamond, bordered by a delicate halo.",
     "materials": [
@@ -134,7 +134,7 @@
   },
   {
     "id": "TRM-ER-005",
-    "name": "Rajkumari Meenakari Polki Studs",
+    "name": "Rajkumari Polki Studs",
     "collection": "earrings",
     "description": "Exquisite round floral-shaped studs showcasing a large central slice of polki diamond enclosed in a vibrant crimson red enamel border (meenakari) and surrounded by a pear-cut polki diamond halo.",
     "materials": [
@@ -152,7 +152,7 @@
   },
   {
     "id": "TRM-ER-006",
-    "name": "Nirvana Pear Polki Studs",
+    "name": "Nirvana Polki Studs",
     "collection": "earrings",
     "description": "Timeless floral cluster studs featuring a magnificent pear-shaped (teardrop) central polki diamond slice, outlined in a delicate pavé diamond border and framed by round polki petals.",
     "materials": [
@@ -168,7 +168,7 @@
   },
   {
     "id": "TRM-ER-007",
-    "name": "Gulbahar Sunflower Ruby Studs",
+    "name": "Gulbahar Ruby Studs",
     "collection": "earrings",
     "description": "A masterclass in color and form, these sunflower-inspired studs feature a central uncut polki diamond bordered in gold, with vibrant pinkish-purple ruby beads radiating outwards as delicate petals.",
     "materials": [
@@ -185,7 +185,7 @@
   },
   {
     "id": "TRM-ER-008",
-    "name": "Empress Kundan Crescent Drops",
+    "name": "Empress Crescent Drops",
     "collection": "earrings",
     "description": "Royal crescent-shaped drop earrings featuring a brilliant kundan cluster, a green emerald-inlay crescent (meenakari), and hanging south sea pearl drops. Perfectly matching the Empress Bridal Set.",
     "materials": [
@@ -202,7 +202,7 @@
   },
   {
     "id": "TRM-ER-009",
-    "name": "Padma Dainty Lotus Studs",
+    "name": "Padma Lotus Studs",
     "collection": "earrings",
     "description": "Delicate and lightweight floral studs crafted in yellow gold, showcasing a central brilliant-cut diamond surrounded by a ring of ten pear-shaped uncut diamonds.",
     "materials": [
@@ -218,7 +218,7 @@
   },
   {
     "id": "TRM-ER-010",
-    "name": "Devika Cushion Halo Studs",
+    "name": "Devika Cushion Studs",
     "collection": "earrings",
     "description": "A contemporary blend of vintage and modern aesthetics, featuring cushion-cut polki diamonds surrounded by a double square halo of micro-pavé diamonds.",
     "materials": [
@@ -265,7 +265,7 @@
   },
   {
     "id": "TRM-BD-001",
-    "name": "Empress Kundan & Pearl Bridal Set",
+    "name": "Empress Bridal Set",
     "collection": "sets",
     "description": "A majestic bridal collar set featuring five rows of pristine seed pearls holding a grand central medallion crafted in 22k yellow gold. Encrusted with brilliant polki diamonds and a border of rich green emerald inlay (meenakari). Comes with matching crescent drop earrings.",
     "materials": [

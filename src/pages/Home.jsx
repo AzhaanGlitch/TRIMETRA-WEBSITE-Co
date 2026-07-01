@@ -1,58 +1,64 @@
 import { useEffect, useState } from 'react';
-import FeaturedCarousel from '../components/FeaturedCarousel.jsx';
 import SectionHeader from '../components/SectionHeader.jsx';
-import { whatsappLink } from '../utils/assets.js';
-
-const HERO_TITLE = 'TRIMETRA';
+import { whatsappLink, imageUrl } from '../utils/assets.js';
 
 export default function Home({ products, content }) {
-    const [typingStarted, setTypingStarted] = useState(false);
-    const [typedText, setTypedText] = useState('');
-    const featuredProducts = products.filter((product) => product.featured);
+    const slides = [
+        'assets/images/Home.png',
+        'assets/images/untitled_design.png',
+        'assets/images/Home1.png'
+    ];
+    const [currentSlide, setCurrentSlide] = useState(0);
 
     useEffect(() => {
-        const timeout = setTimeout(() => setTypingStarted(true), 400);
-        return () => clearTimeout(timeout);
-    }, []);
+        const interval = setInterval(() => {
+            setCurrentSlide((prev) => (prev + 1) % slides.length);
+        }, 10000);
 
-    useEffect(() => {
-        if (!typingStarted) return undefined;
-        if (typedText.length >= HERO_TITLE.length) return undefined;
-        const timeout = setTimeout(() => {
-            setTypedText(HERO_TITLE.slice(0, typedText.length + 1));
-        }, 110);
-        return () => clearTimeout(timeout);
-    }, [typingStarted, typedText]);
-
+        return () => clearInterval(interval);
+    }, [slides.length]);
     return (
         <div className="fade-in-section">
-            <section className="hero-banner-custom">
-                <svg width="0" height="0" style={{ position: 'absolute' }} aria-hidden="true">
-                    <defs>
-                        <clipPath id="wedge-clip" clipPathUnits="objectBoundingBox">
-                            <path d="M 0.05,0.28 C 0.02,0.28 0,0.32 0,0.38 L 0,0.62 C 0,0.68 0.02,0.72 0.05,0.72 L 0.85,0.96 C 0.92,0.98 1,0.8 1,0.5 C 1,0.2 0.92,0.02 0.85,0.04 Z" />
-                        </clipPath>
-                    </defs>
-                </svg>
-
-                <div className="hero-cta-overlay">
-                    <h2 className="hero-cta-title">
-                        <span className="typewriter-text">{typedText}</span>
-                        <span className={`typewriter-cursor${typedText.length >= HERO_TITLE.length ? ' done' : ''}`}>|</span>
-                    </h2>
-                    <p className="hero-cta-tagline">Trust Transformed into Timeless Elegance</p>
-                    <a
-                        href="#/collections"
-                        className="gold-btn hero-cta-btn"
-                    >
-                        <i className="fas fa-shopping-bag" /> Check our Collection
-                    </a>
-                </div>
-            </section>
+            <a
+                href="#/collections"
+                className="hero-banner-custom"
+                aria-label="Explore our Collections"
+                style={{ display: 'flex', textDecoration: 'none', cursor: 'pointer', position: 'relative' }}
+            >
+                {slides.map((slide, index) => (
+                    <div
+                        key={slide}
+                        className={`hero-slide${index === currentSlide ? ' active' : ''}`}
+                        style={{
+                            backgroundImage: `url('${imageUrl(slide)}')`
+                        }}
+                    />
+                ))}
+            </a>
 
             <section className="featured-carousel-section">
-                <SectionHeader eyebrow="Exceptional Masterpieces" title="Featured Creations" />
-                <FeaturedCarousel products={featuredProducts} />
+                <SectionHeader eyebrow="Exceptional Masterpieces" title="Our Collections" />
+                <div className="home-categories-grid">
+                    {Object.entries(content.collectionMetadata).filter(([key]) => key !== 'all').map(([key, value]) => (
+                        <a
+                            href={`#/collections?filter=${key}`}
+                            className="home-category-card"
+                            key={key}
+                        >
+                            <div className="home-category-img-wrap">
+                                <img
+                                    src={imageUrl(value.image)}
+                                    alt={value.title}
+                                    className="home-category-img"
+                                    loading="lazy"
+                                />
+                                <div className="home-category-text-overlay">
+                                    <h3>{value.title}</h3>
+                                </div>
+                            </div>
+                        </a>
+                    ))}
+                </div>
             </section>
 
             <section className="home-cta-banner">

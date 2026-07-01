@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Lenis from 'lenis';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
@@ -8,12 +8,16 @@ import Collections from './pages/Collections.jsx';
 import ProductDetails from './pages/ProductDetails.jsx';
 import About from './pages/About.jsx';
 import Contact from './pages/Contact.jsx';
+import RefundPolicy from './pages/RefundPolicy.jsx';
+import ShippingPolicy from './pages/ShippingPolicy.jsx';
+import JewelleryCare from './pages/JewelleryCare.jsx';
 import ErrorPage from './pages/ErrorPage.jsx';
 import { useHashRoute } from './hooks/useHashRoute.js';
+import RecentlyViewedDrawer from './components/RecentlyViewedDrawer.jsx';
 import products from '../data/products.json';
 import content from '../data/content.json';
 
-function getPage(route) {
+function getPage(route, addToRecentlyViewed) {
     const { path, query } = route;
 
     if (path === '/' || path === '/home') {
@@ -25,7 +29,14 @@ function getPage(route) {
     }
 
     if (path.startsWith('/product/')) {
-        return <ProductDetails products={products} content={content} productId={path.replace('/product/', '')} />;
+        return (
+            <ProductDetails
+                products={products}
+                content={content}
+                productId={path.replace('/product/', '')}
+                addToRecentlyViewed={addToRecentlyViewed}
+            />
+        );
     }
 
     if (path === '/about') {
@@ -36,11 +47,47 @@ function getPage(route) {
         return <Contact contact={content.contact} />;
     }
 
+    if (path === '/refund-policy') {
+        return <RefundPolicy />;
+    }
+
+    if (path === '/shipping-policy') {
+        return <ShippingPolicy />;
+    }
+
+    if (path === '/jewellery-care') {
+        return <JewelleryCare />;
+    }
+
     return <ErrorPage message="We couldn't find the page you are looking for. Navigate back to Trimetra." />;
 }
 
 export default function App() {
     const route = useHashRoute();
+    const lenisRef = useRef(null);
+
+    const [recentlyViewedIds, setRecentlyViewedIds] = useState(() => {
+        try {
+            const saved = localStorage.getItem('trimetra_recently_viewed');
+            return saved ? JSON.parse(saved) : [];
+        } catch (e) {
+            return [];
+        }
+    });
+
+    const addToRecentlyViewed = (id) => {
+        setRecentlyViewedIds((prev) => {
+            const filtered = prev.filter((item) => item !== id);
+            const updated = [id, ...filtered].slice(0, 8); // Keep up to 8 products
+            localStorage.setItem('trimetra_recently_viewed', JSON.stringify(updated));
+            return updated;
+        });
+    };
+
+    const clearRecentlyViewed = () => {
+        setRecentlyViewedIds([]);
+        localStorage.removeItem('trimetra_recently_viewed');
+    };
 
     useEffect(() => {
         const lenis = new Lenis({
@@ -48,6 +95,8 @@ export default function App() {
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
             smoothWheel: true,
         });
+
+        lenisRef.current = lenis;
 
         function raf(time) {
             lenis.raf(time);
@@ -58,18 +107,30 @@ export default function App() {
 
         return () => {
             lenis.destroy();
+            lenisRef.current = null;
         };
     }, []);
 
     // Scroll to top on route change
     useEffect(() => {
-        window.scrollTo(0, 0);
+        if (lenisRef.current) {
+            lenisRef.current.scrollTo(0, { immediate: true });
+        } else {
+            window.scrollTo(0, 0);
+        }
     }, [route.path]);
 
     return (
         <>
             <Header currentPath={route.path} />
-            <main id="app-root">{getPage(route)}</main>
+            <main id="app-root">{getPage(route, addToRecentlyViewed)}</main>
+            <RecentlyViewedDrawer
+                recentlyViewedIds={recentlyViewedIds}
+                products={products}
+                content={content}
+                clearRecentlyViewed={clearRecentlyViewed}
+                currentPath={route.path}
+            />
             <FloatingWhatsApp contact={content.contact} />
             <Footer content={content} />
         </>

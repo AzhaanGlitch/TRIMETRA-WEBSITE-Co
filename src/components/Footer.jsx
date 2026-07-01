@@ -10,7 +10,12 @@ export default function Footer({ content }) {
                     <a href="#/home" className="footer-logo">
                         <img src={imageUrl('assets/images/logo.png')} alt="TRIMETRA logo" className="site-logo footer-site-logo" />
                     </a>
-                    <p className="footer-tagline">{brand.tagline}</p>
+                    <p className="footer-subunit" style={{ fontSize: '0.85rem', color: 'var(--color-gold)', fontWeight: '700', margin: '5px 0 10px', letterSpacing: '0.05em', textTransform: 'uppercase' }}>A unit by Osiya Bullion</p>
+                    <p className="footer-address" style={{ fontSize: '0.85rem', color: 'rgba(255, 255, 255, 0.72)', lineHeight: '1.5', marginBottom: '20px' }}>
+                        Shop No. 3, 2nd Floor, Calian House,<br />
+                        Shaikh Memon Street, Above Mumbadevi Jalebiwala,<br />
+                        Zaveri Bazaar, Mumbai - 400002
+                    </p>
                     <div className="footer-insta-wrap">
                         <a href={contact.instagram.url} target="_blank" rel="noopener noreferrer" className="footer-insta-link">
                             <i className="fab fa-instagram" /> <span>{contact.instagram.handle}</span>
@@ -27,13 +32,11 @@ export default function Footer({ content }) {
                 </div>
 
                 <div className="footer-links-col">
-                    <h3>Collections</h3>
+                    <h3>Support</h3>
                     <ul>
-                        <li><a href="#/collections?filter=necklaces">Necklaces</a></li>
-                        <li><a href="#/collections?filter=earrings">Earrings</a></li>
-                        <li><a href="#/collections?filter=rings">Rings</a></li>
-                        <li><a href="#/collections?filter=bracelets">Bracelets</a></li>
-                        <li><a href="#/collections?filter=sets">Sets</a></li>
+                        <li><a href="#/refund-policy">Return & Refund Policy</a></li>
+                        <li><a href="#/shipping-policy">Shipping Policy</a></li>
+                        <li><a href="#/jewellery-care">Jewellery Care</a></li>
                     </ul>
                 </div>
 
