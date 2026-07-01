@@ -13,7 +13,6 @@ import ShippingPolicy from './pages/ShippingPolicy.jsx';
 import JewelleryCare from './pages/JewelleryCare.jsx';
 import ErrorPage from './pages/ErrorPage.jsx';
 import { useHashRoute } from './hooks/useHashRoute.js';
-import RecentlyViewedDrawer from './components/RecentlyViewedDrawer.jsx';
 import products from '../data/products.json';
 import content from '../data/content.json';
 
@@ -124,13 +123,6 @@ export default function App() {
         <>
             <Header currentPath={route.path} />
             <main id="app-root">{getPage(route, addToRecentlyViewed)}</main>
-            <RecentlyViewedDrawer
-                recentlyViewedIds={recentlyViewedIds}
-                products={products}
-                content={content}
-                clearRecentlyViewed={clearRecentlyViewed}
-                currentPath={route.path}
-            />
             <FloatingWhatsApp contact={content.contact} />
             <Footer content={content} />
         </>

@@ -1318,12 +1318,16 @@ p {
 .product-card-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    padding: 12px;
+    background-color: #ffffff;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
     transition: var(--transition-smooth);
 }
 
 .product-card:hover .product-card-img {
-    transform: scale(1.06);
+    transform: scale(1.04);
 }
 
 .product-card-badge {
@@ -1340,6 +1344,26 @@ p {
     border-radius: 4px;
     z-index: 2;
 }
+
+.product-card-badge.recently-viewed-badge {
+    left: auto;
+    right: 12px;
+    top: 12px;
+    background: rgba(101, 11, 56, 0.95);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(208, 170, 108, 0.5);
+    border-radius: 30px;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    padding: 3px 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
 
 .product-card-info {
     display: flex;
@@ -1469,7 +1493,7 @@ p {
 
 .main-image-viewport {
     aspect-ratio: 1/1;
-    background: var(--color-baby-pink);
+    background: #ffffff;
     border: 1px solid var(--border-color);
     position: relative;
     overflow: hidden;
@@ -1478,7 +1502,11 @@ p {
 .main-image-viewport img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    padding: 15px;
+    background-color: #ffffff;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
     transition: var(--transition-smooth);
 }
 
@@ -1493,7 +1521,7 @@ p {
     width: 90px;
     aspect-ratio: 1/1;
     border: 1px solid var(--border-color);
-    background: var(--color-baby-pink);
+    background: #ffffff;
     cursor: pointer;
     overflow: hidden;
     flex-shrink: 0;
@@ -1503,9 +1531,12 @@ p {
 .gallery-thumbnail img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    padding: 5px;
+    background-color: #ffffff;
     filter: brightness(0.6);
 }
+
 
 .gallery-thumbnail.active {
     border-color: var(--color-gold);
@@ -2263,16 +2294,15 @@ p {
     transform: scale(1.015);
 }
 
-/* Custom Split Hero Layout with Semi-Circle Carousel */
 .hero-banner-custom {
-    height: 120vh;
+    height: calc(100vh - 137px);
     width: 100%;
     position: relative;
     display: flex;
     align-items: center;
-    background: none;
+    background: #ffffff;
     overflow: hidden;
-    margin-top: calc(-1 * var(--header-height) - 1px);
+    margin-top: 137px;
     padding: 0 40px;
     z-index: 1;
 }
@@ -2294,7 +2324,7 @@ p {
 
 @media (max-width: 768px) {
     .hero-slide {
-        background-position: 78% center;
+        background-position: center center;
     }
 }
 
@@ -2712,7 +2742,6 @@ p {
 
     /* Snapped Windows / 67% Screen Widths Custom Hero Scaling */
     .hero-banner-custom {
-        height: 110vh;
         padding: 0 30px;
     }
 
@@ -2782,13 +2811,7 @@ p {
 
     /* Custom Hero Mobile styling */
     .hero-banner-custom {
-        height: 110vh;
-        min-height: 550px;
         padding: 0 20px;
-        display: flex;
-        align-items: center;
-        overflow: hidden;
-        position: relative;
     }
 
     .hero-custom-container {
@@ -3032,8 +3055,6 @@ p {
 
     /* Custom Hero Mobile overrides */
     .hero-banner-custom {
-        height: 110vh;
-        min-height: 500px;
         padding: 0 15px;
     }
 
@@ -3502,9 +3523,14 @@ body,
     }
 
     .hero-banner-custom {
-        height: 80vh !important;
-        aspect-ratio: none !important;
-        margin-top: calc(-1 * var(--header-height) - 1px) !important;
+        height: auto !important;
+        aspect-ratio: 1699 / 926 !important;
+        margin-top: 115px !important;
+        min-height: auto !important;
+    }
+    .hero-banner-custom .hero-slide {
+        background-size: cover !important;
+        background-position: center center !important;
     }
 
     /* Headings responsiveness */
@@ -3550,9 +3576,14 @@ body,
     }
 
     .hero-banner-custom {
-        height: 80vh !important;
-        aspect-ratio: none !important;
+        height: auto !important;
+        aspect-ratio: 1699 / 926 !important;
+        margin-top: 115px !important;
         min-height: auto !important;
+    }
+    .hero-banner-custom .hero-slide {
+        background-size: cover !important;
+        background-position: center center !important;
     }
 
     .hero-cta-btn {

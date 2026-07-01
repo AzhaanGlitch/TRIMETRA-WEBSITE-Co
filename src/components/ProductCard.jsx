@@ -1,13 +1,32 @@
+import { useState, useEffect } from 'react';
 import { imageUrl } from '../utils/assets.js';
 
 export default function ProductCard({ product, featured = false, compactMaterials = false }) {
+    const [isRecentlyViewed, setIsRecentlyViewed] = useState(false);
     const materials = compactMaterials ? product.materials[0] : product.materials.join(', ');
+
+    useEffect(() => {
+        try {
+            const saved = localStorage.getItem('trimetra_recently_viewed');
+            if (saved) {
+                const ids = JSON.parse(saved);
+                setIsRecentlyViewed(ids.includes(product.id));
+            }
+        } catch (e) {
+            // Ignore
+        }
+    }, [product.id]);
 
     return (
         <div className="product-card fade-in-section">
-            {featured && <div className="product-card-badge">Featured</div>}
             <a href={`#/product/${product.id}`} className="product-card-link-wrapper">
                 <div className="product-card-img-wrap">
+                    {featured && <div className="product-card-badge">Featured</div>}
+                    {isRecentlyViewed && (
+                        <div className="product-card-badge recently-viewed-badge">
+                            <i className="far fa-clock" /> Recently Viewed
+                        </div>
+                    )}
                     <img
                         src={imageUrl(product.images[0])}
                         alt={product.name}
@@ -30,3 +49,4 @@ export default function ProductCard({ product, featured = false, compactMaterial
         </div>
     );
 }
+
