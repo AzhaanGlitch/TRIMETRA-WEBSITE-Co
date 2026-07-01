@@ -2285,7 +2285,7 @@ p {
 }
 
 .home-page-wrapper {
-    background: linear-gradient(to bottom, #1f020e 250px, transparent 250px);
+    background: transparent;
 }
 
 .hero-banner-custom {
@@ -2297,7 +2297,7 @@ p {
     align-items: center;
     background: #1f020e;
     overflow: hidden;
-    margin-top: 137px;
+    margin-top: 0;
     padding: 0 40px;
     z-index: 1;
 }
