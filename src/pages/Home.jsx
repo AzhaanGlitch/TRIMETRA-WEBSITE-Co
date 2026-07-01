@@ -1,40 +1,24 @@
-import { useEffect, useState } from 'react';
 import SectionHeader from '../components/SectionHeader.jsx';
 import { whatsappLink, imageUrl } from '../utils/assets.js';
 
 export default function Home({ products, content }) {
-    const slides = [
-        'assets/images/Home.png',
-        'assets/images/untitled_design.png',
-        'assets/images/Home1.png'
-    ];
-    const [currentSlide, setCurrentSlide] = useState(0);
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentSlide((prev) => (prev + 1) % slides.length);
-        }, 5000);
-
-        return () => clearInterval(interval);
-    }, [slides.length]);
     return (
-        <div className="fade-in-section">
-            <a
-                href="#/collections"
-                className="hero-banner-custom"
-                aria-label="Explore our Collections"
-                style={{ display: 'flex', textDecoration: 'none', cursor: 'pointer', position: 'relative' }}
-            >
-                {slides.map((slide, index) => (
-                    <div
-                        key={slide}
-                        className={`hero-slide${index === currentSlide ? ' active' : ''}`}
-                        style={{
-                            backgroundImage: `url('${imageUrl(slide)}')`
-                        }}
-                    />
-                ))}
-            </a>
+        <div className="home-page-wrapper fade-in-section">
+            <div className="hero-banner-custom" style={{ position: 'relative' }}>
+                <div
+                    className="hero-slide active"
+                    style={{
+                        backgroundImage: `url('${imageUrl('assets/images/Banner.webp')}')`
+                    }}
+                >
+                    <div className="hero-explore-btn-wrap">
+                        <a href="#/collections" className="hero-explore-btn">
+                            Explore Our Collection
+                        </a>
+                    </div>
+                </div>
+            </div>
 
             <section className="featured-carousel-section">
                 <SectionHeader eyebrow="Exceptional Masterpieces" title="Our Collections" />

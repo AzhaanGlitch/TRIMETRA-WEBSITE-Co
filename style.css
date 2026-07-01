@@ -2284,13 +2284,18 @@ p {
     transform: scale(1.015);
 }
 
+.home-page-wrapper {
+    background: linear-gradient(to bottom, #1f020e 250px, transparent 250px);
+}
+
 .hero-banner-custom {
-    height: calc(100vh - 137px);
     width: 100%;
+    height: auto;
+    aspect-ratio: 1699 / 926;
     position: relative;
     display: flex;
     align-items: center;
-    background: #ffffff;
+    background: #1f020e;
     overflow: hidden;
     margin-top: 137px;
     padding: 0 40px;
@@ -2300,8 +2305,10 @@ p {
 .hero-slide {
     position: absolute;
     inset: 0;
+    width: 100%;
+    height: 100%;
     background-size: cover;
-    background-position: center top;
+    background-position: center center;
     background-repeat: no-repeat;
     opacity: 0;
     transition: opacity 1.2s ease-in-out;
@@ -2310,6 +2317,38 @@ p {
 
 .hero-slide.active {
     opacity: 1;
+}
+
+.hero-explore-btn-wrap {
+    position: absolute;
+    bottom: 18%;
+    left: 6.8%;
+    z-index: 10;
+}
+
+.hero-explore-btn {
+    display: inline-block;
+    padding: 15px 38px;
+    background: transparent;
+    border: 1.5px solid var(--color-gold);
+    color: #ffffff;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    border-radius: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.hero-explore-btn:hover {
+    background: var(--color-gold);
+    color: #220314;
+    border-color: var(--color-gold);
+    box-shadow: 0 10px 25px rgba(34, 3, 20, 0.4);
+    transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {
@@ -3517,10 +3556,26 @@ body,
         aspect-ratio: 1699 / 926 !important;
         margin-top: 115px !important;
         min-height: auto !important;
+        background: #1f020e !important;
     }
     .hero-banner-custom .hero-slide {
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
         background-size: cover !important;
         background-position: center center !important;
+    }
+    .hero-explore-btn {
+        padding: 8px 20px !important;
+        font-size: 0.68rem !important;
+        letter-spacing: 0.1em !important;
+        border-radius: 30px !important;
+    }
+    .hero-explore-btn-wrap {
+        bottom: 10.5% !important;
+        left: 6.8% !important;
+        transform: none !important;
     }
 
     /* Headings responsiveness */
@@ -3570,10 +3625,26 @@ body,
         aspect-ratio: 1699 / 926 !important;
         margin-top: 115px !important;
         min-height: auto !important;
+        background: #1f020e !important;
     }
     .hero-banner-custom .hero-slide {
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
         background-size: cover !important;
         background-position: center center !important;
+    }
+    .hero-explore-btn {
+        padding: 6px 14px !important;
+        font-size: 0.52rem !important;
+        letter-spacing: 0.06em !important;
+        border-radius: 30px !important;
+    }
+    .hero-explore-btn-wrap {
+        bottom: 8.5% !important;
+        left: 6.8% !important;
+        transform: none !important;
     }
 
     .hero-cta-btn {
