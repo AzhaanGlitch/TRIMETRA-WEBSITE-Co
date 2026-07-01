@@ -3,6 +3,7 @@ import { imageUrl } from '../utils/assets.js';
 
 export default function ProductCard({ product, featured = false, compactMaterials = false }) {
     const [isRecentlyViewed, setIsRecentlyViewed] = useState(false);
+    const [aspectRatio, setAspectRatio] = useState('square');
     const materials = compactMaterials ? product.materials[0] : product.materials.join(', ');
 
     useEffect(() => {
@@ -17,6 +18,15 @@ export default function ProductCard({ product, featured = false, compactMaterial
         }
     }, [product.id]);
 
+    const handleImageLoad = (e) => {
+        const { naturalWidth, naturalHeight } = e.target;
+        if (naturalWidth > naturalHeight * 1.1) {
+            setAspectRatio('landscape');
+        } else {
+            setAspectRatio('cover-style');
+        }
+    };
+
     return (
         <div className="product-card fade-in-section">
             <a href={`#/product/${product.id}`} className="product-card-link-wrapper">
@@ -30,8 +40,9 @@ export default function ProductCard({ product, featured = false, compactMaterial
                     <img
                         src={imageUrl(product.images[0])}
                         alt={product.name}
-                        className="product-card-img"
+                        className={`product-card-img is-${aspectRatio}`}
                         loading="lazy"
+                        onLoad={handleImageLoad}
                     />
                 </div>
                 <div className="product-card-info">
