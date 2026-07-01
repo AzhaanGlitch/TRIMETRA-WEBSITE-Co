@@ -23,12 +23,15 @@ export default function Footer({ content }) {
                             lineHeight: '1.2'
                         }}>A unit by Osiya Bullion</p>
                     </div>
-                    <p className="footer-address" style={{ fontSize: '0.85rem', color: 'rgba(255, 255, 255, 0.72)', lineHeight: '1.5', marginBottom: '20px', marginTop: '10px' }}>
-                        Shop No. 3, 2nd Floor, Calian House,<br />
-                        Shaikh Memon Street, Above Mumbadevi Jalebiwala,<br />
-                        Zaveri Bazaar, Mumbai - 400002
+                    <p className="footer-address" style={{ fontSize: '0.85rem', color: 'rgba(255, 255, 255, 0.72)', lineHeight: '1.6', marginBottom: '20px', marginTop: '15px', display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
+                        <i className="fas fa-map-marker-alt" style={{ color: 'var(--color-gold)', marginTop: '4px', fontSize: '0.9rem' }} />
+                        <span>
+                            Shop No. 3, 2nd Floor, Calian House,<br />
+                            Shaikh Memon Street, Above Mumbadevi Jalebiwala,<br />
+                            Zaveri Bazaar, Mumbai - 400002
+                        </span>
                     </p>
-                    <div className="footer-insta-wrap">
+                    <div className="footer-insta-wrap" style={{ marginTop: '5px' }}>
                         <a href={contact.instagram.url} target="_blank" rel="noopener noreferrer" className="footer-insta-link">
                             <i className="fab fa-instagram" /> <span>{contact.instagram.handle}</span>
                         </a>
