@@ -2310,7 +2310,7 @@ p {
     position: absolute;
     inset: 0;
     background-size: cover;
-    background-position: center center;
+    background-position: center top;
     background-repeat: no-repeat;
     opacity: 0;
     transition: opacity 1.2s ease-in-out;
