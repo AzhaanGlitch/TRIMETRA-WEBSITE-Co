@@ -53,12 +53,8 @@ export default function Contact({ contact }) {
                                 <div className="contact-method-details">
                                     <h4>Call or WhatsApp</h4>
                                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', alignItems: 'center' }}>
-                                        <a href={`tel:+91${contact.whatsapp.number}`}>
+                                        <a href={whatsappLink(contact.whatsapp.number, contact.whatsapp.message)} target="_blank" rel="noopener noreferrer">
                                             {contact.whatsapp.display}
-                                        </a>
-                                        <span style={{ color: 'rgba(98, 3, 53, 0.15)', fontSize: '0.8rem' }}>|</span>
-                                        <a href={whatsappLink(contact.whatsapp.number, contact.whatsapp.message)} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-                                            <i className="fab fa-whatsapp" style={{ color: '#25d366' }} /> Chat
                                         </a>
                                     </div>
                                     <p style={{ fontSize: '0.8rem', marginTop: 4, color: 'var(--text-muted)' }}>Instant advice & queries</p>
