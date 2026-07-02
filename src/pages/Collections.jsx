@@ -73,11 +73,7 @@ export default function Collections({ products, content, initialFilter }) {
                     </div>
                 </div>
 
-                <div className="collection-display-heading reveal-on-scroll">
-                    <span>Curated Display</span>
-                    <h2>{currentFilter === 'all' ? 'A Gallery Of Signature Pieces' : `${meta.title} Showcase`}</h2>
-                    <p>Browse each design as an editorial display piece, with composition and craftsmanship taking focus.</p>
-                </div>
+
 
                 <div className="collection-product-display reveal-on-scroll">
                     {filteredProducts.length === 0 ? (
