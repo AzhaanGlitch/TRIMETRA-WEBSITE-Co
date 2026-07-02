@@ -52,7 +52,12 @@ export default function ProductDetails({ products, content, productId, addToRece
                 <div className="product-details-grid">
                     <div className="product-gallery">
                         <div className="main-image-viewport">
-                            <img src={imageUrl(product.images[selectedImage])} alt={product.name} id="main-product-image" />
+                            <img
+                                src={imageUrl(product.images[selectedImage])}
+                                alt={product.name}
+                                id="main-product-image"
+                                style={{ objectPosition: product.objectPosition || 'center' }}
+                            />
                         </div>
                         <div className="gallery-thumbnails">
                             {product.images.map((img, index) => (

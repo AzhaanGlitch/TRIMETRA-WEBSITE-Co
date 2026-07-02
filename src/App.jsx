@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import Lenis from 'lenis';
+import { initScrollReveal } from './utils/scrollReveal.js';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import FloatingWhatsApp from './components/FloatingWhatsApp.jsx';
@@ -117,6 +118,14 @@ export default function App() {
         } else {
             window.scrollTo(0, 0);
         }
+    }, [route.path]);
+
+    // Re-init scroll reveal on every route change
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            initScrollReveal();
+        }, 100); // Small delay to ensure DOM is rendered
+        return () => clearTimeout(timer);
     }, [route.path]);
 
     return (

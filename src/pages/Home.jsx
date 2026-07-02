@@ -133,7 +133,7 @@ export default function Home({ products, content }) {
                 </div>
             </div>
 
-            <section className="featured-carousel-section">
+            <section className="featured-carousel-section reveal-on-scroll">
                 <SectionHeader eyebrow="Exceptional Masterpieces" title="Our Collections" />
                 <div className="home-collections-circle-wrapper">
                     {Object.entries(content.collectionMetadata).filter(([key]) => key !== 'all').map(([key, value]) => (
@@ -157,7 +157,7 @@ export default function Home({ products, content }) {
                 </div>
             </section>
 
-            <section className="home-top-styles-section">
+            <section className="home-top-styles-section reveal-on-scroll">
                 <SectionHeader eyebrow="Trending Masterpieces" title="Our Top Styles" />
                 
                 <div className="top-styles-tabs">
@@ -185,7 +185,7 @@ export default function Home({ products, content }) {
                 </div>
             </section>
 
-            <section className="home-cta-banner">
+            <section className="home-cta-banner reveal-on-scroll">
                 <div className="home-cta-content">
                     <h2>Bespoke Creations</h2>
                     <p>Looking for a custom length, specific diamond grade, or a completely personalized design? Connect with our master concierge via WhatsApp for dedicated advice.</p>
@@ -200,7 +200,7 @@ export default function Home({ products, content }) {
                 </div>
             </section>
 
-            <section className="testimonials-burgundy-section">
+            <section className="testimonials-burgundy-section reveal-on-scroll">
                 <div className="testimonials-container">
                     <SectionHeader eyebrow="Stories from our clients" title="Testimonials" />
                     <div className="testimonials-grid">

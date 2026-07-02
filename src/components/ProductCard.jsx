@@ -60,11 +60,6 @@ export default function ProductCard({ product, featured = false, compactMaterial
                     >
                         <i className={`${isWishlisted ? 'fas' : 'far'} fa-heart`} />
                     </button>
-
-                    {/* View Details Button overlaying the image */}
-                    <div className="product-card-action-overlay">
-                        <span className="product-card-action-btn">View Details</span>
-                    </div>
                 </div>
                 <div className="product-card-info">
                     <span className="product-card-collection">{product.collection}</span>
