@@ -51,7 +51,7 @@ export default function Contact({ contact }) {
                             <div className="contact-method-item reveal-on-scroll" style={{ '--reveal-delay': '120ms' }}>
                                 <div className="contact-method-icon"><i className="fab fa-whatsapp" /></div>
                                 <div className="contact-method-details">
-                                    <h4>WhatsApp Chat</h4>
+                                    <h4>Call or WhatsApp</h4>
                                     <a href={whatsappLink(contact.whatsapp.number, contact.whatsapp.message)} target="_blank" rel="noopener noreferrer">
                                         {contact.whatsapp.display}
                                     </a>
