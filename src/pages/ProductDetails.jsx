@@ -1,6 +1,27 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import ErrorPage from './ErrorPage.jsx';
 import { imageUrl, whatsappLink } from '../utils/assets.js';
+
+function AccordionItem({ title, children, defaultOpen = false }) {
+    const [isOpen, setIsOpen] = useState(defaultOpen);
+    const contentRef = useRef(null);
+
+    return (
+        <div className={`pd-accordion-item ${isOpen ? 'open' : ''}`}>
+            <button className="pd-accordion-header" onClick={() => setIsOpen(!isOpen)}>
+                <span>{title}</span>
+                <span className="pd-accordion-icon">{isOpen ? '−' : '+'}</span>
+            </button>
+            <div
+                className="pd-accordion-body"
+                ref={contentRef}
+                style={{ maxHeight: isOpen ? (contentRef.current?.scrollHeight || 500) + 'px' : '0px' }}
+            >
+                <div className="pd-accordion-content">{children}</div>
+            </div>
+        </div>
+    );
+}
 
 export default function ProductDetails({ products, content, productId, addToRecentlyViewed }) {
     const product = products.find((item) => item.id === productId);
@@ -55,23 +76,21 @@ export default function ProductDetails({ products, content, productId, addToRece
                             <span className="product-detail-id">REF: {product.id}</span>
                         </div>
 
-                        <div className="divider" />
+                        <div className="product-accordions">
+                            <AccordionItem title="The Piece" defaultOpen>
+                                <p>{product.description}</p>
+                            </AccordionItem>
 
-                        <div className="product-desc-wrap">
-                            <h3>Description</h3>
-                            <p>{product.description}</p>
+                            <AccordionItem title="Composition & Materials">
+                                <ul className="materials-list">
+                                    {product.materials.map((material) => <li key={material}>{material}</li>)}
+                                </ul>
+                            </AccordionItem>
+
+                            <AccordionItem title="Shipping & Care">
+                                <p>All pieces are shipped in a luxury presentation box, insured and tracked. We recommend storing your jewellery in a cool, dry place and avoiding contact with perfumes or chemicals.</p>
+                            </AccordionItem>
                         </div>
-
-                        <div className="divider" />
-
-                        <div className="product-materials-wrap">
-                            <h3>Composition & Materials</h3>
-                            <ul className="materials-list">
-                                {product.materials.map((material) => <li key={material}>{material}</li>)}
-                            </ul>
-                        </div>
-
-                        <div className="divider" />
 
                         <div className="product-actions">
                             <a href={whatsappLink(content.contact.whatsapp.number, message)} target="_blank" rel="noopener noreferrer" className="whatsapp-enquiry-btn">

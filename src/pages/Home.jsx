@@ -1,4 +1,6 @@
+import { useState, useMemo } from 'react';
 import SectionHeader from '../components/SectionHeader.jsx';
+import ProductCard from '../components/ProductCard.jsx';
 import { whatsappLink, imageUrl } from '../utils/assets.js';
 
 function TestimonialSpotlightCard({ testimonial }) {
@@ -29,6 +31,41 @@ function TestimonialSpotlightCard({ testimonial }) {
 }
 
 export default function Home({ products, content }) {
+    const [selectedTab, setSelectedTab] = useState('all');
+
+    const displayedProducts = useMemo(() => {
+        if (selectedTab !== 'all') {
+            return products.filter((p) => p.collection === selectedTab).slice(0, 4);
+        }
+        
+        // Return a mix of different collections for the "All" tab
+        const mixed = [];
+        const collections = ['necklaces', 'earrings', 'rings', 'bracelets'];
+        let idx = 0;
+        while (mixed.length < 4) {
+            let addedInThisRound = false;
+            for (const col of collections) {
+                const colItems = products.filter(p => p.collection === col);
+                if (colItems[idx]) {
+                    mixed.push(colItems[idx]);
+                    addedInThisRound = true;
+                }
+                if (mixed.length === 4) break;
+            }
+            if (!addedInThisRound) break;
+            idx++;
+        }
+        return mixed;
+    }, [products, selectedTab]);
+
+    const tabs = [
+        { id: 'all', label: 'All' },
+        { id: 'necklaces', label: 'Necklaces' },
+        { id: 'bracelets', label: 'Bracelets' },
+        { id: 'earrings', label: 'Earrings' },
+        { id: 'rings', label: 'Rings' }
+    ];
+
     return (
         <div className="home-page-wrapper fade-in-section">
             <div className="hero-banner-custom" style={{ position: 'relative' }}>
@@ -117,6 +154,34 @@ export default function Home({ products, content }) {
                             <span className="circle-label">{value.title}</span>
                         </a>
                     ))}
+                </div>
+            </section>
+
+            <section className="home-top-styles-section">
+                <SectionHeader eyebrow="Trending Masterpieces" title="Our Top Styles" />
+                
+                <div className="top-styles-tabs">
+                    {tabs.map((tab) => (
+                        <button
+                            key={tab.id}
+                            className={`top-styles-tab-btn ${selectedTab === tab.id ? 'active' : ''}`}
+                            onClick={() => setSelectedTab(tab.id)}
+                        >
+                            {tab.label}
+                        </button>
+                    ))}
+                </div>
+
+                <div className="top-styles-grid">
+                    {displayedProducts.map((product) => (
+                        <ProductCard key={product.id} product={product} />
+                    ))}
+                </div>
+
+                <div className="top-styles-view-all">
+                    <a href="#/collections" className="gold-btn-custom-outline">
+                        View All Designs
+                    </a>
                 </div>
             </section>
 

@@ -17,6 +17,14 @@ export default function ProductCard({ product, featured = false, compactMaterial
         }
     }, [product.id]);
 
+    const [isWishlisted, setIsWishlisted] = useState(false);
+
+    const handleWishlistClick = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        setIsWishlisted(!isWishlisted);
+    };
+
     return (
         <div className="product-card fade-in-section">
             <a href={`#/product/${product.id}`} className="product-card-link-wrapper">
@@ -32,6 +40,7 @@ export default function ProductCard({ product, featured = false, compactMaterial
                         alt={product.name}
                         className={`product-card-img primary-image ${product.images[1] ? 'has-hover' : ''}`}
                         loading="lazy"
+                        style={{ objectPosition: product.objectPosition || 'center' }}
                     />
                     {product.images[1] && (
                         <img
@@ -39,8 +48,23 @@ export default function ProductCard({ product, featured = false, compactMaterial
                             alt={`${product.name} alternate view`}
                             className="product-card-img hover-image"
                             loading="lazy"
+                            style={{ objectPosition: product.objectPosition || 'center' }}
                         />
                     )}
+                    
+                    {/* Wishlist Heart Icon */}
+                    <button 
+                        className={`product-card-wishlist-btn ${isWishlisted ? 'active' : ''}`}
+                        onClick={handleWishlistClick}
+                        aria-label="Add to wishlist"
+                    >
+                        <i className={`${isWishlisted ? 'fas' : 'far'} fa-heart`} />
+                    </button>
+
+                    {/* View Details Button overlaying the image */}
+                    <div className="product-card-action-overlay">
+                        <span className="product-card-action-btn">View Details</span>
+                    </div>
                 </div>
                 <div className="product-card-info">
                     <span className="product-card-collection">{product.collection}</span>
@@ -48,11 +72,6 @@ export default function ProductCard({ product, featured = false, compactMaterial
                     <p className="product-card-materials">{materials}</p>
                 </div>
             </a>
-            <div className="product-card-footer">
-                <a href={`#/product/${product.id}`} className="product-card-btn">
-                    Details <i className="fas fa-arrow-right" />
-                </a>
-            </div>
         </div>
     );
 }
