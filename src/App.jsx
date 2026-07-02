@@ -13,6 +13,7 @@ import RefundPolicy from './pages/RefundPolicy.jsx';
 import ShippingPolicy from './pages/ShippingPolicy.jsx';
 import JewelleryCare from './pages/JewelleryCare.jsx';
 import ErrorPage from './pages/ErrorPage.jsx';
+import ComingSoon from './components/ComingSoon.jsx';
 import { useHashRoute } from './hooks/useHashRoute.js';
 import products from '../data/products.json';
 import content from '../data/content.json';
@@ -74,6 +75,14 @@ export default function App() {
             return [];
         }
     });
+
+    // Check if the current domain is the production domain (.in)
+    const isProduction = window.location.hostname.includes('trimetra.in');
+
+    if (isProduction) {
+        return <ComingSoon />;
+    }
+
 
     const addToRecentlyViewed = (id) => {
         setRecentlyViewedIds((prev) => {
