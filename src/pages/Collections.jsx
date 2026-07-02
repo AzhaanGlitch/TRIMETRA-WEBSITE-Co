@@ -31,9 +31,7 @@ function ProductPortrait({ product }) {
                 />
             </figure>
             <div className="collection-product-caption">
-                <span>{product.collection}</span>
                 <h3>{product.name}</h3>
-                <p>{materials}</p>
                 <strong>
                     View Piece <i className="fas fa-arrow-right" />
                 </strong>

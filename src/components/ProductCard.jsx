@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
 import { imageUrl } from '../utils/assets.js';
 
-export default function ProductCard({ product, featured = false, compactMaterials = false }) {
+export default function ProductCard({ product, featured = false }) {
     const [isRecentlyViewed, setIsRecentlyViewed] = useState(false);
-    const materials = compactMaterials ? product.materials[0] : product.materials.join(', ');
 
     useEffect(() => {
         try {
@@ -62,9 +61,7 @@ export default function ProductCard({ product, featured = false, compactMaterial
                     </button>
                 </div>
                 <div className="product-card-info">
-                    <span className="product-card-collection">{product.collection}</span>
                     <h3 className="product-card-title">{product.name}</h3>
-                    <p className="product-card-materials">{materials}</p>
                 </div>
             </a>
         </div>
